@@ -1,8 +1,9 @@
 // The one place pages read the library from. Everything comes from data/library.json.
 import raw from '../../data/library.json';
-import { diagramOf } from './diagrams.mjs';
+import { diagramOf, MAP } from './diagrams.mjs';
 export const lib = raw;
-export const items = raw.items;
+// a card with its own diagram shows that, not a related card's clip
+export const items = raw.items.map((i) => (MAP[i.slug] && i.shown_with && !i.licensed.some((l) => l.media) ? { ...i, shown_with: null } : i));
 export const models = raw.models;
 // row titles and pills read better in the plural; the data keeps the singular label
 const PLURAL = { 'Shot size': 'Shot sizes', Angle: 'Angles', 'Camera move': 'Camera moves', Rig: 'Rigs', Lens: 'Lenses', 'Aspect ratio': 'Aspect ratios', 'Colour look': 'Colour looks', 'Art style': 'Art styles',

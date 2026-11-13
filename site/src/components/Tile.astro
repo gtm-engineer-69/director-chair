@@ -8,7 +8,7 @@ const t = tileOf(item, words);
 ---
 <a class:list={['tile', t.say && 'say']} href={t.href} data-clip={t.clip || undefined}>
   <span class="name">{t.name}</span>
-  {t.still ? <><img src={t.still} alt="" width="480" height="270" loading={lazy ? 'lazy' : 'eager'} fetchpriority={first ? 'high' : undefined} decoding="async" /><span class="line">{t.line}</span></>
+  {t.still ? <><img src={t.still} alt="" width="640" height="360" loading={lazy ? 'lazy' : 'eager'} fetchpriority={first ? 'high' : undefined} decoding="async" /><span class="line">{t.line}</span></>
     : t.say ? <p>{t.text.split(' ').map((w, n) => <><span class="w" style={`--i:${n}`}>{w}</span>{' '}</>)}</p>
       : t.dg ? <Fragment set:html={t.dg} />
         : <p>{t.text}</p>}

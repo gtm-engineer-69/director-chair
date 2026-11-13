@@ -22,7 +22,7 @@ const others = g.cats.filter((c) => c.id !== cat.id);
   {subs.map((sub, n) => (
     <section class="group" id={`g${n}`}>
       {subs.length > 1 && <h2>{sub}</h2>}
-      <div class="grid">{unique(clipsFirst(inSub(sub))).map((u, k) => <Tile item={u.item} words={u.words} lazy={n > 0} first={n === 0 && k === 0} />)}</div>
+      <div class="grid">{unique(clipsFirst(inSub(sub))).map((u, k) => <Tile item={u.item} words={u.words} lazy={n > 0 || k > 7} first={n === 0 && k < 8} />)}</div>
     </section>
   ))}
 </Base>
