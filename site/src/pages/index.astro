@@ -19,8 +19,8 @@ const row = (id) => {
   const rest = id === 'hook' ? [...inCat(id)].sort((a, b) => (a.shown_with ? 1 : 0) - (b.shown_with ? 1 : 0)) : clipsFirst(inCat(id));
   return { cat: catOf(id), list: [...lead, ...rest.filter((i) => !lead.includes(i))].slice(0, 12) };
 };
+// home stays calm: three shelves and the first-video path, then every shelf one tap away in All groups
 const first = ['move', 'hook', 'expression'].map(row);
-const more = ['shot', 'light', 'look', 'transition', 'effect', 'script', 'preset'].map(row);
 const step = (verb, target) => (typeof target === 'string' ? { verb, href: `/${target}`, name: catOf(target).plural } : { verb, href: urlOf(target), name: tileOf(target).name });
 const start = [step('Pick the model for the shot.', bySlug('which-model-for-video')), step('Make the first frame.', bySlug('guide-shot-from-first-frame')), step('Choose how close the camera is.', 'shot'),
   step('Add one camera move.', 'move'), step('Set the light.', 'light'), step('Open on a hook.', 'hook'), step('Give it an arc.', 'script'), step('Caption it and cut it.', 'effect'), step('Check it before you post.', 'publish')];
@@ -29,7 +29,7 @@ const start = [step('Pick the model for the shot.', bySlug('which-model-for-vide
   <section class="hero" data-hero>
     {sky.map((f, n) => { const c = clipOf(f.item); return (
       <a class:list={['c', f.shape, f.d && 'd']} href={urlOf(f.item)} aria-label={tileOf(f.item).name} style={f.style}>
-        {n === 0 ? <video src={c.media.card} poster={c.media.card_poster} muted loop playsinline data-autoplay width="480" height="270"></video> : <img src={c.media.card_poster} alt="" width="480" height="270" />}
+        {n === 0 ? <video src={c.media.card} poster={c.media.card_poster} muted loop playsinline preload="none" data-autoplay width="480" height="270"></video> : <img src={c.media.card_poster} alt="" width="480" height="270" />}
       </a>); })}
     <div class="core">
       <h1>Every move, hook and look,<br /> ready to paste.</h1>
@@ -67,7 +67,6 @@ const start = [step('Pick the model for the shot.', bySlug('which-model-for-vide
     <Row title="Your first video, in nine cards" id="start">
       {start.map((s) => <a class="tile" href={s.href}><p>{s.verb}</p><span class="name">{s.name}</span><span class="act">Open <Icon name="arrow-right" /></span></a>)}
     </Row>
-    {more.map((r) => <Row title={r.cat.plural} href={`/${r.cat.id}`} count={r.cat.count} items={r.list} />)}
     <section class="row" id="groups">
       <header><h2>All groups</h2><a class="see" href="/board">Open the board <Icon name="arrow-right" /></a></header>
       <div class="index">{groups.map((g) => <div><h3>{g.name}</h3>{g.cats.map((c) => <a href={`/${c.id}`}>{c.plural} <span>{c.count}</span></a>)}</div>)}</div>

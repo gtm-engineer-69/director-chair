@@ -8,7 +8,8 @@ import figtree from '@fontsource-variable/figtree/files/figtree-latin-wght-norma
 import { groups, items, SITE, MARK, ICON, bySlug, clipOf } from '../lib/data.mjs';
 const { title, description, path, image, twin, noindex = false } = Astro.props;
 const canonical = SITE + (path === '/' ? '/' : path);
-const og = SITE + (image || clipOf(bySlug('dolly-in')).media.poster);
+// share image: the page's own picture, else the constellation of posters on paper (public/og.jpg, rendered once from the posters)
+const og = SITE + (image || '/og.jpg');
 const lead = ['Camera', 'Light and look', 'Edit', 'Story'].map((n) => groups.find((g) => g.name === n)).filter(Boolean);
 const tools = [['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'], ['About', '/about']];
 ---
