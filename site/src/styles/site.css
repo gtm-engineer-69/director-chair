@@ -132,3 +132,8 @@ button.see{border:0;background:none;cursor:pointer;color:inherit;text-decoration
 }
 .mark{min-height:var(--control)}
 .foot nav a{min-width:var(--control)}
+/* targets: a link inside a sentence is at least 24px tall, a field's input fills its pill */
+.foot span a,.fine a,.credit a,.prose a,.head p a,.shown a{display:inline-block;padding:4px 0;margin:-4px 0}
+.field input,.search input{align-self:stretch}
+.all:not([open]) .sheet{display:none}
+.slot .tile:focus-visible,.pick .tile.is-on:focus-visible{outline-width:4px}
