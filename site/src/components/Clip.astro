@@ -1,0 +1,14 @@
+---
+// The large clip of a card page. Without a clip the card's own words fill the frame.
+import Icon from './Icon.astro';
+const { view, name, text } = Astro.props;
+const m = view?.media;
+---
+{m ? (
+  <div class="clip" data-clip-main>
+    <video src={m.video} poster={m.poster} muted loop playsinline preload="metadata" width={m.width} height={m.height} aria-label={`${name}, reference clip`}></video>
+    <button class="pill round" type="button" data-toggle aria-label="Play the clip"><Icon name="play" class="i-play" /><Icon name="pause" class="i-pause" /></button>
+  </div>
+) : (
+  <div class="clip type"><p>{text}</p></div>
+)}

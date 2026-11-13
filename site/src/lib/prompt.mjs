@@ -58,7 +58,7 @@ function phraseFor(item, model, models) {
 
 // Pitfalls are advice to the person writing the prompt, so they go into chat prompts and onto the card, never into an image or video prompt.
 const refLines = (items) => items.flatMap((i) => (i.licensed || []).filter((l) => l.media).slice(0, 1)
-  .map((l) => `Reference clip, ${l.name}, by ${l.credit}: ${SITE}${l.media.video}`));
+  .map((l) => `Reference clip (${l.name}): ${SITE}${l.media.video}`));
 
 function parts(items, model, models) {
   const by = {};

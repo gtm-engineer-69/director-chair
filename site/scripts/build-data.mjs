@@ -65,6 +65,15 @@ const items = published.map(({ fm, body }) => {
   };
 });
 
+// A card without its own clip may show the clip of the first related card that has one, credited as such.
+const bySlug = new Map(items.map((i) => [i.slug, i]));
+for (const i of items) {
+  const own = i.licensed.some((l) => l.media);
+  const r = own ? null : i.related.map((s) => bySlug.get(s)).find((x) => x && x.licensed.some((l) => l.media));
+  const l = r && r.licensed.find((x) => x.media);
+  i.shown_with = r ? { slug: r.slug, name: r.name, category: r.category, label: `Shown with: ${r.name}`, site: l.site, credit: l.credit, source_url: l.source_url, media: l.media } : null;
+}
+
 const out = {
   name: 'Director Chair', url: 'https://directorchair.ai', generated: new Date().toISOString().slice(0, 10),
   licence: { code: 'MIT', text: 'CC BY 4.0', third_party: 'Clips and card texts inside a "licensed" block belong to their makers and are shown with permission and credit.' },
@@ -90,5 +99,6 @@ if (problems.length) { console.error('FAIL build-data\n - ' + problems.join('\n 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, text + '\n');
 const withMedia = items.filter((i) => i.licensed.some((l) => l.media)).length;
-console.log(`build-data PASS: read ${all.length}, dropped ${dropped} workflow, published ${items.length} items in ${out.categories.filter((c) => c.count).length} categories, ${withMedia} with clips (${items.reduce((a, i) => a + i.licensed.length, 0)} clips), ${out.models.length} models, ${(text.length / 1024).toFixed(0)} KB`);
+  const borrowed = items.filter((i) => i.shown_with).length;
+console.log(`build-data PASS: read ${all.length}, dropped ${dropped} workflow, published ${items.length} items in ${out.categories.filter((c) => c.count).length} categories, ${withMedia} with clips (${items.reduce((a, i) => a + i.licensed.length, 0)} clips), ${borrowed} shown with a related card's clip, ${out.models.length} models, ${(text.length / 1024).toFixed(0)} KB`);
 }

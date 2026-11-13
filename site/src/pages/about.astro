@@ -1,18 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
-import Win from '../components/Win.astro';
 import { items, cats, lib } from '../lib/data.mjs';
 const makers = lib.external_sites.filter((s) => s.policy === 'licensed');
 const clips = (id) => items.reduce((a, i) => a + i.licensed.filter((l) => l.site === id).length, 0);
 ---
-<Base title="About Director Chair: open data, licences and credits" description="Director Chair is a free, open library of video craft for AI video. How to use the data in your own agent, the licences, who made the reference clips and how to cite it." path="/about" current="About">
-  <div class="item-head"><h1 class="title">About</h1><p class="effect">The free, open operating system for the AI video marketer. {items.length} cards on {cats.length} shelves, each with a prompt ready to paste.</p></div>
-  <Win title="What this is" tint="var(--bar-yellow)"><div class="prose">
+<Base title="About Director Chair: open data, licences and credits" description="Director Chair is a free, open library of video craft for AI video. How to use the data in your own agent, the licences, who made the reference clips and how to cite it." path="/about">
+  <div class="page"><h1>About</h1><p class="lead">The free, open operating system for the AI video marketer. {items.length} cards on {cats.length} shelves, each with a prompt ready to paste.</p></div>
+  <section class="row"><header><h2>What this is</h2></header><div class="prose">
     <p>Everything you need to make a short video that works, as cards: shot sizes, angles, camera moves, lenses, light, colour looks, transitions, effects, sound, expressions, hooks, scripts, formats, presets, and which model for what.</p>
     <p>Every card has prompt instructions. Pick your model, copy the prompt, paste it. Where a card has a reference clip you can watch it, download it, and its address sits in the prompt so your AI can fetch it too.</p>
     <p>It is free. There is no account, no paywall, no newsletter and no affiliate link.</p>
-  </div></Win>
-  <Win id="agents" title="For agents" meta="open data" tint="var(--bar-cyan)"><div class="prose">
+  </div></section>
+  <section class="row" id="agents"><header><h2>For agents</h2></header><div class="prose">
     <p>The whole library is open data. Point your agent at it, or drop the skill into Claude or ChatGPT.</p>
     <ul>
       <li><a href="/director-chair-skill.zip" download>director-chair-skill.zip</a>: a skill file, the library as JSON and the prompt engine</li>
@@ -21,24 +20,24 @@ const clips = (id) => items.reduce((a, i) => a + i.licensed.filter((l) => l.site
       <li><a href="/move/dolly-in.md">/move/dolly-in.md</a>: every card page as markdown (add .md to its address)</li>
       <li><a href="/llms.txt">/llms.txt</a>: the index for language models</li>
     </ul>
-  </div></Win>
-  <Win title="Licences" tint="var(--bar-green)"><div class="prose">
+  </div></section>
+  <section class="row"><header><h2>Licences</h2></header><div class="prose">
     <ul>
       <li>Code: MIT.</li>
       <li>Our texts and data: Creative Commons Attribution 4.0 (CC BY 4.0). Use them, change them, sell what you make with them; say where they came from.</li>
       <li>Reference clips and the makers' own card texts: they belong to their makers and are shown here with permission and credit. They are not covered by the two licences above.</li>
     </ul>
-  </div></Win>
-  <Win title="Credits" tint="var(--bar-magenta)"><div class="prose">
+  </div></section>
+  <section class="row"><header><h2>Credits</h2></header><div class="prose">
     <ul>
       {makers.map((s) => <li><a href={s.url} rel="noopener">{s.name}</a>: {clips(s.id)} reference clips and their card texts, with permission.</li>)}
-      <li><a href="https://github.com/halfmage/pixelarticons" rel="noopener">pixelarticons</a> by Gerrit Halfmann, MIT.</li>
-      <li>Typefaces: League Gothic, IBM Plex Mono and Jersey 15, all under the SIL Open Font License.</li>
+      <li>Icons: <a href="https://lucide.dev" rel="noopener">Lucide</a>, ISC licence.</li>
+      <li>Typeface: Figtree, SIL Open Font License.</li>
     </ul>
-  </div></Win>
-  <Win title="How to cite" tint="var(--bar-red)"><div class="prose">
+  </div></section>
+  <section class="row"><header><h2>How to cite</h2></header><div class="prose">
     <p>Director Chair (2026). The video craft library for AI video. https://directorchair.ai</p>
     <p>For one card, cite its own address, for example https://directorchair.ai/move/dolly-in, with the date on the card.</p>
-  </div></Win>
-  <Win title="Who" tint="var(--bar-blue)"><div class="prose"><p>Made by the people behind <a href="https://notavideo.ai" rel="noopener">Not A Video</a>.</p></div></Win>
+  </div></section>
+  <section class="row"><header><h2>Who</h2></header><div class="prose"><p>Made by the people behind <a href="https://notavideo.ai" rel="noopener">Not A Video</a>.</p></div></section>
 </Base>

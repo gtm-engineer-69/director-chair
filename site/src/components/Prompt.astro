@@ -1,59 +1,51 @@
 ---
-// Prompt instructions: model tabs, the prompt, Copy, Download reference, credit, related. A window in the page, never a modal.
+// Prompt instructions: model choice, the prompt, Copy, Download reference, credit. In the page, never a modal.
 import Icon from './Icon.astro';
-import Tile from './Tile.astro';
-import { models, lib, bySlug, clipOf } from '../lib/data.mjs';
-import { assemble, modelsFor, kindOf, CHAT } from '../lib/prompt.mjs';
+import { models, lib, clipOf } from '../lib/data.mjs';
+import { assemble, modelsFor, CHAT } from '../lib/prompt.mjs';
 const { item = null, board = false } = Astro.props;
-const offered = board ? models.filter((m) => modelsFor({ category: 'light', media: ['image', 'video'], slug: '' }, models).includes(m)) : modelsFor(item, models);
+const offered = board ? modelsFor({ category: 'light', media: ['image', 'video'], slug: '' }, models) : modelsFor(item, models);
 const chat = offered[0]?.id === CHAT.id;
 // the three a visitor reaches for first; the rest sit behind More
 const FIRST = ['seedance-2.5', 'veo-3.1', 'kling-3', 'nano-banana-pro', 'gpt-image', 'seedream-5', 'seedance-2.0', 'nano-banana-2'];
 const order = [...offered].sort((a, b) => FIRST.indexOf(a.id) - FIRST.indexOf(b.id));
-const onlyImage = offered.every((m) => m.medium === 'image');
-const tabs = chat ? order : onlyImage ? order.slice(0, 3) : board || offered.some((m) => m.medium === 'image') ? [order[0], order[1], order.find((m) => m.medium === 'image')] : order.slice(0, 3);
-const rest = chat ? [] : models.filter((m) => !tabs.includes(m) && (board || !item || item.media.includes(m.medium) || offered.includes(m)));
+const mixed = offered.some((m) => m.medium === 'image') && offered.some((m) => m.medium === 'video');
+const tabs = chat ? order : mixed ? [order[0], order[1], order.find((m) => m.medium === 'image')] : order.slice(0, 3);
+const rest = chat ? [] : offered.filter((m) => !tabs.includes(m));
+const notRun = chat ? [] : models.filter((m) => !offered.includes(m) && (board || item.media.includes(m.medium)));
 const note = (m) => (m.id === CHAT.id ? 'Paste it into Claude, ChatGPT or Gemini.' : `${m.name} reads ${m.prompt_style}.`);
 const first = tabs[0];
-const text = board ? '' : assemble([item], first.id, {}, models);
+const text = board ? 'Pick at least one card.' : assemble([item], first.id, {}, models);
 const clip = item && clipOf(item);
 const site = clip && lib.external_sites.find((s) => s.id === clip.site);
-const related = item ? item.related.map(bySlug).filter(Boolean).slice(0, 3) : [];
 const labels = chat ? ['Your product', 'Your audience'] : ['Your subject', 'Your setting'];
 const data = { board, items: item ? [item] : [], models, notes: Object.fromEntries([...offered, CHAT].map((m) => [m.id, note(m)])) };
 ---
-<section class="win win-prompt" aria-labelledby="pi" data-prompt>
-  <header class="win-bar"><span class="win-swatch"></span><h2 class="win-title" id="pi">Prompt instructions</h2><span class="win-btns" aria-hidden="true"><Icon name="minus" /><Icon name="expand" /><Icon name="close" /></span></header>
-  <div class="win-body">
-    <div class="tabs" role="tablist" aria-label="Model">
-      {tabs.map((m, n) => <button class="tab" type="button" role="tab" aria-selected={n === 0 ? 'true' : 'false'} data-model={m.id}>{m.name}</button>)}
-      {rest.length > 0 && <button class="tab" type="button" role="tab" aria-selected="false" data-model="more">More</button>}
-    </div>
-    <div class="sheet" role="tabpanel" data-sheet>
-      <p class="sheet-note" data-note>{note(first)}</p>
-      <pre class="prompt" data-out>{text}</pre>
-      {rest.length > 0 && (
-        <ul class="more" data-more hidden>
-          {rest.map((m) => offered.includes(m)
-            ? <li><button type="button" data-model={m.id}>{m.name}: {m.prompt_style}</button></li>
-            : <li>{m.name}: <i>{/^announced/.test(m.prompt_style) ? 'announced, not run by us' : 'no signal'}</i></li>)}
-        </ul>
-      )}
-    </div>
-    <div class="fields">
-      <label><span>{labels[0]}</span><input type="text" data-field="subject" autocomplete="off" placeholder={chat ? 'a ceramic mug brand' : 'a woman in a red coat'} /></label>
-      <label><span>{labels[1]}</span><input type="text" data-field="setting" autocomplete="off" placeholder={chat ? 'people who gift coffee gear' : 'a hotel corridor at night'} /></label>
-    </div>
-    <div class="prompt-actions">
-      <span class="stamp" data-stamp aria-hidden="true">Copied</span>
-      <button class="btn btn-primary btn-block" type="button" data-copy><span><Icon name="copy" />Copy prompt</span></button>
-      {clip && <a class="btn btn-block" href={clip.media.video} download><span><Icon name="download" />Download reference</span></a>}
-    </div>
-    <p class="vh" role="status" data-status></p>
-    {clip && <p class="credit">Reference clip by <a href={site?.url || clip.source_url} rel="noopener">{site?.name || clip.credit}</a>, shown with permission. <a href={clip.source_url} rel="noopener">Original file</a></p>}
-    {related.length > 0 && (
-      <div class="related"><h3>Goes well with</h3><ul>{related.map((r) => <li><Tile item={r} /></li>)}</ul></div>
-    )}
-    <script type="application/json" data-json set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
+<section class="prompt" aria-labelledby="pi" data-prompt>
+  <h2 id="pi">Prompt instructions</h2>
+  <div class="models" role="tablist" aria-label="Model">
+    {tabs.map((m, n) => <button class:list={['pill', n > 0 && 'plain']} type="button" role="tab" aria-selected={n === 0 ? 'true' : 'false'} data-model={m.id}>{m.name}</button>)}
+    {(rest.length > 0 || notRun.length > 0) && <button class="pill plain" type="button" aria-expanded="false" aria-controls="more-models" data-more-toggle>More <Icon name="chevron-down" /></button>}
   </div>
+  {(rest.length > 0 || notRun.length > 0) && (
+    <div class="more" id="more-models" data-more hidden>
+      {rest.length > 0 && <div class="models" role="tablist" aria-label="More models">{rest.map((m) => <button class="pill plain" type="button" role="tab" aria-selected="false" data-model={m.id}>{m.name}</button>)}</div>}
+      {notRun.length > 0 && <p class="credit">Not run by us yet, so no prompt: {notRun.map((m) => m.name).join(', ')}.</p>}
+    </div>
+  )}
+  <div class="panel" role="tabpanel">
+    <p class="out" id="prompt" data-out>{text}</p>
+    <div class="acts">
+      <button class="pill ink" type="button" data-copy><Icon name="copy" class="i-copy" /><Icon name="check" class="i-check" /><span data-copy-label>Copy prompt</span></button>
+      {clip && <a class="see" href={clip.media.video} download><Icon name="download" /> Download reference</a>}
+    </div>
+  </div>
+  <p class="vh" role="status" data-status></p>
+  <p class="credit" data-note>{board ? '' : note(first)}</p>
+  {clip && <p class="credit">Reference clip by <a href={site?.url || clip.source_url} rel="noopener">{site?.name || clip.credit}</a>, shown with permission.</p>}
+  <div class="fields">
+    <label><span>{labels[0]}</span><input type="text" data-field="subject" autocomplete="off" placeholder={chat ? 'a ceramic mug brand' : 'a woman in a red coat'} /></label>
+    <label><span>{labels[1]}</span><input type="text" data-field="setting" autocomplete="off" placeholder={chat ? 'people who gift coffee gear' : 'a hotel corridor at night'} /></label>
+  </div>
+  <script type="application/json" data-json set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
 </section>

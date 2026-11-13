@@ -1,53 +1,64 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Win from '../../components/Win.astro';
-import Tile from '../../components/Tile.astro';
-import Monitor from '../../components/Monitor.astro';
+import Row from '../../components/Row.astro';
+import Clip from '../../components/Clip.astro';
 import Prompt from '../../components/Prompt.astro';
 import Icon from '../../components/Icon.astro';
-import { items, lib, catOf, groupOf, clipOf, cardOf, urlOf } from '../../lib/data.mjs';
+import { items, lib, catOf, groupOf, clipOf, viewOf, tileOf, urlOf, bySlug, sentence } from '../../lib/data.mjs';
 import { md } from '../../lib/md.mjs';
 export const getStaticPaths = () => items.map((item) => ({ params: { category: item.category, slug: item.slug }, props: { item } }));
 const { item } = Astro.props;
 const cat = catOf(item.category);
 const g = groupOf(item.category);
-const c = cardOf(item);
-const clip = clipOf(item);
-const paren = (item.name.match(/\s*(\(.*\))$/) || [])[1];
-// the move card becomes rows of the spec; the rest of the notes render as they are
-const cardRows = [...(item.body.match(/## Move card\n+([\s\S]*?)(?:\n## |$)/)?.[1] || '').matchAll(/^- \*\*(.+?):\*\* (.+)$/gm)].map((m) => [m[1], m[2]]);
+const t = tileOf(item);
+const view = viewOf(item);
+const own = clipOf(item);
+// the move card becomes four facts; the rest of the notes render as they are
+const facts = [...(item.body.match(/## Move card\n+([\s\S]*?)(?:\n## |$)/)?.[1] || '').matchAll(/^- \*\*(.+?):\*\* (.+)$/gm)].map((m) => [m[1], m[2]]);
 const notes = item.body.replace(/## Move card\n+[\s\S]*?(?=\n## |$)/, '').trim();
-const sentence = (s) => s.charAt(0).toUpperCase() + s.slice(1) + (/[.!?]$/.test(s) ? '' : '.');
 const siteName = (id) => lib.external_sites.find((s) => s.id === id)?.name || id;
-const extra = item.licensed.filter((l) => l.media && l !== clip);
+const extra = item.licensed.filter((l) => l.media && l !== own);
+const related = item.related.map(bySlug).filter(Boolean);
 const description = `${item.effect} ${sentence(item.use_when)} With a prompt ready to paste.`.slice(0, 300);
 ---
-<Base title={`${item.name}: ${cat.label.toLowerCase()} prompt for AI video | Director Chair`} description={description} path={urlOf(item)} image={clip?.media.poster} twin={`${urlOf(item)}.md`} current={item.category === 'guide' ? 'Guides' : 'Library'}>
-  <div class="item">
-    <div class="item-main">
-      <div class="item-head">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Library</a><Icon name="chevron-right" /><a href={g.href}>{g.name}</a><Icon name="chevron-right" /><a href={`/${cat.id}`}>{cat.label}</a></nav>
-        <h1 class="title">{c.name} {paren && <small>{paren}</small>}</h1>
-        <p class="effect">{item.effect}</p>
-      </div>
-      <Monitor clip={clip} name={c.name} ch={c.ch} autoplay />
-      <Win class="win-card" title={`${cat.label} card`} meta={item.group} tint={g.tint}>
-        <dl class="spec">
-          <dt>Use when</dt><dd>{sentence(item.use_when)}</dd>
-          <dt>Say it</dt><dd>{sentence(item.phrase)}</dd>
-          {cardRows.map(([k, v]) => <><dt>{k}</dt><dd>{sentence(v)}</dd></>)}
-          {item.pitfalls.length > 0 && <><dt>Watch out</dt><dd><ul class="pitfalls">{item.pitfalls.map((p) => <li>{p.text} <small><span class="chip">{p.evidence}</span> {p.source}</small></li>)}</ul></dd></>}
-          {item.licensed.map((l) => <><dt>{l.intensity ? `${l.intensity} take` : "Maker's card"}</dt><dd><q>{l.text}</q> <small>{l.credit}</small></dd></>)}
-          {item.external_refs.length > 0 && <><dt>Look further</dt><dd><ul class="refs">{item.external_refs.map((r) => <li><a href={r.url} rel="noopener">{siteName(r.site)}</a>: {r.what}</li>)}</ul></dd></>}
-          <dt>Source</dt><dd><small>{item.source.note || 'Own words.'} {item.source.url && <a href={item.source.url} rel="noopener">Source link</a>} Checked {item.checked}.</small></dd>
-          <dt>For agents</dt><dd><small><a href={`${urlOf(item)}.md`}>Markdown</a> <a href={`/api${urlOf(item)}.json`}>JSON</a></small></dd>
-        </dl>
-        {notes && <div class="prose" set:html={md(notes)} />}
-        {extra.length > 0 && <div class="rail" tabindex="0" role="group" aria-label="More clips on this card">{extra.map((l) => (
-          <a class="card" href={l.media.video} data-ch={c.ch} data-name={l.name} data-src={l.media.poster} data-clip={l.media.card}><img src={l.media.card_poster} alt={`${l.name}${l.intensity ? ', ' + l.intensity : ''}`} width="480" height="270" loading="lazy" /><span class="osd osd-tl">{l.intensity || 'Clip'}</span><span class="osd osd-bl">{l.name}</span></a>
-        ))}</div>}
-      </Win>
+<Base title={`${item.name}: ${cat.label.toLowerCase()} prompt for AI video | Director Chair`} description={description} path={urlOf(item)} image={own?.media.poster} twin={`${urlOf(item)}.md`}>
+  <article class="card">
+    <Clip view={view} name={t.name} text={sentence(item.phrase)} />
+    <div class="info">
+      <a class="pill" href={`/${cat.id}`}><Icon name={g.icon} />{cat.plural}</a>
+      <h1>{t.name}</h1>
+      <p class="lead">{item.effect}</p>
+      <dl class="when"><dt>Use when</dt><dd>{sentence(item.use_when)}</dd></dl>
+      {item.shown_with && <p class="shown">{item.shown_with.label.replace(/: .*/, ': ')}<a href={`/${item.shown_with.category}/${item.shown_with.slug}`}>{item.shown_with.name}</a>. Clip by {siteName(item.shown_with.site)}, shown with permission.</p>}
     </div>
-    <aside class="item-side"><Prompt item={item} /></aside>
-  </div>
+    <Prompt item={item} />
+  </article>
+  {facts.length > 0 && (
+    <section class="row"><header><h2>{cat.label === 'Camera move' ? 'Move card' : 'Card'}</h2></header>
+      <dl class="facts">{facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v.charAt(0).toUpperCase() + v.slice(1)}</dd></div>)}</dl>
+    </section>
+  )}
+  {view && <section class="row"><header><h2>Say it like this</h2></header><div class="prose"><p>{sentence(item.phrase)}</p></div></section>}
+  {item.pitfalls.length > 0 && (
+    <section class="row"><header><h2>Watch out</h2></header>
+      <ul class="notes">{item.pitfalls.map((p) => <li>{p.text}<small>{p.evidence}: {p.source}</small></li>)}</ul>
+    </section>
+  )}
+  {notes && <section class="row"><header><h2>Notes</h2></header><div class="prose" set:html={md(notes)} /></section>}
+  {item.licensed.length > 0 && (
+    <section class="row"><header><h2>The maker's card</h2></header>
+      <ul class="notes">{item.licensed.map((l) => <li><q>{l.text}</q><small>{l.intensity ? `${l.intensity}. ` : ''}{l.credit}</small></li>)}</ul>
+    </section>
+  )}
+  {extra.length > 0 && (
+    <Row title="More clips on this card">{extra.map((l) => <a class="tile" href={l.media.video} data-clip={l.media.card}><img src={l.media.card_poster} alt="" width="480" height="270" loading="lazy" /><span class="name">{l.name}{l.intensity ? `, ${l.intensity.toLowerCase()}` : ''}</span></a>)}</Row>
+  )}
+  {related.length > 0 && <Row title="Related" items={related} />}
+  <section class="row"><header><h2>Sources</h2></header>
+    <div class="fine">
+      <p>{item.source.note || 'Own words.'} {item.source.url && <a href={item.source.url} rel="noopener">Source</a>} Checked {item.checked}.</p>
+      {item.external_refs.map((r) => <p><a href={r.url} rel="noopener">{siteName(r.site)}</a>: {r.what}</p>)}
+      <p>For agents: <a href={`${urlOf(item)}.md`}>this card as markdown</a>, <a href={`/api${urlOf(item)}.json`}>as JSON</a>.</p>
+    </div>
+  </section>
 </Base>

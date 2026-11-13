@@ -30,7 +30,7 @@ const [mh, mw] = scan(files.filter((f) => f.endsWith('.md')), (f) => fs.readFile
 line(dh + mh === 0, 'no vault path, client name or em dash in dist', `${files.filter((f) => TEXT.test(f)).length} text files scanned, ${dh + mh} with hits ${[...dw, ...mw].join(' | ')}`);
 const ROOT = path.resolve(SITE, '..');
 try {
-  const tracked = execFileSync('git', ['ls-files', '-co', '--exclude-standard'], { cwd: ROOT, encoding: 'utf8' }).split('\n').filter((f) => f && /\.(mjs|js|ts|astro|json|md|txt|css|svg|html)$|LICENSE|\.gitignore$/.test(f) && !f.endsWith('package-lock.json'));
+  const tracked = execFileSync('git', ['ls-files', '-co', '--exclude-standard'], { cwd: ROOT, encoding: 'utf8' }).split('\n').filter((f) => f && /\.(mjs|js|ts|astro|json|md|txt|css|svg|html)$|LICENSE|\.gitignore$/.test(f) && !f.endsWith('package-lock.json') && fs.existsSync(path.join(ROOT, f)));
   // source code builds the twin addresses, so the .md rule holds for the data file only
   const [gh, gw] = scan(tracked, (f) => { const t = fs.readFileSync(path.join(ROOT, f), 'utf8'); return f.includes('/data/') ? t : t.replace(/\.md\b/g, ''); });
   line(gh === 0, 'no vault path or client name in files git would take', `${tracked.length} files scanned, ${gh} with hits ${gw.join(' | ')}`);

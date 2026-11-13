@@ -1,21 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import Win from '../components/Win.astro';
 import { models, bySlug, urlOf } from '../lib/data.mjs';
 const kinds = [['Video models', 'video'], ['Image models', 'image']];
 const guide = (m) => m.guide && bySlug(m.guide);
 ---
-<Base title="Which AI video and image model for what | Director Chair" description="Which model to pick for which shot: what each AI video and image model is best for, what it is not for, how it wants its prompt, and when we last checked." path="/models" current="Models">
-  <div class="item-head"><h1 class="title">Which model for what <small>{models.length} models</small></h1><p class="effect">Pick the model by what the shot has to do. Every line carries the date we last checked it.</p></div>
+<Base title="Which AI video and image model for what | Director Chair" description="Which model to pick for which shot: what each AI video and image model is best for, what it is not for, how it wants its prompt, and when we last checked." path="/models">
+  <div class="page"><h1>Which model for what</h1><p class="lead">Pick the model by what the shot has to do. Every line carries the date we last checked it.</p>
+    <nav class="subnav" aria-label="How to choose"><a class="pill" href={urlOf(bySlug('which-model-for-video'))}>Which model for video</a><a class="pill" href={urlOf(bySlug('which-model-for-stills'))}>Which model for stills</a><a class="pill plain" href="/guide">All prompt guides</a></nav>
+  </div>
   {kinds.map(([title, medium]) => (
-    <Win title={title} meta={`${models.filter((m) => m.medium === medium).length} models`} tint="var(--bar-grey)">
+    <section class="row"><header><h2>{title}</h2></header>
       <div class="table"><table>
         <thead><tr><th scope="col">Model</th><th scope="col">Best for</th><th scope="col">Not for</th><th scope="col">Reads</th><th scope="col">Checked</th></tr></thead>
         <tbody>{models.filter((m) => m.medium === medium).map((m) => (
-          <tr id={m.id}><th scope="row">{m.name} <small>{m.maker}</small></th><td>{m.best_for}</td><td>{m.not_for}</td><td>{m.prompt_style}{guide(m) && <> <a href={urlOf(guide(m))}>Prompt guide</a></>}</td><td>{m.checked}</td></tr>
+          <tr id={m.id}><th scope="row">{m.name} <small>{m.maker}</small></th><td>{m.best_for}</td><td>{m.not_for}</td><td>{m.prompt_style}{guide(m) && <>. <a href={urlOf(guide(m))}>Prompt guide</a></>}</td><td>{m.checked}</td></tr>
         ))}</tbody>
       </table></div>
-    </Win>
+    </section>
   ))}
-  <Win title="How to choose" tint="var(--bar-yellow)"><ul class="refs"><li><a href={urlOf(bySlug('which-model-for-video'))}>Which model for video</a></li><li><a href={urlOf(bySlug('which-model-for-stills'))}>Which model for stills</a></li><li><a href="/guide">All prompt guides</a></li></ul></Win>
 </Base>

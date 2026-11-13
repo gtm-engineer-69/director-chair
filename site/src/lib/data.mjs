@@ -3,38 +3,38 @@ import raw from '../../data/library.json';
 export const lib = raw;
 export const items = raw.items;
 export const models = raw.models;
-export const cats = raw.categories.filter((c) => c.count);
+// row titles and pills read better in the plural; the data keeps the singular label
+const PLURAL = { 'Shot size': 'Shot sizes', Angle: 'Angles', 'Camera move': 'Camera moves', Rig: 'Rigs', Lens: 'Lenses', 'Aspect ratio': 'Aspect ratios', 'Colour look': 'Colour looks', 'Art style': 'Art styles',
+  Character: 'Characters', Expression: 'Expressions', Setting: 'Settings', Transition: 'Transitions', 'Edit effect': 'Edit effects', Hook: 'Hooks', 'Script arc': 'Script arcs', 'Video format': 'Video formats',
+  'Call to action': 'Calls to action', Preset: 'Presets', 'Prompt guide': 'Prompt guides' };
+export const cats = raw.categories.filter((c) => c.count).map((c) => ({ ...c, plural: PLURAL[c.label] || c.label }));
 export const SITE = raw.url;
-export const LOGO = '/logo-120.png'; // the logo is referenced from here only (source: public/logo.png)
+export const MARK = null;                 // the slot for a logo mark: a path under public/, or null while the logo is not final
+export const ICON = '/logo-120.png';      // browser tab icon, the only place the provisional mark is used
 
-// The seven bars in broadcast order, one per library group; Recipes sits on paper.
-const BARS = ['grey', 'yellow', 'cyan', 'green', 'magenta', 'red', 'blue'];
-const ICON = { Camera: 'video', Frame: 'frame', 'Light and look': 'sun', 'People and places': 'users', Motion: 'speed-fast', Edit: 'scissors', Story: 'script', Recipes: 'clipboard-note' };
-export const bar = (n) => ({ tint: `var(--bar-${BARS[n % 7]})`, on: n % 7 < 4 ? 'on-ink' : 'on-paper' });
-export const groups = [...new Set(cats.map((c) => c.group))].map((name, n) => {
+const GROUP_ICON = { Camera: 'video', Frame: 'frame', 'Light and look': 'sun', 'People and places': 'users', Motion: 'gauge', Edit: 'scissors', Story: 'scroll-text', Recipes: 'clipboard-list' };
+export const groups = [...new Set(cats.map((c) => c.group))].map((name) => {
   const own = cats.filter((c) => c.group === name);
-  return { name, icon: ICON[name], cats: own, count: own.reduce((a, c) => a + c.count, 0), href: `/${own[0].id}`, ...(n < 7 ? bar(n) : { tint: 'var(--paper-sheet)', on: '' }) };
+  return { name, icon: GROUP_ICON[name], cats: own, count: own.reduce((a, c) => a + c.count, 0), href: `/${own[0].id}` };
 });
 export const catOf = (id) => cats.find((c) => c.id === id);
 export const groupOf = (catId) => groups.find((g) => g.cats.some((c) => c.id === catId));
 export const inCat = (id) => items.filter((i) => i.category === id);
 export const bySlug = (slug) => items.find((i) => i.slug === slug);
 export const urlOf = (i) => `/${i.category}/${i.slug}`;
-export const clipOf = (i) => (i.licensed.find((l) => l.media) || null);
+export const clipOf = (i) => i.licensed.find((l) => l.media) || null;          // the card's own clip
+export const viewOf = (i) => clipOf(i) || i.shown_with || null;                // what the page shows: own clip, else a related card's
 export const shortName = (n) => n.replace(/\s*\(.*\)$/, '').replace(/^Prompt guide: /, '');
-const pad = (n) => String(n).padStart(2, '0');
+export const sentence = (s) => s.charAt(0).toUpperCase() + s.slice(1) + (/[.!?]$/.test(s) ? '' : '.');
+export const clipsFirst = (list) => [...list].sort((a, b) => (clipOf(b) ? 2 : viewOf(b) ? 1 : 0) - (clipOf(a) ? 2 : viewOf(a) ? 1 : 0));
 
-// what a card needs, for the Card component and the search index alike
-export function cardOf(i, tintIndex) {
-  const c = clipOf(i);
-  const g = groupOf(i.category);
-  const t = tintIndex == null ? g : bar(tintIndex);
-  const short = shortName(i.name);
-  return {
-    href: urlOf(i), name: short, effect: i.effect,
-    ch: c ? pad((c.media.video.match(/\/(\d+)-/) || [0, inCat(i.category).indexOf(i) + 1])[1]) : pad(inCat(i.category).indexOf(i) + 1),
-    poster: c ? c.media.poster : '', still: c ? c.media.card_poster : '', clip: c ? c.media.card : '',
-    label: i.category === 'hook' ? (i.group || '').split(' ')[0].replace('The', 'Rule') : catOf(i.category).label,
-    tint: t.tint, on: t.on || 'on-ink', size: short.length <= 13 ? '' : short.length <= 22 ? 't2' : short.length <= 38 ? 't3' : 't4',
-  };
+// what a tile needs, for the Tile component and the search index alike
+// In one row or grid a borrowed clip shows once; later cards that would borrow it again show their words.
+export function unique(list) {
+  const seen = new Set();
+  return list.map((item) => { const v = !clipOf(item) && item.shown_with; const again = v && seen.has(v.media.card); if (v) seen.add(v.media.card); return { item, words: !!again }; });
+}
+export function tileOf(i, words = false) {
+  const v = words ? null : viewOf(i);
+  return { href: urlOf(i), name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', text: v ? '' : sentence(i.phrase) };
 }

@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import Monitor from '../components/Monitor.astro';
+import Row from '../components/Row.astro';
+import { inCat, catOf, clipsFirst } from '../lib/data.mjs';
 ---
-<Base title="No signal | Director Chair" description="This channel is empty. Back to the library." path="/404" noindex>
-  <div class="item-head"><h1 class="title">No signal</h1><p class="effect">Nothing is broadcasting on this channel. The card may have moved, or it never existed.</p></div>
-  <Monitor name="Not found" ch="404" label="Monitor" />
-  <div class="actions"><a class="btn btn-primary" href="/"><span>Back to the library</span></a><a class="btn" href="/board"><span>Open the board</span></a></div>
+<Base title="No card here | Director Chair" description="This page does not exist. Search the library or browse the camera moves." path="/404" noindex>
+  <div class="page"><h1>No card here.</h1><p class="lead">The page may have moved, or it never existed. The library is one step away.</p>
+    <nav class="subnav" aria-label="Ways back"><a class="pill ink" href="/#search">Search the library</a><a class="pill" href="/board">Open the board</a></nav>
+  </div>
+  <Row title={catOf('move').plural} href="/move" count={catOf('move').count} items={clipsFirst(inCat('move')).slice(0, 12)} />
 </Base>

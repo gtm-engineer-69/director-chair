@@ -1,9 +1,11 @@
 ---
-// A row: one window with a horizontal track of uniform 16:9 tiles.
-import Win from './Win.astro';
+// A row: a title, "See all" at its end, one line of uniform tiles.
+import Icon from './Icon.astro';
 import Tile from './Tile.astro';
-const { title, meta, tint, href, items, through = false, lazy = true, class: cls } = Astro.props;
+import { unique } from '../lib/data.mjs';
+const { title, href, count, items = [], lazy = true, id } = Astro.props;
 ---
-<Win title={title} meta={meta} tint={tint} link={href} class={cls}>
-  <div class="rail" tabindex="0" role="group" aria-label={title}>{items.map((i, k) => <Tile item={i} tintIndex={through ? k : undefined} lazy={lazy} />)}</div>
-</Win>
+<section class="row" id={id}>
+  <header><h2>{title}</h2>{href && <a class="see" href={href}>See all {count} <Icon name="arrow-right" /></a>}</header>
+  <div class="rail" tabindex="0" role="group" aria-label={title}>{unique(items).map((u) => <Tile item={u.item} words={u.words} lazy={lazy} />)}<slot /></div>
+</section>

@@ -1,0 +1,17 @@
+/* Direction 2, modern minimalist. Source: Design library entry floema@1 (needs-review). */
+:root{
+  --paper:#f2efea;      /* entry ground, 79% of painted area */
+  --plate:#ebe7df;      /* entry second paper, used for typographic tiles only */
+  --white:#ffffff;      /* pills, search field, prompt panel */
+  --ink:#241f21;
+  --ink-soft:#6b6466;   /* secondary text, checked against paper, plate and white */
+  --font:"Figtree Variable","Figtree",system-ui,sans-serif; /* stands in for Zimula (commercial): same class, one family */
+  --wght:450;           /* one weight for everything, as the entry does */
+  --display:57.2px; --h2:23.2px; --lead:19.2px; --text:16px; --small:14px;
+  --track-display:-0.04em; --track-text:-0.02em;
+  --r-plate:12px; --r-pill:9999px;
+  --gutter:32px; --gap:16px; --row-gap:88px;
+  --ease:cubic-bezier(0.19,1,0.22,1); --dur:.5s;
+  --control:44px;
+}
+@media (max-width:720px){ :root{ --display:38px; --h2:21px; --lead:18px; --gutter:16px; --row-gap:64px; } }

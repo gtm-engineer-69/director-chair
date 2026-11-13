@@ -1,50 +1,58 @@
 ---
 import Base from '../layouts/Base.astro';
-import Win from '../components/Win.astro';
-import Tile from '../components/Tile.astro';
-import Billboard from '../components/Billboard.astro';
 import Row from '../components/Row.astro';
 import Icon from '../components/Icon.astro';
-import { items, groups, cats, inCat, bySlug, catOf, clipOf, cardOf, urlOf, groupOf, LOGO } from '../lib/data.mjs';
-const featured = bySlug('dolly-in');
-const withClipFirst = (list) => [...list].sort((a, b) => (clipOf(b) ? 1 : 0) - (clipOf(a) ? 1 : 0));
-// one row per group, the cards with a clip first
-const rows = groups.map((g) => ({ g, list: withClipFirst(items.filter((i) => g.cats.some((c) => c.id === i.category))).slice(0, 14) }));
-const step = (verb, target) => (typeof target === 'string'
-  ? { verb, href: `/${target}`, text: `${catOf(target).label}, ${catOf(target).count} cards` }
-  : { verb, href: urlOf(target), text: target.name });
-const start = [step('Pick the model', bySlug('which-model-for-video')), step('Make the first frame', bySlug('guide-shot-from-first-frame')), step('Choose the shot size', 'shot'),
-  step('Add one camera move', 'move'), step('Set the light', 'light'), step('Open on a hook', 'hook'), step('Give it an arc', 'script'), step('Caption and cut', 'effect'), step('Check before posting', 'publish')];
+import { items, groups, inCat, bySlug, catOf, clipOf, tileOf, urlOf, clipsFirst } from '../lib/data.mjs';
+// the constellation: [slug, shape, hidden on small screens, desktop x y w opacity, small-screen x y w]
+const sky = [
+  ['dolly-in', '', 0, '14%', 19, '216px', 1, '6%', 12, '150px'], ['awe', 'p', 0, '33%', 17, '92px', 1, '58%', 10, '64px'], ['orbit', '', 0, '45.5%', 23, '112px', 0.4, '40%', 27, '84px'],
+  ['laughter', 's', 0, '58%', 11, '76px', 1, '80%', 21, '52px'], ['tilt-up', 'p', 1, '66%', 25, '60px', 0.22], ['tracking-shot', '', 0, '78%', 30, '168px', 1, '62%', 67, '120px'],
+  ['handheld-shot', '', 1, '8%', 47, '84px', 0.14], ['eye-roll', 's', 1, '86%', 56, '64px', 0.5], ['pan', '', 0, '22%', 68, '128px', 0.7, '8%', 66, '96px'],
+  ['determination', 'p', 0, '71%', 66, '96px', 1, '14%', 80, '72px'], ['slow-zoom-in', '', 0, '55%', 75, '84px', 1, '42%', 77, '76px'], ['crash-zoom', 's', 0, '39%', 76, '88px', 1, '72%', 84, '64px'],
+  ['push-past', '', 0, '9%', 90, '192px', 1, '38%', 93, '130px'], ['dolly-out', '', 1, '58%', 92, '144px', 1],
+].map(([slug, shape, d, x, y, w, o, mx, my, mw]) => ({ item: bySlug(slug), shape, d, style: `--x:${x};--y:${y};--w:${w};--o:${o}` + (mx ? `;--mx:${mx};--my:${my};--mw:${mw}` : '') })).filter((f) => f.item);
+// a row leads with the cards named here, then the cards with a clip
+const LEAD = { move: ['dolly-in', 'dolly-out', 'slow-zoom-in', 'push-past', 'orbit', 'pan', 'tilt-up', 'tracking-shot', 'handheld-shot'], expression: ['awe', 'laughter', 'determination', 'eye-roll', 'anxiety', 'confusion', 'flirtation', 'disgust'] };
+const row = (id) => {
+  const lead = (LEAD[id] || []).map(bySlug).filter(Boolean);
+  // hooks open on what to say; the ones that borrow a camera clip follow
+  const rest = id === 'hook' ? [...inCat(id)].sort((a, b) => (a.shown_with ? 1 : 0) - (b.shown_with ? 1 : 0)) : clipsFirst(inCat(id));
+  return { cat: catOf(id), list: [...lead, ...rest.filter((i) => !lead.includes(i))].slice(0, 12) };
+};
+const first = ['move', 'hook', 'expression'].map(row);
+const more = ['shot', 'light', 'look', 'transition', 'effect', 'script', 'preset'].map(row);
+const step = (verb, target) => (typeof target === 'string' ? { verb, href: `/${target}`, name: catOf(target).plural } : { verb, href: urlOf(target), name: tileOf(target).name });
+const start = [step('Pick the model for the shot.', bySlug('which-model-for-video')), step('Make the first frame.', bySlug('guide-shot-from-first-frame')), step('Choose how close the camera is.', 'shot'),
+  step('Add one camera move.', 'move'), step('Set the light.', 'light'), step('Open on a hook.', 'hook'), step('Give it an arc.', 'script'), step('Caption it and cut it.', 'effect'), step('Check it before you post.', 'publish')];
 ---
-<Base title="Director Chair: the video craft library for AI video" description={`A free, open library of ${items.length} cards of video craft for AI video: shots, moves, light, looks, hooks, scripts and presets, each with a prompt ready to paste for your model.`} path="/" current="Library">
-  <Win class="win-main" title="Library" meta={`${items.length} cards`} tint="var(--bar-yellow)" level={0}>
-    <div class="lockup"><img src={LOGO} alt="" width="60" height="60" /><span>Director Chair</span></div>
-    <div class="hero">
-      <h1 class="display line1"><span>Every move, hook and look,</span> <span class="hl">ready to paste.</span></h1>
-      <div class="hero-copy">
-        <p class="lede">A free, open library of video craft for AI video. Pick a card, <mark>copy the prompt for your model</mark>, paste it.</p>
-        <form class="search" role="search" action="/" data-search><Icon name="search" /><label class="vh" for="q">Search the library</label><input id="q" name="q" type="search" autocomplete="off" placeholder="Search: dolly in, golden hour, curiosity gap" /><kbd>/</kbd></form>
-        <div class="actions">
-          <a class="btn btn-primary" href="#start"><span>Start here: your first video</span></a>
-          <a class="btn" href="/board"><span>Open the board</span></a>
-        </div>
-        <p class="small">Free. No account, no newsletter, nobody will call you.</p>
-      </div>
-      <Billboard item={featured} />
+<Base title="Director Chair: the video craft library for AI video" description={`A free, open library of ${items.length} cards of video craft for AI video: shots, moves, light, looks, hooks, scripts and presets, each with a prompt ready to paste for your model.`} path="/">
+  <section class="hero" data-hero>
+    {sky.map((f, n) => { const c = clipOf(f.item); return (
+      <a class:list={['c', f.shape, f.d && 'd']} href={urlOf(f.item)} aria-label={tileOf(f.item).name} style={f.style}>
+        {n === 0 ? <video src={c.media.card} poster={c.media.card_poster} muted loop playsinline data-autoplay width="480" height="270"></video> : <img src={c.media.card_poster} alt="" width="480" height="270" />}
+      </a>); })}
+    <div class="core">
+      <h1>Every move, hook and look,<br /> ready to paste.</h1>
+      <form class="search" id="search" role="search" action="/" data-search>
+        <label><Icon name="search" /><input type="search" name="q" autocomplete="off" placeholder={`Search ${items.length} video-craft cards`} aria-label="Search the library" /></label>
+        <button class="pill round" aria-label="Search"><Icon name="arrow-right" /></button>
+      </form>
     </div>
-    <nav class="bars" aria-label="Library groups">
-      {groups.map((g) => <a class={g.on} style={`--tint:${g.tint}`} href={g.href}><span>{g.name}</span><b>{g.count}</b></a>)}
-    </nav>
-  </Win>
-  <section class="win" data-results-win hidden aria-live="polite">
-    <header class="win-bar"><span class="win-swatch"></span><h2 class="win-title">Search</h2><span class="win-meta" data-results-meta></span></header>
-    <div class="win-body"><div class="grid" data-results></div><p class="nosignal" data-noresults hidden>No signal on that channel. Try a move, a light, a hook.</p></div>
   </section>
-  <Win id="start" title="Start here" meta="your first video, in nine cards" tint="var(--bar-yellow)">
-    <ol class="path">{start.map((s) => <li><span>{s.verb}</span> <a href={s.href}>{s.text}</a></li>)}</ol>
-  </Win>
-  {rows.map((r, n) => <Row title={r.g.name} meta={`${r.g.count} cards`} tint={r.g.tint} href={r.g.href} items={r.list} through={!r.g.on} lazy={n > 0} />)}
-  <Win title="Everything" meta={`${cats.length} shelves`} tint="var(--bar-grey)">
-    <ul class="shelves">{groups.map((g) => <li><b>{g.name}</b> {g.cats.map((c) => <a href={`/${c.id}`}>{c.label} <span>{c.count}</span></a>)}</li>)}</ul>
-  </Win>
+  <section class="results" data-results-wrap hidden aria-live="polite">
+    <p class="count" data-results-meta></p>
+    <div class="grid" data-results></div>
+    <p class="empty" data-noresults hidden>No card by that name. Try a move, a light or a hook.</p>
+  </section>
+  <div data-library>
+    {first.map((r, n) => <Row title={r.cat.plural} href={`/${r.cat.id}`} count={r.cat.count} items={r.list} lazy={n > 0} />)}
+    <Row title="Your first video, in nine cards" id="start">
+      {start.map((s) => <a class="tile" href={s.href}><p>{s.verb}</p><span class="name">{s.name}</span><span class="act">Open <Icon name="arrow-right" /></span></a>)}
+    </Row>
+    {more.map((r) => <Row title={r.cat.plural} href={`/${r.cat.id}`} count={r.cat.count} items={r.list} />)}
+    <section class="row" id="groups">
+      <header><h2>All groups</h2><a class="see" href="/board">Open the board <Icon name="arrow-right" /></a></header>
+      <div class="index">{groups.map((g) => <div><h3>{g.name}</h3>{g.cats.map((c) => <a href={`/${c.id}`}>{c.plural} <span>{c.count}</span></a>)}</div>)}</div>
+    </section>
+  </div>
 </Base>
