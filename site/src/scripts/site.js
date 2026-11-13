@@ -112,7 +112,7 @@ if (form) {
   const q = $('input', form); const hero = $('[data-hero]'); const wrap = $('[data-results-wrap]'); const grid = $('[data-results]'); const meta = $('[data-results-meta]'); const none = $('[data-noresults]'); const library = $('[data-library]');
   let index = null;
   const words = (t) => t.split(' ').map((w, n) => `<span class="w" style="--i:${n}">${esc(w)}</span>`).join(' ');
-  const tile = (c) => `<a class="tile${c.say ? ' say' : ''}" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}><span class="name">${esc(c.name)}</span>${c.still ? `<img src="${esc(c.still)}" alt="" width="480" height="270" loading="lazy"><span class="line">${esc(c.line)}</span>` : `<p>${c.say ? words(c.text) : esc(c.text)}</p>`}</a>`;
+  const tile = (c) => `<a class="tile${c.say ? ' say' : ''}" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}><span class="name">${esc(c.name)}</span>${c.still ? `<img src="${esc(c.still)}" alt="" width="480" height="270" loading="lazy"><span class="line">${esc(c.line)}</span>` : c.dg || `<p>${c.say ? words(c.text) : esc(c.text)}</p>`}</a>`;
   async function run() {
     const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
     history.replaceState(null, '', terms.length ? `?q=${encodeURIComponent(q.value)}` : location.pathname);
@@ -136,7 +136,7 @@ if (form) {
 const finder = $('[data-find]');
 if (finder) {
   const fq = $('input', finder); const list = $('[data-hits]', finder); const note = $('[data-hits-note]', finder);
-  const row = (c) => `<li><a href="${esc(c.href)}">${c.still ? `<img src="${esc(c.still)}" alt="" width="96" height="54" loading="lazy">` : '<span class="ph"></span>'}<span><span class="nm">${esc(c.name)} <span class="soft">· ${esc(c.group)}</span></span><small>${esc(c.line)}</small></span></a></li>`;
+  const row = (c) => `<li><a href="${esc(c.href)}">${c.still ? `<img src="${esc(c.still)}" alt="" width="96" height="54" decoding="async">` : `<span class="ph">${c.dg || ''}</span>`}<span><span class="nm">${esc(c.name)} <span class="soft">· ${esc(c.group)}</span></span><small>${esc(c.line)}</small></span></a></li>`;
   let t = 0;
   fq.addEventListener('input', () => {
     clearTimeout(t);
@@ -170,7 +170,7 @@ if (board && pw) {
     for (const slot of slots) {
       const id = slot.dataset.slot; const b = $('.tile', slot); const card = picks.get(id) && $(`[data-pick="${picks.get(id)}"]`, picker(id));
       slot.classList.toggle('sel', open === id); b.classList.toggle('empty', !card);
-      b.innerHTML = !card ? empty : card.dataset.still ? `<img src="${esc(card.dataset.still)}" alt=""><span class="name">${esc(card.dataset.name)}</span>` : `<p>${esc(card.dataset.name)}</p>`;
+      b.innerHTML = !card ? empty : card.dataset.still ? `<img src="${esc(card.dataset.still)}" alt=""><span class="name">${esc(card.dataset.name)}</span>` : $('.dg', card) ? `${$('.dg', card).outerHTML}<span class="name">${esc(card.dataset.name)}</span>` : `<p>${esc(card.dataset.name)}</p>`;
       if (card?.dataset.clip) b.dataset.clip = card.dataset.clip; else delete b.dataset.clip;
       b.setAttribute('aria-label', card ? `${slot.firstElementChild.textContent}: ${card.dataset.name}. Change it` : `Pick ${/^[aeiou]/i.test(slot.firstElementChild.textContent) ? "an" : "a"} ${slot.firstElementChild.textContent.toLowerCase()}`);
       b.setAttribute('aria-expanded', String(open === id));

@@ -1,5 +1,6 @@
 // The one place pages read the library from. Everything comes from data/library.json.
 import raw from '../../data/library.json';
+import { diagramOf } from './diagrams.mjs';
 export const lib = raw;
 export const items = raw.items;
 export const models = raw.models;
@@ -41,9 +42,10 @@ const isSaid = (i) => i.category === 'hook' && /^Textual/.test(i.group || '');
 // the line a textual hook is shown as: the example half when the phrase opens on an instruction
 export const sayLine = (i) => sentence(/^(say|open|ask|state|name|start|tell|show|give|promise|admit|address|call|use|lead|pose|list|make|end|begin|put|let|turn|take|repeat|speak)\b/i.test(i.phrase) && i.phrase.includes(': ') ? i.phrase.slice(i.phrase.indexOf(': ') + 2) : i.phrase);
 // what a tile needs, for the Tile component, the board and the search index alike:
-// a picture with one line on hover, or a caption frame (a textual hook), or the card's effect in words
+// a picture with one line on hover, or a caption frame (a textual hook), or a diagram, or the card's effect in words
 export function tileOf(i, words = false) {
   const v = words ? null : viewOf(i);
   const say = !v && isSaid(i);
-  return { href: urlOf(i), slug: i.slug, name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', line: i.effect, say, text: v ? '' : say ? sayLine(i) : i.category === 'hook' ? sentence(i.phrase) : i.effect };
+  const d = v || say ? null : diagramOf(i);   // a drawing for the camera fundamentals, in place of the words
+  return { href: urlOf(i), slug: i.slug, name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', line: i.effect, say, text: v || d ? '' : say ? sayLine(i) : i.category === 'hook' ? sentence(i.phrase) : i.effect, ...(d && { dg: d.svg + (d.label && `<span class="dl">${d.label}</span>`) }) };
 }

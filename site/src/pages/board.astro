@@ -30,7 +30,7 @@ const parts = [['shot', 'Shot'], ['angle', 'Angle'], ['move', 'Move'], ['lens', 
           <div class="rail">
             {p.list.map((t) => (
               <button class="tile" type="button" data-pick={t.slug} data-name={t.name} data-still={t.still} data-clip={t.clip || undefined}>
-                {t.still ? <img src={t.still} alt="" width="480" height="270" loading="lazy" /> : <p>{t.text}</p>}<span class="name">{t.name}</span>
+                {t.still ? <img src={t.still} alt="" width="480" height="270" loading="lazy" /> : t.dg ? <Fragment set:html={t.dg} /> : <p>{t.text}</p>}<span class="name">{t.name}</span>
               </button>
             ))}
           </div>

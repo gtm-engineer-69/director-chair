@@ -15,7 +15,8 @@ const PLAN = { publish: 'a step-by-step plan I can follow this week', effect: 'a
   sound: 'a sound brief: what to record or pick, where it sits on the timeline, the levels, and what to check before export',
   preset: 'a production plan: the shots or scenes in order, what each one needs, and the edit settings', guide: 'a filled-in prompt that follows this guide, plus the one thing to check in the result' };
 
-const usable = (m) => !/^(unknown|announced)/.test(m.prompt_style);
+// a model is offered only when we know how it reads and have a layout for it (a new model in the data must not break the build)
+const usable = (m) => !/^(unknown|announced)/.test(m.prompt_style) && (m.medium === 'text' || m.id in LAYOUT_OF);
 const isTextHook = (i) => i.category === 'hook' && /^(Textual|The rule)/.test(i.group || '');
 export const kindOf = (item, models) =>
   item.category === 'guide' && models.some((m) => m.guide === item.slug) ? 'skeleton'

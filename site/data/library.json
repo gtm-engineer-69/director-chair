@@ -226,11 +226,11 @@
    "maker": "ByteDance",
    "medium": "video",
    "prompt_style": "labelled blocks with timecodes",
-   "checked": "2026-09-29",
+   "checked": "2026-11-13",
    "best_for": "scenes of 10 to 30 seconds with dialogue, several shots and characters that must hold; edits on real footage that keep the performance",
    "not_for": "a cheap single shot",
    "guide": "guide-seedance-2-5",
-   "source": "Director Chair field notes on video prompting (Higgsfield catalogue, 29 Sep 2026)"
+   "source": "Director Chair field notes on video prompting (Higgsfield catalogue, 29 Sep 2026); 30 seconds per generation per https://seed.bytedance.com/en/seedance2_5 (checked 13 Nov 2026)"
   },
   {
    "id": "seedance-2.0",
@@ -261,12 +261,12 @@
    "name": "Kling 4.0",
    "maker": "Kuaishou",
    "medium": "video",
-   "prompt_style": "announced 27 Sep 2026, not run by us",
-   "checked": "2026-09-29",
-   "best_for": "announced 27 Sep 2026, closed beta; not run by us",
-   "not_for": "anything we promise today",
+   "prompt_style": "no 4.0 prompt guide yet; write it in the 3.0 Omni shape. Not run by us",
+   "checked": "2026-11-13",
+   "best_for": "early access from 28 Sep 2026, full launch 15 Oct 2026 per Kuaishou, up to 30 seconds per generation; not run by us",
+   "not_for": "anything we promise before testing it on our platform",
    "guide": "guide-kling-3",
-   "source": "Director Chair field notes on video prompting (press relays, 29 Sep 2026)"
+   "source": "Https://kling.ai/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling and https://bernama.com/en/press/news.php?id=2622471 (checked 13 Nov 2026)"
   },
   {
    "id": "veo-3.1",
@@ -3182,9 +3182,9 @@
      "source": "Director Chair notes on Paid UGC on performance (Hector Serrano, Wispr Flow)"
     },
     {
-     "text": "Keep ads different in person, setting, words or format. Meta's own engineering post says similar ads get overlapping codes; the often-quoted 60 percent cut-off has no Meta source.",
-     "evidence": "practitioner",
-     "source": "Director Chair notes on Paid UGC on performance (Hector Serrano, Wispr Flow)"
+     "text": "Keep ads different in person, setting, words or format. Meta's engineering blog describes an ads tokenizer in which similar ads share tokens; it gives advertisers no similarity cut-off, and the often-quoted 60 percent figure has no Meta source.",
+     "evidence": "vendor",
+     "source": "Https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/ (Meta Engineering, 19 Oct 2026)"
     },
     {
      "text": "Choose creators for the gaps in the ad library, one per kind of buyer, not for follower numbers.",
@@ -7401,9 +7401,9 @@
      "source": "Director Chair measurement of a published short, 22 Oct 2026 and Director Chair measurement of a published short, 23 Oct 2026"
     },
     {
-     "text": "Since 2 August 2026 AI-generated people in content are a labelling question in Europe; label generated footage.",
-     "evidence": "practitioner",
-     "source": "Director Chair notes on Jean Phil"
+     "text": "Since 2 August 2026 the EU AI Act requires disclosure of deepfakes, generated people and scenes that could pass for real; label generated footage.",
+     "evidence": "vendor",
+     "source": "Https://eur-lex.europa.eu/eli/reg/2024/1689/oj (AI Act, Articles 50(4) and 113) and https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes (Omnibus, checked 13 Nov 2026)"
     }
    ],
    "per_model": [],
@@ -8580,15 +8580,15 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Short shots that move cleanly without the camera wandering.",
    "use_when": "Single shots of 3 to 10 seconds, start-to-end frame moves, a new setting behind a real person.",
    "phrase": "the subject, what it visibly does, the scene, then the camera move, the light and the mood, in simple sentences",
    "pitfalls": [
     {
-     "text": "Kling says itself that its models are not sensitive to numbers; describe instead of counting.",
-     "evidence": "vendor",
-     "source": "Director Chair field notes on video prompting"
+     "text": "Exact counts tend not to hold, according to third-party Kling prompt guides; describe a group instead of counting. Kling's own prompt guide does not say this and we have not tested it.",
+     "evidence": "unverified",
+     "source": "Director Chair field notes on video prompting; not found in https://kling.ai/blog/kling-ai-prompt-guide (checked 13 Nov 2026)"
     },
     {
      "text": "Give one main camera move per shot. Two moves at once, or orders that contradict each other, make the camera wander.",
@@ -8729,7 +8729,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Scenes of up to 30 seconds that hold their characters, look and timing.",
    "use_when": "Multi-shot scenes, dialogue, ads with a story, edits on real footage.",
    "phrase": "one continuous block in labelled sections: the look first, the scene, the cast, the place, the first frame and who stands where, then each shot on its own timecode, then optics, camera, physics, light, and the sound last",
@@ -8759,7 +8759,7 @@
    "evidence": "vendor",
    "source": {
     "url": "https://higgsfield.ai/blog/seedance-2-5-prompting-guide",
-    "note": "Own words from Director Chair field notes on video prompting and the Higgsfield guide summary"
+    "note": "Own words from Director Chair field notes on video prompting and the Higgsfield guide summary; the 30-second ceiling per generation is from ByteDance, https://seed.bytedance.com/en/seedance2_5 (checked 13 Nov 2026)"
    },
    "body": "## The prompt, in order\n\n1. **Global look:** camera, lens, stock, light, grade, one block, the same words in every prompt of the job.\n2. **Scene:** what happens, in two sentences.\n3. **Cast:** one line per person with only what never changes, plus their voice.\n4. **Place:** the location, its light, what is in it.\n5. **First frame and blocking:** who stands where, as positions in the frame.\n6. **Shots:** each with its own timecode, framing, action and the kind of cut into the next.\n7. **Optics and camera:** field of view in degrees plus distance; one main move per shot.\n8. **Physics and light:** what changes one way only, what repeats as a rule, where the light comes from.\n9. **Sound:** ambience, effects, music, the spoken lines with their delivery.\n\nEvery rule that must never break gets its own named lock (how many people exist, who stays on which side).\n\n## Lengths\nOne generation holds about 30 seconds. A longer script is split at a hand-off into parts that cut together, each carrying the same look and cast blocks.",
    "shown_with": null
@@ -9519,9 +9519,9 @@
    "phrase": "hook rate is three-second views divided by impressions; hold rate is the share that keeps watching past the opening",
    "pitfalls": [
     {
-     "text": "Practitioner bands for Meta, directional only since Meta publishes no benchmark: a hook rate under 25 percent is weak and 30 to 40 good; a hold rate under 15 percent is weak and about 25 good.",
+     "text": "Practitioner bands for Meta, directional only since Meta reports neither metric natively and publishes no benchmark: a hook rate around 25 percent is average and 30 percent or more good. Hold rate has no single formula (ThruPlays divided by three-second views, or 15-second views divided by impressions), so its published bands run from about 20 to 50 percent depending on the formula; compare only numbers built the same way.",
      "evidence": "practitioner",
-     "source": "Director Chair field notes on hooks and ideas"
+     "source": "Director Chair field notes on hooks and ideas and https://insights.vaizle.com/hook-rate-hold-rate/ (checked 13 Nov 2026)"
     },
     {
      "text": "TikTok's view rates divide by views, not impressions, so these bands do not transfer. Compare within one placement.",
@@ -10261,9 +10261,9 @@
    "phrase": "set the platform's own AI label and its commercial-content setting before the post goes out",
    "pitfalls": [
     {
-     "text": "Since 2 August 2026 AI-generated people in content are a labelling question in Europe.",
-     "evidence": "practitioner",
-     "source": "Director Chair notes on Jean Phil"
+     "text": "Since 2 August 2026 the EU AI Act requires anyone who publishes a deepfake (generated people or scenes that could pass for real) to disclose it. The Digital Omnibus did not move this date; it only gave tools already on the market until 2 December 2026 to add machine-readable marking.",
+     "evidence": "vendor",
+     "source": "Https://eur-lex.europa.eu/eli/reg/2024/1689/oj (AI Act, Articles 50(4) and 113) and https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes (Omnibus, checked 13 Nov 2026)"
     },
     {
      "text": "Set disclosures through the platform's own settings, per platform, as part of the posting step.",
@@ -14875,15 +14875,15 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "A strange recurring character in ordinary places; doubt about whether it is real makes people share.",
    "use_when": "Persona-led social accounts and campaigns.",
    "phrase": "one silhouette and one routine that never change, filmed as if a phone leans against a kerb, in real everyday places",
    "pitfalls": [
     {
-     "text": "Since 2 August 2026 AI-generated people in content are a labelling question in Europe; disclose, or the audience turns when it finds out.",
-     "evidence": "practitioner",
-     "source": "Director Chair notes on Jean Phil"
+     "text": "Since 2 August 2026 the EU AI Act requires disclosure of deepfakes, generated people that could pass for real; disclose, or the audience turns when it finds out.",
+     "evidence": "vendor",
+     "source": "Https://eur-lex.europa.eu/eli/reg/2024/1689/oj (AI Act, Articles 50(4) and 113) and https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes (Omnibus, checked 13 Nov 2026)"
     }
    ],
    "per_model": [],
@@ -21876,7 +21876,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Picks the video model by what the shot has to do.",
    "use_when": "Before writing any video prompt.",
    "phrase": "Seedance 2.5 for scenes with dialogue and characters; Kling 3.0 for short cheap single shots; Veo 3.1 for the most realistic motion from one still",
@@ -21887,9 +21887,9 @@
      "source": "Director Chair field notes on image prompting"
     },
     {
-     "text": "Kling 4.0 was announced on 27 Sep 2026 and was in closed beta; check availability before promising it.",
+     "text": "Kling 4.0 opened in early access at the end of September 2026 (Kling 4.0 Flash from 28 Sep for top annual subscribers) and Kuaishou says the full model launched on 15 Oct 2026. Not yet run by us; check the modes on your platform before promising it.",
      "evidence": "vendor",
-     "source": "Director Chair field notes on video prompting"
+     "source": "Https://kling.ai/blog/kling40-kling-visual-realism-creative-control-introducing-storytelling (Kling, 30 Sep 2026) and https://bernama.com/en/press/news.php?id=2622471 (Kuaishou announcement, 19 Oct 2026)"
     }
    ],
    "per_model": [],

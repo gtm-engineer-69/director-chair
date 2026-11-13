@@ -23,7 +23,7 @@ const description = `${item.effect} ${sentence(item.use_when)} With a prompt rea
 ---
 <Base title={`${item.name}: ${cat.label.toLowerCase()} prompt for AI video | Director Chair`} description={description} path={urlOf(item)} image={view?.media.poster} twin={`${urlOf(item)}.md`}>
   <article class="card">
-    <Clip view={view} name={t.name} text={t.say ? t.text : sentence(item.phrase)} say={t.say} />
+    <Clip view={view} name={t.name} text={t.say ? t.text : sentence(item.phrase)} say={t.say} dg={t.dg} />
     <div class="info">
       <a class="pill" href={`/${cat.id}`}><Icon name={g.icon} />{cat.plural}</a>
       <h1>{t.name}</h1>
@@ -38,7 +38,7 @@ const description = `${item.effect} ${sentence(item.use_when)} With a prompt rea
       <dl class="facts">{facts.map(([k, v]) => <div><dt>{k}</dt><dd>{v.charAt(0).toUpperCase() + v.slice(1)}</dd></div>)}</dl>
     </section>
   )}
-  {view && <section class="row"><header><h2>Say it like this</h2></header><div class="prose"><p>{sentence(item.phrase)}</p></div></section>}
+  {(view || t.dg) && <section class="row"><header><h2>Say it like this</h2></header><div class="prose"><p>{sentence(item.phrase)}</p></div></section>}
   {item.pitfalls.length > 0 && (
     <section class="row"><header><h2>Watch out</h2></header>
       <ul class="notes">{item.pitfalls.map((p) => <li>{p.text}<small>{p.evidence}: {p.source}</small></li>)}</ul>

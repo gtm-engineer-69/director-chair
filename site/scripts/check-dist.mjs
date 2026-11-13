@@ -4,6 +4,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { leaks } from './build-data.mjs';
+import { MAP, GLYPHS, diagramOf, aov } from '../src/lib/diagrams.mjs';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(SITE, 'dist');
@@ -58,5 +59,18 @@ for (const f of ['api/library.json', 'api/search.json', 'llms.txt', 'sitemap.xml
 try { const list = execFileSync('unzip', ['-l', path.join(DIST, 'director-chair-skill.zip')], { encoding: 'utf8' }); execFileSync('unzip', ['-tq', path.join(DIST, 'director-chair-skill.zip')]); line(/SKILL\.md/.test(list) && /library\.json/.test(list) && /prompt\.mjs/.test(list), 'skill zip opens and holds SKILL, library and engine'); } catch (e) { line(false, 'skill zip opens', e.message.split('\n')[0]); }
 const noTitle = files.filter((f) => f.endsWith('.html')).filter((f) => { const h = fs.readFileSync(f, 'utf8'); return !/<title>[^<]{10,}<\/title>/.test(h) || !/<meta name="description" content="[^"]{30,}"/.test(h) || !/<link rel="canonical" href="https:\/\/directorchair\.ai\//.test(h); });
 line(noTitle.length === 0, 'title, description and canonical on every page', `${noTitle.length} pages without ${noTitle.slice(0, 3).map(rel).join(' ')}`);
+// 5. diagrams: every mapped card exists, the glyphs are Lucide's own paths, frames and fields of view are true to their numbers
+const lost = Object.keys(MAP).filter((s) => !lib.items.some((i) => i.slug === s));
+line(lost.length === 0, 'every card with a diagram exists in the data', `${Object.keys(MAP).length} mapped, ${lost.length} unknown ${lost.join(' ')}`);
+const lucide = (name) => fs.readFileSync(path.join(SITE, 'src/icons', `${name}.svg`), 'utf8').replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/\s*\n\s*/g, '').replace(/ \/>/g, '/>');
+const redrawn = Object.keys(GLYPHS).filter((g) => GLYPHS[g] !== lucide(g));
+line(redrawn.length === 0, 'diagram glyphs are the Lucide files', `${Object.keys(GLYPHS).length} glyphs ${redrawn.join(' ')}`);
+const off = [];
+for (const i of lib.items.filter((i) => MAP[i.slug])) {
+  const d = diagramOf(i); if (!d) { off.push(`${i.slug}: no number in the name`); continue; }
+  if (MAP[i.slug].type === 'ratio') { const [, w, h] = d.svg.match(/class="f"[^>]* width="([\d.]+)" height="([\d.]+)"/); const [, a, b] = i.name.match(/([\d.]+):(\d+)/); if (Math.abs(w / h / (a / b) - 1) > 0.01) off.push(`${i.slug}: ${(w / h).toFixed(3)}`); }
+  if (MAP[i.slug].type === 'lens') { const [, ax, ay, x, y] = d.svg.match(/class="t" d="M([\d.]+) ([\d.]+)L([\d.]+) ([\d.]+)/).map(Number); const deg = (2 * Math.atan2(ay - y, x - ax) * 180) / Math.PI; if (Math.abs(deg - aov(parseInt(d.label))) > 1) off.push(`${i.slug}: ${deg.toFixed(1)}`); }
+}
+line(off.length === 0, 'ratio frames within 1 percent, lens wedges within 1 degree', off.join(' | '));
 console.log(failed ? `\ncheck-dist: ${failed} FAIL` : '\ncheck-dist: all PASS');
 process.exit(failed ? 1 : 0);

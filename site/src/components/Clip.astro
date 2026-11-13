@@ -1,7 +1,7 @@
 ---
-// The large frame of a card page: its clip, or a hook's line as a caption that lights up word by word, or the card's own words.
+// The large frame of a card page: its clip, or a hook's line as a caption that lights up word by word, or a diagram, or the card's own words.
 import Icon from './Icon.astro';
-const { view, name, text, say = false } = Astro.props;
+const { view, name, text, say = false, dg = '' } = Astro.props;
 const m = view?.media;
 const size = text && text.length > 220 ? 'xlong' : text && text.length > 110 ? 'long' : '';
 ---
@@ -12,6 +12,8 @@ const size = text && text.length > 220 ? 'xlong' : text && text.length > 110 ? '
   </div>
 ) : say ? (
   <div class:list={['clip say play', size]} tabindex="0" aria-label={text}><p aria-hidden="true">{text.split(' ').map((w, n) => <><span class="w" style={`--i:${n}`}>{w}</span>{' '}</>)}</p></div>
+) : dg ? (
+  <div class="clip dia" role="img" aria-label={`${name}, diagram`} set:html={dg} />
 ) : (
   <div class:list={['clip type', size]}><p>{text}</p></div>
 )}
