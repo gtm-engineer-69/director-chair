@@ -981,7 +981,7 @@
     {
      "text": "Say what lights the face too (a bounce, a window), or it falls into silhouette.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -1008,7 +1008,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -1684,7 +1684,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its camera motion filter: zoom, pan, rotate, static)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its camera motion filter: zoom, pan, rotate, static)"
    },
    "body": "",
    "shown_with": {
@@ -2359,7 +2359,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    "note": "Own words; the term from the controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
    },
    "body": "",
    "shown_with": {
@@ -3805,7 +3805,7 @@
     {
      "text": "Dawn and dusk look alike to a model; add what only mornings have (mist, dew, empty streets).",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -3832,7 +3832,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -3881,7 +3881,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -6769,7 +6769,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -6858,7 +6858,7 @@
     {
      "text": "A fisheye bends straight lines at the edges; keep important text and logos in the centre.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -6885,7 +6885,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (lens size Ultra Wide / Fisheye) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters (lens size Ultra Wide / Fisheye) and general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -7054,7 +7054,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -7108,7 +7108,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -7969,7 +7969,7 @@
     {
      "text": "A front view flattens the face; turn the body a few degrees or light it from the side when the shape of the face matters.",
      "evidence": "film-craft",
-     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+     "source": "The controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
     }
    ],
    "per_model": [],
@@ -8001,7 +8001,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from the controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026 and general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -8170,7 +8170,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (genre and type filters)"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters (genre and type filters)"
    },
    "body": "## Translations to start from\n\n- **Thriller:** low-key side light, cold grade, longer lenses, tight frames\n- **Horror:** underlight or darkness, wide lens close to the face, long holds\n- **Western:** hard sun, wide exteriors, low angles, warm brown grade\n- **Sci-fi:** clean symmetry, cool practical light, scale against a person\n- **Romance:** soft backlight, warm grade, shallow focus\n- **Comedy:** high-key, wide enough to see the body, eye level\n- **Music video:** coloured light, fast moves, bold framing\n\nThe sites also file stills by type (film, series, ad, music video, documentary) and release year; search there by genre and look at the frames, then write the translation.",
    "shown_with": null
@@ -8504,7 +8504,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (the Characters filter counts people)"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters (the Characters filter counts people)"
    },
    "body": "",
    "shown_with": null
@@ -9076,7 +9076,7 @@
     {
      "text": "Hard light shows every skin flaw; on faces, keep it for looks that want grit.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -9103,7 +9103,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -9332,7 +9332,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its brightness filter)"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters (its brightness filter)"
    },
    "body": "",
    "shown_with": null
@@ -9430,7 +9430,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    "note": "Own words; the term from the controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
    },
    "body": "",
    "shown_with": null
@@ -9958,7 +9958,7 @@
     {
      "text": "State inside or outside first, then the light source that belongs to it; a model otherwise lights an interior like a sunny day.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -9985,7 +9985,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -10144,7 +10144,7 @@
     {
      "text": "Knee level looks slightly up; ground level looks along the floor. Name which one.",
      "evidence": "film-craft",
-     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+     "source": "The controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
     }
    ],
    "per_model": [],
@@ -10166,7 +10166,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    "note": "Own words; the term from the controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
    },
    "body": "",
    "shown_with": null
@@ -10399,7 +10399,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its environment presets)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its environment presets)"
    },
    "body": "## Landforms to name\n\nCity street, village, mountain, jungle, swamp, beach, rocky coast, redwood forest, cave, canyon, slot canyon, rocky desert, sand dunes, savanna, an overgrown or abandoned place.",
    "shown_with": null
@@ -10766,7 +10766,7 @@
     {
      "text": "Say what moves (blurred) and what holds still (sharp); without that the whole frame blurs.",
      "evidence": "film-craft",
-     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+     "source": "General film vocabulary, as also used in Flim's filters"
     }
    ],
    "per_model": [],
@@ -10793,7 +10793,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its long-exposure preset)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its long-exposure preset)"
    },
    "body": "",
    "shown_with": {
@@ -12194,7 +12194,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -12221,7 +12221,7 @@
     {
      "text": "Real night is black. Ask for dim blue light with visible shapes, the way films fake it.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -12248,7 +12248,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -13383,7 +13383,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -13905,7 +13905,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (time period) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (release year)"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters (time period) and general film vocabulary, as also used in Flim's filters (release year)"
    },
    "body": "",
    "shown_with": null
@@ -14194,12 +14194,12 @@
     {
      "text": "Write the pose as the parts of the body and where the weight sits, not as a mood word.",
      "evidence": "film-craft",
-     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+     "source": "The controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
     },
     {
      "text": "If a posed blocking frame is attached, say the pose must match it; the model otherwise keeps its own default stance.",
      "evidence": "practitioner",
-     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+     "source": "The controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
     }
    ],
    "per_model": [],
@@ -14221,7 +14221,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    "note": "Own words; the term from the controls of the free 3D stage at aicameracontrol.com, read 13 Nov 2026"
    },
    "body": "## Stances to start from\n\n- **Alert:** standing, weight forward, head up, ready to move\n- **Crouched:** low to the ground, one hand on the floor\n- **Kneeling:** down on one knee\n- **Fallen:** lying where they dropped\n- **Asleep:** lying down, the body loose\n- **Braced:** fists up, feet apart\n- **Slumped:** head lowered, shoulders dropped",
    "shown_with": null
@@ -15633,7 +15633,7 @@
     {
      "text": "Rain shows against a dark background with a light behind it; without backlight it disappears.",
      "evidence": "film-craft",
-     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+     "source": "General film vocabulary, as also used in Flim's filters"
     }
    ],
    "per_model": [],
@@ -15660,7 +15660,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -15761,7 +15761,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its ratio filter)"
    },
    "body": "",
    "shown_with": null
@@ -15809,7 +15809,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 1.66)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its ratio filter, which also lists 1.66)"
    },
    "body": "",
    "shown_with": null
@@ -15912,7 +15912,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 2.20)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its ratio filter, which also lists 2.20)"
    },
    "body": "",
    "shown_with": null
@@ -15960,7 +15960,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 3.5 and 4)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its ratio filter, which also lists 3.5 and 4)"
    },
    "body": "",
    "shown_with": null
@@ -16081,7 +16081,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its ratio filter)"
    },
    "body": "",
    "shown_with": null
@@ -17479,7 +17479,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "## Cues per season\n\n- **Spring:** fresh green, blossom, light jackets, clear soft light\n- **Summer:** high sun, saturated colour, bare arms, heat haze\n- **Autumn:** orange and brown, wet leaves, coats, low sun\n- **Winter:** bare trees, snow or frost, breath in the air, short grey days",
    "shown_with": null
@@ -17874,7 +17874,7 @@
     {
      "text": "Looking room is the default: the space goes in front of the face. Break it only on purpose.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -17901,7 +17901,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (composition: left heavy, right heavy, balanced)"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters (composition: left heavy, right heavy, balanced)"
    },
    "body": "",
    "shown_with": null
@@ -17922,7 +17922,7 @@
     {
      "text": "Keep both cameras on the same side of the line between them, or the two people seem to look the same way.",
      "evidence": "film-craft",
-     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+     "source": "General film vocabulary, as also used in Flim's filters"
     },
     {
      "text": "Generate both sides from the same start frame or reference set, or the room and the light change between them.",
@@ -17954,7 +17954,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its counter-shot preset)"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters (its counter-shot preset)"
    },
    "body": "",
    "shown_with": null
@@ -18039,7 +18039,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -18213,7 +18213,7 @@
     {
      "text": "Name it clean when no foreground person may appear; a dialogue scene otherwise drifts into an over-the-shoulder.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -18240,7 +18240,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters and general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -18829,7 +18829,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -18878,7 +18878,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -19557,7 +19557,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    "note": "Own words; the term from general film vocabulary, as also used in Flim's filters"
    },
    "body": "",
    "shown_with": null
@@ -20682,7 +20682,7 @@
     {
      "text": "Eyes go dark under top light; add a faint bounce from below if the eyes must read.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -20709,7 +20709,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
@@ -21154,7 +21154,7 @@
     {
      "text": "Give it a reason in the scene (a phone, a fire, a floor lamp); unmotivated it reads as a gimmick.",
      "evidence": "film-craft",
-     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+     "source": "General film vocabulary, as also used in ShotDeck's filters"
     }
    ],
    "per_model": [],
@@ -21181,7 +21181,7 @@
    "evidence": "film-craft",
    "source": {
     "url": null,
-    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    "note": "Own words; the term from general film vocabulary, as also used in ShotDeck's filters"
    },
    "body": "",
    "shown_with": null
