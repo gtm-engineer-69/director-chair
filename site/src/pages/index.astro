@@ -1,15 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
 import Win from '../components/Win.astro';
-import Card from '../components/Card.astro';
-import Monitor from '../components/Monitor.astro';
+import Tile from '../components/Tile.astro';
+import Billboard from '../components/Billboard.astro';
+import Row from '../components/Row.astro';
 import Icon from '../components/Icon.astro';
 import { items, groups, cats, inCat, bySlug, catOf, clipOf, cardOf, urlOf, groupOf, LOGO } from '../lib/data.mjs';
 const featured = bySlug('dolly-in');
 const withClipFirst = (list) => [...list].sort((a, b) => (clipOf(b) ? 1 : 0) - (clipOf(a) ? 1 : 0));
-// rails: [category, through the bars?]
-const rails = [['move', false], ['hook', true], ['expression', false], ['look', false], ['transition', false], ['preset', true]]
-  .map(([id, through]) => ({ cat: catOf(id), through, list: withClipFirst(inCat(id)).slice(0, 12), tint: groupOf(id).tint }));
+// one row per group, the cards with a clip first
+const rows = groups.map((g) => ({ g, list: withClipFirst(items.filter((i) => g.cats.some((c) => c.id === i.category))).slice(0, 14) }));
 const step = (verb, target) => (typeof target === 'string'
   ? { verb, href: `/${target}`, text: `${catOf(target).label}, ${catOf(target).count} cards` }
   : { verb, href: urlOf(target), text: target.name });
@@ -30,7 +30,7 @@ const start = [step('Pick the model', bySlug('which-model-for-video')), step('Ma
         </div>
         <p class="small">Free. No account, no newsletter, nobody will call you.</p>
       </div>
-      <Monitor clip={clipOf(featured)} name={cardOf(featured).name} ch={cardOf(featured).ch} autoplay />
+      <Billboard item={featured} />
     </div>
     <nav class="bars" aria-label="Library groups">
       {groups.map((g) => <a class={g.on} style={`--tint:${g.tint}`} href={g.href}><span>{g.name}</span><b>{g.count}</b></a>)}
@@ -43,11 +43,7 @@ const start = [step('Pick the model', bySlug('which-model-for-video')), step('Ma
   <Win id="start" title="Start here" meta="your first video, in nine cards" tint="var(--bar-yellow)">
     <ol class="path">{start.map((s) => <li><span>{s.verb}</span> <a href={s.href}>{s.text}</a></li>)}</ol>
   </Win>
-  {rails.map((r, n) => (
-    <Win title={r.cat.label} meta={`${r.cat.count} cards`} tint={r.tint} link={`/${r.cat.id}`} class={n % 3 === 1 ? 'w-narrow' : n % 3 === 2 ? 'w-right' : ''}>
-      <div class="rail" tabindex="0" role="group" aria-label={r.cat.label}>{r.list.map((i, k) => <Card item={i} tintIndex={r.through ? k : undefined} lazy={n > 0} />)}</div>
-    </Win>
-  ))}
+  {rows.map((r, n) => <Row title={r.g.name} meta={`${r.g.count} cards`} tint={r.g.tint} href={r.g.href} items={r.list} through={!r.g.on} lazy={n > 0} />)}
   <Win title="Everything" meta={`${cats.length} shelves`} tint="var(--bar-grey)">
     <ul class="shelves">{groups.map((g) => <li><b>{g.name}</b> {g.cats.map((c) => <a href={`/${c.id}`}>{c.label} <span>{c.count}</span></a>)}</li>)}</ul>
   </Win>

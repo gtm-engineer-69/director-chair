@@ -1,7 +1,7 @@
 ---
 // Prompt instructions: model tabs, the prompt, Copy, Download reference, credit, related. A window in the page, never a modal.
 import Icon from './Icon.astro';
-import Card from './Card.astro';
+import Tile from './Tile.astro';
 import { models, lib, bySlug, clipOf } from '../lib/data.mjs';
 import { assemble, modelsFor, kindOf, CHAT } from '../lib/prompt.mjs';
 const { item = null, board = false } = Astro.props;
@@ -52,7 +52,7 @@ const data = { board, items: item ? [item] : [], models, notes: Object.fromEntri
     <p class="vh" role="status" data-status></p>
     {clip && <p class="credit">Reference clip by <a href={site?.url || clip.source_url} rel="noopener">{site?.name || clip.credit}</a>, shown with permission. <a href={clip.source_url} rel="noopener">Original file</a></p>}
     {related.length > 0 && (
-      <div class="related"><h3>Goes well with</h3><ul>{related.map((r) => <li><Card item={r} /></li>)}</ul></div>
+      <div class="related"><h3>Goes well with</h3><ul>{related.map((r) => <li><Tile item={r} /></li>)}</ul></div>
     )}
     <script type="application/json" data-json set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
   </div>

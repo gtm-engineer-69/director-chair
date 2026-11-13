@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Win from '../components/Win.astro';
-import Card from '../components/Card.astro';
+import Tile from '../components/Tile.astro';
 import Icon from '../components/Icon.astro';
 import { cats, inCat, groupOf } from '../lib/data.mjs';
 export const getStaticPaths = () => cats.map((cat) => ({ params: { category: cat.id }, props: { cat } }));
@@ -19,6 +19,6 @@ const names = list.slice(0, 4).map((i) => i.name).join(', ');
   </div>
   {subs.map((sub) => {
     const own = list.filter((i) => (i.group || cat.label) === sub);
-    return <Win title={sub} meta={`${own.length} cards`} tint={g.tint}><div class="grid">{own.map((i) => <Card item={i} />)}</div></Win>;
+    return <Win title={sub} meta={`${own.length} cards`} tint={g.tint}><div class="grid">{own.map((i) => <Tile item={i} />)}</div></Win>;
   })}
 </Base>

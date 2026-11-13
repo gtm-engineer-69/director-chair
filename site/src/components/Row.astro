@@ -1,0 +1,9 @@
+---
+// A row: one window with a horizontal track of uniform 16:9 tiles.
+import Win from './Win.astro';
+import Tile from './Tile.astro';
+const { title, meta, tint, href, items, through = false, lazy = true, class: cls } = Astro.props;
+---
+<Win title={title} meta={meta} tint={tint} link={href} class={cls}>
+  <div class="rail" tabindex="0" role="group" aria-label={title}>{items.map((i, k) => <Tile item={i} tintIndex={through ? k : undefined} lazy={lazy} />)}</div>
+</Win>
