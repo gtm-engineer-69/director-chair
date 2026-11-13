@@ -1,0 +1,60 @@
+---
+import Icon from '../components/Icon.astro';
+import { groups, lib, items, SITE, LOGO } from '../lib/data.mjs';
+const { title, description, path, image, current = '', twin, noindex = false } = Astro.props;
+const canonical = SITE + (path === '/' ? '/' : path);
+const og = SITE + (image || '/logo.png');
+const menu = [['Library', '/'], ['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'], ['About', '/about']];
+const tools = [['Board', '/board', 'layout'], ['Models', '/models', 'cpu'], ['Guides', '/guide', 'book-open'], ['Recipes', '/preset', 'clipboard-note'], ['Agent skill', '/about#agents', 'terminal'], ['No signal', '/404', 'tv']];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex" />}
+<meta property="og:site_name" content="Director Chair" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={og} />
+<meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+<link rel="icon" href={LOGO} />
+{twin && <link rel="alternate" type="text/markdown" href={twin} />}
+<link rel="alternate" type="application/json" href="/api/library.json" title="The whole library as JSON" />
+</head>
+<body>
+<a class="vh" href="#main">Skip to the content</a>
+<header class="menubar" data-menubar>
+  <a class="brand" href="/"><img src={LOGO} alt="" width="30" height="30" /><span>Director Chair</span></a>
+  <nav class="menu" aria-label="Main" id="menu">{menu.map(([t, h]) => <a href={h} aria-current={current === t ? 'page' : undefined}>{t}</a>)}</nav>
+  <div class="menu-right">
+    <a class="btn btn-sm btn-primary" href="/director-chair-skill.zip" download><span>Get the agent skill</span></a>
+    <a class="iconbtn" href="/#q" aria-label="Search the library"><Icon name="search" /></a>
+    <button class="iconbtn menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><Icon name="menu" /></button>
+  </div>
+</header>
+<nav class="icons icons-l" aria-label="Library groups">
+  {groups.filter((g) => g.on).map((g) => <a class:list={['dicon', g.on]} style={`--tint:${g.tint}`} href={g.href}><span class="dicon-tile"><Icon name={g.icon} /></span><span class="dicon-label">{g.name}</span></a>)}
+</nav>
+<nav class="icons icons-r" aria-label="Tools">
+  {tools.map(([t, h, i]) => <a class="dicon" style="--tint:var(--paper-sheet)" href={h}><span class="dicon-tile"><Icon name={i} /></span><span class="dicon-label">{t}</span></a>)}
+</nav>
+<main class="stack" id="main"><slot /></main>
+<footer class="testband">
+  <div class="tc-cast" aria-hidden="true"><div class="c-blue"></div><div class="c-black"></div><div class="c-magenta"></div><div class="c-black"></div><div class="c-cyan"></div><div class="c-black"></div><div class="c-grey"></div></div>
+  <div class="tc-pluge">
+    <div class="c-navy">Director Chair. Free and open. {items.length} cards.</div>
+    <div class="c-white"><span>Clips by <a href="https://aicameramovements.com/" rel="noopener">AI Camera Movements</a> and <a href="https://seedance-emotion-direction.vercel.app/" rel="noopener">Emotion Direction</a>, with permission.</span></div>
+    <div class="c-violet"><span><a href="/director-chair-skill.zip" download>Get the agent skill</a> <a href="/about">About and licences</a></span></div>
+    <div class="c-black"><span>No cookies. Nothing to accept. Made by the people behind <a href="https://notavideo.ai" rel="noopener">Not A Video</a>.</span></div>
+    <div class="c-black"></div><div class="c-pluge"></div><div class="c-black"></div><div class="c-black"></div>
+  </div>
+</footer>
+<script>import '../scripts/site.js';</script>
+</body>
+</html>

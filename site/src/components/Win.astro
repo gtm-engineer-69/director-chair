@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+const { title, meta, tint, link, linkText = 'See all', id, level = 2, class: cls } = Astro.props;
+const H = level ? `h${level}` : 'span';
+---
+<section class:list={['win', cls]} id={id}>
+  <header class="win-bar" style={tint ? `--tint:${tint}` : undefined}>
+    <span class="win-swatch"></span><H class="win-title">{title}</H>{meta && <span class="win-meta">{meta}</span>}
+    {link && <a class="win-link" href={link}>{linkText} <Icon name="arrow-right" /></a>}
+    <span class="win-btns" aria-hidden="true"><Icon name="minus" /><Icon name="expand" /><Icon name="close" /></span>
+  </header>
+  <div class="win-body"><slot /></div>
+</section>

@@ -1,0 +1,15 @@
+---
+import { cardOf } from '../lib/data.mjs';
+const { item, tintIndex, lazy = true } = Astro.props;
+const c = cardOf(item, tintIndex);
+---
+{c.still ? (
+  <a class="card" href={c.href} data-ch={c.ch} data-name={c.name} data-src={c.poster} data-clip={c.clip}>
+    <img src={c.still} alt={c.name} width="480" height="270" loading={lazy ? 'lazy' : 'eager'} decoding="async" />
+    <span class="osd osd-tl">CH {c.ch}</span><span class="osd osd-bl">{c.name}</span>
+  </a>
+) : (
+  <a class:list={['card', 'card-type', c.on, c.size]} style={`--tint:${c.tint}`} href={c.href} data-ch={c.ch} data-name={c.name} data-src="">
+    <span class="osd osd-tl">{c.label}</span><b>{c.name}</b>
+  </a>
+)}

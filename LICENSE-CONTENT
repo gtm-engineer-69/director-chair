@@ -1,0 +1,27 @@
+Director Chair content licence
+
+The texts and data of Director Chair (everything in site/data/library.json
+and the pages generated from it, except the parts named below) are licensed
+under the Creative Commons Attribution 4.0 International licence (CC BY 4.0).
+
+  https://creativecommons.org/licenses/by/4.0/
+
+You may copy, share and adapt them for any purpose, also commercially, as long
+as you give credit: "Director Chair (directorchair.ai)", with a link where the
+medium allows one, and say if you changed something.
+
+Third-party material, not covered by CC BY 4.0
+
+1. Reference clips and posters (site/public/media, not in this repository) and
+   the card texts inside a "licensed" block of an item belong to their makers:
+     - AI Camera Movements (aicameramovements.com)
+     - Emotion Direction (seedance-emotion-direction.vercel.app)
+   They are shown on directorchair.ai with the makers' permission and with
+   credit. Ask the makers before you reuse them elsewhere.
+2. Icons in site/src/icons are pixelarticons by Gerrit Halfmann, MIT licence
+   (see site/src/icons/LICENSE-pixelarticons.txt).
+3. Typefaces (League Gothic, IBM Plex Mono, Jersey 15) are under the SIL Open
+   Font License and come from the fontsource packages.
+4. Names of models, tools and companies belong to their owners.
+
+The code in this repository is under the MIT licence (see LICENSE).

@@ -1,0 +1,19 @@
+---
+// The monitor: the clip with its on-screen display, or the test card when there is no signal.
+import Icon from './Icon.astro';
+const { clip, name, ch, autoplay = false, label = 'Monitor' } = Astro.props;
+const m = clip?.media;
+---
+<section class="win monitor" aria-label={label}>
+  <header class="win-bar"><span class="win-swatch"></span><span class="win-title">{label}</span><span class="win-btns" aria-hidden="true"><Icon name="minus" /><Icon name="expand" /><Icon name="close" /></span></header>
+  <div class:list={['screen', !m && 'is-card']} data-screen data-ch={ch} data-name={name}>
+    {m && <video src={m.video} poster={m.poster} muted loop playsinline preload={autoplay ? 'metadata' : 'none'} data-autoplay={autoplay ? '' : undefined} width={m.width} height={m.height}></video>}
+    <img class="screen-still" alt="" width="1280" height="720" data-still />
+    <div class="testcard" aria-hidden="true"><div class="tc-bars"><div class="c-grey"></div><div class="c-yellow"></div><div class="c-cyan"></div><div class="c-green"></div><div class="c-magenta"></div><div class="c-red"></div><div class="c-blue"></div></div><div class="tc-cast"><div class="c-blue"></div><div class="c-black"></div><div class="c-magenta"></div><div class="c-black"></div><div class="c-cyan"></div><div class="c-black"></div><div class="c-grey"></div></div><div class="tc-pluge"><div class="c-navy"></div><div class="c-white"></div><div class="c-violet"></div><div class="c-black"></div><div class="c-black"></div><div class="c-pluge"></div><div class="c-black"></div><div class="c-black"></div></div></div>
+    <canvas class="static" width="160" height="90" aria-hidden="true"></canvas>
+    <span class="osd osd-tl" data-osd="ch">CH {ch}</span>
+    {m && <button class="osd osd-tr" type="button" data-osd="play" aria-label="Play the clip"><span><Icon name="play" /><span data-osd="state">Play</span></span></button>}
+    <span class="osd osd-bl" data-osd="name">{name}</span>
+    <span class="osd osd-br" data-osd="tc">{m ? '0:00:00' : 'No signal'}</span>
+  </div>
+</section>

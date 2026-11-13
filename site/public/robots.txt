@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://directorchair.ai/sitemap.xml

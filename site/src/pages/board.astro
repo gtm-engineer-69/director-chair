@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Win from '../components/Win.astro';
+import Monitor from '../components/Monitor.astro';
+import Prompt from '../components/Prompt.astro';
+import { cats, inCat, groupOf, models, cardOf } from '../lib/data.mjs';
+import { kindOf } from '../lib/prompt.mjs';
+// one slot per shelf whose cards go into an image or video prompt
+const slots = cats.map((cat) => ({ cat, g: groupOf(cat.id), list: inCat(cat.id).filter((i) => kindOf(i, models) === 'shot') })).filter((s) => s.list.length && !['preset', 'guide'].includes(s.cat.id));
+---
+<Base title="Director's board: build one prompt from many cards | Director Chair" description="Pick one of each (shot, angle, move, light, look, expression, hook, transition) and get one complete prompt for your model. The address holds your board, so you can share it." path="/board" current="Board">
+  <div class="item" data-board>
+    <div class="item-main">
+      <div class="item-head"><h1 class="title">Director's board</h1><p class="effect">Pick one of each. The prompt on the right is written for the model you choose, and the address holds your board, so you can share it.</p></div>
+      <Monitor name="Pick a card" ch="00" />
+      <Win class="win-card" title="Board" meta={`${slots.length} slots`} tint="var(--bar-yellow)">
+        <form class="slots" data-slots>
+          {slots.map((s) => (
+            <label style={`--tint:${s.g.tint}`}><span><i class="win-swatch"></i>{s.cat.label}</span>
+              <select name={s.cat.id} data-slot={s.cat.id}><option value="">none</option>{s.list.map((i) => <option value={i.slug} data-name={cardOf(i).name} data-ch={cardOf(i).ch} data-src={cardOf(i).poster}>{i.name}</option>)}</select>
+            </label>
+          ))}
+          <button class="btn" type="reset"><span>Clear the board</span></button>
+        </form>
+      </Win>
+    </div>
+    <aside class="item-side"><Prompt board /></aside>
+  </div>
+</Base>

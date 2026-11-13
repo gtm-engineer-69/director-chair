@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import Monitor from '../components/Monitor.astro';
+---
+<Base title="No signal | Director Chair" description="This channel is empty. Back to the library." path="/404" noindex>
+  <div class="item-head"><h1 class="title">No signal</h1><p class="effect">Nothing is broadcasting on this channel. The card may have moved, or it never existed.</p></div>
+  <Monitor name="Not found" ch="404" label="Monitor" />
+  <div class="actions"><a class="btn btn-primary" href="/"><span>Back to the library</span></a><a class="btn" href="/board"><span>Open the board</span></a></div>
+</Base>

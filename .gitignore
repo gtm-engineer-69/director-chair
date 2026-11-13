@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.DS_Store
+# The reference clips ship with the Vercel deploy, not with the repository (they belong to their makers).
+site/public/media/
+site/scripts/private-rules.mjs

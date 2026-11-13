@@ -1,0 +1,19 @@
+{
+  "name": "director-chair",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "data": "node scripts/build-data.mjs",
+    "dev": "astro dev",
+    "build": "node scripts/build-data.mjs && astro build",
+    "check": "node scripts/check-prompts.mjs && node scripts/check-dist.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.0.0",
+    "@fontsource/jersey-15": "^5.0.0",
+    "@fontsource/league-gothic": "^5.0.0",
+    "astro": "^7.4.11"
+  }
+}
