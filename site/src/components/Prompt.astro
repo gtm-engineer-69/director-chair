@@ -10,19 +10,28 @@ const chat = offered[0]?.id === CHAT.id;
 const FIRST = ['seedance-2.5', 'veo-3.1', 'kling-3', 'nano-banana-pro', 'gpt-image', 'seedream-5', 'seedance-2.0', 'nano-banana-2'];
 const order = [...offered].sort((a, b) => FIRST.indexOf(a.id) - FIRST.indexOf(b.id));
 const mixed = offered.some((m) => m.medium === 'image') && offered.some((m) => m.medium === 'video');
-const tabs = chat ? order : mixed ? [order[0], order[1], order.find((m) => m.medium === 'image')] : order.slice(0, 3);
+// a chat prompt reads the same in all three, so the pills are a plain choice
+const CHATS = [{ ...CHAT, name: 'Claude' }, { ...CHAT, id: 'chat-chatgpt', name: 'ChatGPT' }, { ...CHAT, id: 'chat-gemini', name: 'Gemini' }];
+const tabs = chat ? CHATS : mixed ? [order[0], order[1], order.find((m) => m.medium === 'image')] : order.slice(0, 3);
 const rest = chat ? [] : offered.filter((m) => !tabs.includes(m));
 const notRun = chat ? [] : models.filter((m) => !offered.includes(m) && (board || item.media.includes(m.medium)));
-const note = (m) => (m.id === CHAT.id ? 'Paste it into Claude, ChatGPT or Gemini.' : `${m.name} reads ${m.prompt_style}.`);
+const note = (m) => (m.medium === 'text' ? 'The same prompt works in Claude, ChatGPT and Gemini.' : `${m.name} reads ${m.prompt_style}.`);
 const first = tabs[0];
-const text = board ? 'Pick at least one card.' : assemble([item], first.id, {}, models);
+const text = board ? 'Pick a card to start your prompt.' : assemble([item], first.id, {}, models);
 const clip = item && clipOf(item);
 const site = clip && lib.external_sites.find((s) => s.id === clip.site);
-const labels = chat ? ['Your product', 'Your audience'] : ['Your subject', 'Your setting'];
-const data = { board, items: item ? [item] : [], models, notes: Object.fromEntries([...offered, CHAT].map((m) => [m.id, note(m)])) };
+const labels = chat ? ['Product', 'Audience'] : ['Subject', 'Setting'];
+const { heading = 'Prompt instructions' } = Astro.props;
+const data = { board, items: item ? [item] : [], models, notes: Object.fromEntries([...offered, ...CHATS].map((m) => [m.id, note(m)])) };
 ---
 <section class="prompt" aria-labelledby="pi" data-prompt>
-  <h2 id="pi">Prompt instructions</h2>
+  <h2 id="pi">{heading}</h2>
+  {chat && (
+    <div class:list={['fields', !chat && 'after']}>
+      <label class="field"><span>{labels[0]}</span><input type="text" data-field="subject" autocomplete="off" /></label>
+      <label class="field"><span>{labels[1]}</span><input type="text" data-field="setting" autocomplete="off" /></label>
+    </div>
+  )}
   <div class="models" role="tablist" aria-label="Model">
     {tabs.map((m, n) => <button class:list={['pill', n > 0 && 'plain']} type="button" role="tab" aria-selected={n === 0 ? 'true' : 'false'} data-model={m.id}>{m.name}</button>)}
     {(rest.length > 0 || notRun.length > 0) && <button class="pill plain" type="button" aria-expanded="false" aria-controls="more-models" data-more-toggle>More <Icon name="chevron-down" /></button>}
@@ -34,7 +43,7 @@ const data = { board, items: item ? [item] : [], models, notes: Object.fromEntri
     </div>
   )}
   <div class="panel" role="tabpanel">
-    <p class="out" id="prompt" data-out>{text}</p>
+    <p class:list={['out', board && 'soft']} id="prompt" data-out>{text}</p>
     <div class="acts">
       <button class="pill ink" type="button" data-copy><Icon name="copy" class="i-copy" /><Icon name="check" class="i-check" /><span data-copy-label>Copy prompt</span></button>
       {clip && <a class="see" href={clip.media.video} download><Icon name="download" /> Download reference</a>}
@@ -43,9 +52,11 @@ const data = { board, items: item ? [item] : [], models, notes: Object.fromEntri
   <p class="vh" role="status" data-status></p>
   <p class="credit" data-note>{board ? '' : note(first)}</p>
   {clip && <p class="credit">Reference clip by <a href={site?.url || clip.source_url} rel="noopener">{site?.name || clip.credit}</a>, shown with permission.</p>}
-  <div class="fields">
-    <label><span>{labels[0]}</span><input type="text" data-field="subject" autocomplete="off" placeholder={chat ? 'a ceramic mug brand' : 'a woman in a red coat'} /></label>
-    <label><span>{labels[1]}</span><input type="text" data-field="setting" autocomplete="off" placeholder={chat ? 'people who gift coffee gear' : 'a hotel corridor at night'} /></label>
-  </div>
+  {!chat && (
+    <div class:list={['fields', !chat && 'after']}>
+      <label class="field"><span>{labels[0]}</span><input type="text" data-field="subject" autocomplete="off" /></label>
+      <label class="field"><span>{labels[1]}</span><input type="text" data-field="setting" autocomplete="off" /></label>
+    </div>
+  )}
   <script type="application/json" data-json set:html={JSON.stringify(data).replace(/</g, '\\u003c')} />
 </section>

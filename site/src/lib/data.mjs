@@ -12,7 +12,7 @@ export const SITE = raw.url;
 export const MARK = null;                 // the slot for a logo mark: a path under public/, or null while the logo is not final
 export const ICON = '/logo-120.png';      // browser tab icon, the only place the provisional mark is used
 
-const GROUP_ICON = { Camera: 'video', Frame: 'frame', 'Light and look': 'sun', 'People and places': 'users', Motion: 'gauge', Edit: 'scissors', Story: 'scroll-text', Recipes: 'clipboard-list' };
+const GROUP_ICON = { Camera: 'video', Frame: 'frame', 'Light and look': 'sun', 'People and places': 'users', Motion: 'gauge', Edit: 'scissors', Story: 'captions', Recipes: 'clipboard-list' };
 export const groups = [...new Set(cats.map((c) => c.group))].map((name) => {
   const own = cats.filter((c) => c.group === name);
   return { name, icon: GROUP_ICON[name], cats: own, count: own.reduce((a, c) => a + c.count, 0), href: `/${own[0].id}` };
@@ -26,7 +26,10 @@ export const clipOf = (i) => i.licensed.find((l) => l.media) || null;          /
 export const viewOf = (i) => clipOf(i) || i.shown_with || null;                // what the page shows: own clip, else a related card's
 export const shortName = (n) => n.replace(/\s*\(.*\)$/, '').replace(/^Prompt guide: /, '');
 export const sentence = (s) => s.charAt(0).toUpperCase() + s.slice(1) + (/[.!?]$/.test(s) ? '' : '.');
-export const clipsFirst = (list) => [...list].sort((a, b) => (clipOf(b) ? 2 : viewOf(b) ? 1 : 0) - (clipOf(a) ? 2 : viewOf(a) ? 1 : 0));
+const clipNo = (i) => { const c = clipOf(i); return c ? Number((c.media.video.match(/\/(\d+)-/) || [0, 999])[1]) : 999; };
+// cards with their own clip first, in the makers' own order; then cards that borrow one; then words
+export const clipsFirst = (list) => [...list].sort((a, b) => (clipOf(a) ? 0 : viewOf(a) ? 1 : 2) - (clipOf(b) ? 0 : viewOf(b) ? 1 : 2) || clipNo(a) - clipNo(b));
+export const firstClipNo = (list) => Math.min(...list.map(clipNo));
 
 // what a tile needs, for the Tile component and the search index alike
 // In one row or grid a borrowed clip shows once; later cards that would borrow it again show their words.
@@ -34,7 +37,13 @@ export function unique(list) {
   const seen = new Set();
   return list.map((item) => { const v = !clipOf(item) && item.shown_with; const again = v && seen.has(v.media.card); if (v) seen.add(v.media.card); return { item, words: !!again }; });
 }
+const isSaid = (i) => i.category === 'hook' && /^Textual/.test(i.group || '');
+// the line a textual hook is shown as: the example half when the phrase opens on an instruction
+export const sayLine = (i) => sentence(/^(say|open|ask|state|name|start|tell|show|give|promise|admit|address|call|use|lead|pose|list|make|end|begin|put|let|turn|take|repeat|speak)\b/i.test(i.phrase) && i.phrase.includes(': ') ? i.phrase.slice(i.phrase.indexOf(': ') + 2) : i.phrase);
+// what a tile needs, for the Tile component, the board and the search index alike:
+// a picture with one line on hover, or a caption frame (a textual hook), or the card's effect in words
 export function tileOf(i, words = false) {
   const v = words ? null : viewOf(i);
-  return { href: urlOf(i), name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', text: v ? '' : sentence(i.phrase) };
+  const say = !v && isSaid(i);
+  return { href: urlOf(i), slug: i.slug, name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', line: i.effect, say, text: v ? '' : say ? sayLine(i) : i.category === 'hook' ? sentence(i.phrase) : i.effect };
 }

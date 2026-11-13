@@ -4,6 +4,7 @@ import '../styles/tokens.css';
 import '../styles/mock.css';
 import '../styles/site.css';
 import Icon from '../components/Icon.astro';
+import figtree from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import { groups, items, SITE, MARK, ICON, bySlug, clipOf } from '../lib/data.mjs';
 const { title, description, path, image, twin, noindex = false } = Astro.props;
 const canonical = SITE + (path === '/' ? '/' : path);
@@ -28,6 +29,7 @@ const tools = [['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'],
 <meta property="og:image" content={og} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#f2efea" />
+<link rel="preload" as="font" type="font/woff2" href={figtree} crossorigin />
 <link rel="icon" href={ICON} />
 {twin && <link rel="alternate" type="text/markdown" href={twin} />}
 <link rel="alternate" type="application/json" href="/api/library.json" title="The whole library as JSON" />

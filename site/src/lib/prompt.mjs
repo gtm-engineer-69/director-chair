@@ -10,8 +10,7 @@ const ROLE = { shot: 'framing', angle: 'framing', composition: 'framing', ratio:
   motion: 'action', transition: 'cut', hook: 'opening', sound: 'sound' };
 
 // words, not pictures: these get a prompt for a chat model
-const WRITE = { hook: 'three opening hooks, each one the first line a viewer hears or reads', script: 'a script outline, beat by beat, with the seconds per beat',
-  cta: 'three closing calls to action', format: 'a shot-by-shot outline in this format' };
+const WRITE = { hook: 1, script: 1, cta: 1, format: 1 };
 const PLAN = { publish: 'a step-by-step plan I can follow this week', effect: 'an edit brief: where it goes on the timeline, the exact settings, and what to check before export',
   sound: 'a sound brief: what to record or pick, where it sits on the timeline, the levels, and what to check before export',
   preset: 'a production plan: the shots or scenes in order, what each one needs, and the edit settings', guide: 'a filled-in prompt that follows this guide, plus the one thing to check in the result' };
@@ -106,17 +105,20 @@ const LAYOUT = {
 const LAYOUT_OF = { 'nano-banana-pro': 'paragraph', 'nano-banana-2': 'paragraph', 'seedream-5': 'paragraph', 'gpt-image': 'gpt',
   'seedance-2.5': 'seedance', 'seedance-2.0': 'seedance', 'kling-3': 'kling', 'veo-3.1': 'veo' };
 
+// Words, not pictures: one paragraph a chat model can act on, built from the card. Pitfalls go in here, they are advice for a writer.
 function chatPrompt(item, fields, kind) {
   const product = fields.subject || '[your product]';
   const audience = fields.setting || '[your audience]';
-  const notes = (item.pitfalls || []).filter((p) => p.evidence !== 'unverified').slice(0, 3).map((p) => `- ${first(p.text)}`);
-  const what = kind === 'write' ? WRITE[item.category] : PLAN[item.category];
-  return [
-    kind === 'write' ? `You are a short-form video copywriter. Write ${what}, for ${product}, aimed at ${audience}.` : `You are my video producer. Give me ${what}, for a short video about ${product}, aimed at ${audience}.`,
-    `Technique: ${item.name}. ${sent(item.effect)}`, `How it works: ${sent(item.phrase)}`, `Right for: ${sent(item.use_when)}`,
-    notes.length ? `What we learned from tested runs:\n${notes.join('\n')}` : null,
-    kind === 'write' ? 'Plain spoken language, no hashtags, no emoji. Say which option you would post first and why, in one line.' : 'Be concrete: numbers, seconds and settings, no theory. Ask me one question first if something you need is missing.',
-  ].filter(Boolean).join('\n');
+  const low = (t) => t.charAt(0).toLowerCase() + t.slice(1);
+  const notes = (item.pitfalls || []).filter((p) => p.evidence !== 'unverified').slice(0, 2).map((p) => sent(first(p.text))).join(' ');
+  const name = item.name.replace(/\s*\(.*\)$/, '').replace(/^Prompt guide: /, '');
+  if (kind === 'write') {
+    const what = { hook: 'five opening lines', script: 'a script outline, beat by beat, with the seconds per beat,', cta: 'three closing calls to action', format: 'a shot-by-shot outline' }[item.category];
+    return [`Write ${what} for a short video about ${product}, for ${audience}.`, `Use the ${low(name)} pattern: ${low(sent(item.effect))}`, notes,
+      `${item.category === 'hook' ? 'Example' : 'How it works'}: ${low(sent(item.phrase))}`, 'Plain spoken language, no hashtags, no emoji. Tell me which one you would post first and why, in one line.'].filter(Boolean).join(' ');
+  }
+  return [`Give me ${PLAN[item.category]}, for a short video about ${product}, for ${audience}.`, `The technique is ${low(name)}: ${low(sent(item.effect))}`, `How it works: ${low(sent(item.phrase))}`, `It is right for: ${low(sent(item.use_when))}`, notes,
+    'Be concrete: numbers, seconds and settings, no theory. Ask me one question first if something you need is missing.'].filter(Boolean).join(' ');
 }
 
 export function assemble(items, modelId, fields = {}, models = []) {

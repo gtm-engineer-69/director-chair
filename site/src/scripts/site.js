@@ -29,8 +29,9 @@ if (main) {
 
 // ---- tiles: the clip plays quietly on hover or focus; on touch screens, while the tile is in view
 const playIn = (tile) => {
+  if (!tile.dataset.clip) return;
   let v = $('video', tile);
-  if (!v) { v = Object.assign(document.createElement('video'), { muted: true, loop: true, playsInline: true, src: tile.dataset.clip }); v.setAttribute('aria-hidden', 'true'); tile.insertBefore(v, tile.children[1] || null); }
+  if (!v) { v = Object.assign(document.createElement('video'), { muted: true, loop: true, playsInline: true, src: tile.dataset.clip }); v.setAttribute('aria-hidden', 'true'); $('img', tile)?.after(v); }
   v.play().catch(() => {});
 };
 const stopIn = (tile) => $('video', tile)?.remove();
@@ -40,14 +41,15 @@ function tiles() {
   for (const t of $$('.tile[data-clip]')) {
     if (t.dataset.wired) continue; t.dataset.wired = '1';
     if (watch) { watch.observe(t); continue; }
-    t.addEventListener('mouseenter', () => playIn(t)); t.addEventListener('focus', () => playIn(t));
-    t.addEventListener('mouseleave', () => stopIn(t)); t.addEventListener('blur', () => stopIn(t));
+    t.addEventListener('pointerenter', () => playIn(t)); t.addEventListener('focus', () => playIn(t));
+    t.addEventListener('pointerleave', () => stopIn(t)); t.addEventListener('blur', () => stopIn(t));
   }
 }
 tiles();
 
 // ---- prompt panel
-const pretty = (s) => esc(s).replace(/^([A-Z][A-Za-z0-9 ]{2,28}(?: \([^)\n]*\))?:)/gm, '<b>$1</b>').replace(/ (Camera|Pace|Keep|Ends|Cut):/g, ' <b>$1:</b>');
+const pretty = (s) => esc(s).replace(/^([A-Z][A-Za-z0-9 ]{2,28}(?: \([^)\n]*\))?:)/gm, '<b>$1</b>').replace(/ (Camera|Pace|Keep|Ends|Cut):/g, ' <b>$1:</b>').replace(/\[your [a-z]+\]/g, '<span class="tok">$&</span>');
+const engine = (id) => (id.startsWith('chat') ? CHAT.id : id); // Claude, ChatGPT and Gemini share one chat prompt
 function promptPanel(root) {
   const data = JSON.parse($('[data-json]', root).textContent);
   const out = $('[data-out]', root); const note = $('[data-note]', root); const more = $('[data-more]', root); const moreToggle = $('[data-more-toggle]', root);
@@ -57,8 +59,8 @@ function promptPanel(root) {
   const fields = () => Object.fromEntries($$('[data-field]', root).map((f) => [f.dataset.field, f.value.trim()]));
   function render() {
     note.textContent = data.notes[st.model] || '';
-    st.raw = st.items.length ? assemble(st.items, st.model, fields(), data.models) : '';
-    out.innerHTML = st.raw ? pretty(st.raw) : 'Pick at least one card.';
+    st.raw = st.items.length ? assemble(st.items, engine(st.model), fields(), data.models) : '';
+    out.innerHTML = st.raw ? pretty(st.raw) : 'Pick a card to start your prompt.'; out.classList.toggle('soft', !st.raw);
     copy.disabled = !st.raw;
   }
   function select(id) {
@@ -80,7 +82,7 @@ function promptPanel(root) {
     copy.classList.add('is-done'); copyLabel.textContent = 'Copied'; status.textContent = 'Prompt copied';
     setTimeout(() => { copy.classList.remove('is-done'); copyLabel.textContent = 'Copy prompt'; status.textContent = ''; }, 1600);
   });
-  if (st.items.length) { st.raw = assemble(st.items, st.model, fields(), data.models); out.innerHTML = pretty(st.raw); } else copy.disabled = true;
+  if (st.items.length) { st.raw = assemble(st.items, engine(st.model), fields(), data.models); out.innerHTML = pretty(st.raw); } else copy.disabled = true;
   return { st, render, fields, select };
 }
 const pw = $('[data-prompt]') && promptPanel($('[data-prompt]'));
@@ -90,15 +92,16 @@ const form = $('[data-search]');
 if (form) {
   const q = $('input', form); const hero = $('[data-hero]'); const wrap = $('[data-results-wrap]'); const grid = $('[data-results]'); const meta = $('[data-results-meta]'); const none = $('[data-noresults]'); const library = $('[data-library]');
   let index = null;
-  const tile = (c) => `<a class="tile" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}>${c.still ? `<img src="${esc(c.still)}" alt="" width="480" height="270" loading="lazy">` : `<p>${esc(c.text)}</p>`}<span class="name">${esc(c.name)}</span></a>`;
+  const words = (t) => t.split(' ').map((w, n) => `<span class="w" style="--i:${n}">${esc(w)}</span>`).join(' ');
+  const tile = (c) => `<a class="tile${c.say ? ' say' : ''}" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}>${c.still ? `<img src="${esc(c.still)}" alt="" width="480" height="270" loading="lazy"><span class="line">${esc(c.line)}</span>` : `<p>${c.say ? words(c.text) : esc(c.text)}</p>`}<span class="name">${esc(c.name)}</span></a>`;
   async function run() {
     const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
     history.replaceState(null, '', terms.length ? `?q=${encodeURIComponent(q.value)}` : location.pathname);
-    hero.classList.toggle('is-searching', terms.length > 0); wrap.hidden = !terms.length; library.hidden = terms.length > 0;
+    hero.classList.toggle('is-searching', terms.length > 0); wrap.hidden = !terms.length; library.hidden = false;
     if (!terms.length) return;
     index ||= await fetch('/api/search.json').then((r) => r.json());
     const hits = index.filter((c) => terms.every((t) => c.words.includes(t))).sort((a, b) => Number(b.name.toLowerCase().includes(terms[0])) - Number(a.name.toLowerCase().includes(terms[0]))).slice(0, 60);
-    none.hidden = hits.length > 0; meta.textContent = hits.length ? `${hits.length} ${hits.length === 1 ? 'card' : 'cards'}` : '';
+    none.hidden = hits.length > 0; library.hidden = hits.length > 0; meta.textContent = hits.length ? `${hits.length} ${hits.length === 1 ? 'card' : 'cards'}` : '';
     grid.innerHTML = hits.map(tile).join('');
     tiles();
   }
@@ -112,30 +115,43 @@ if (form) {
   if (location.hash === '#search') q.focus({ preventScroll: true });
 }
 
-// ---- board: the picks live in the address, so a board can be shared
+// ---- board: pick one card per part; the picks live in the address, so a board can be shared
 const board = $('[data-board]');
 if (board && pw) {
-  const slots = $$('[data-slot]', board); let lib = null;
-  const words = $('[data-board-words]', board); const still = $('[data-board-still]', board); const frame = $('[data-board-clip]', board);
+  const slots = $$('[data-slot]', board); let lib = null; let open = null;
+  const picks = new Map();
   const params = new URLSearchParams(location.search);
-  slots.forEach((s) => { if (params.get(s.name)) s.value = params.get(s.name); });
   $$('[data-field]', board).forEach((f) => { f.value = params.get(f.dataset.field === 'subject' ? 's' : 'p') || ''; });
-  async function update() {
-    const picks = slots.filter((s) => s.value);
-    if (picks.length) lib ||= await fetch('/api/library.json').then((r) => r.json());
-    pw.st.items = picks.map((s) => lib.items.find((i) => i.slug === s.value)).filter(Boolean);
-    pw.render();
-    const next = new URLSearchParams(picks.map((s) => [s.name, s.value]));
-    const f = pw.fields(); if (f.subject) next.set('s', f.subject); if (f.setting) next.set('p', f.setting);
-    if (picks.length) next.set('m', pw.st.model);
-    history.replaceState(null, '', [...next].length ? `?${next}` : location.pathname);
-    // the frame shows the picture of the last pick that has one, else the names picked
-    const pic = picks.map((s) => s.selectedOptions[0].dataset.src).filter(Boolean).pop();
-    still.hidden = !pic; words.hidden = !!pic; frame.classList.toggle('type', !pic);
-    if (pic) still.src = pic; else words.textContent = picks.length ? picks.map((s) => s.selectedOptions[0].dataset.name).join(', ') + '.' : 'Pick one of each.';
+  const picker = (id) => $(`[data-picker="${id}"]`, board);
+  const empty = $('.tile.empty', board).innerHTML;
+  function draw() {
+    for (const slot of slots) {
+      const id = slot.dataset.slot; const b = $('.tile', slot); const card = picks.get(id) && $(`[data-pick="${picks.get(id)}"]`, picker(id));
+      slot.classList.toggle('sel', open === id); b.classList.toggle('empty', !card);
+      b.innerHTML = !card ? empty : card.dataset.still ? `<img src="${esc(card.dataset.still)}" alt=""><span class="name">${esc(card.dataset.name)}</span>` : `<p>${esc(card.dataset.name)}</p>`;
+      if (card?.dataset.clip) b.dataset.clip = card.dataset.clip; else delete b.dataset.clip;
+      b.setAttribute('aria-label', card ? `${slot.firstElementChild.textContent}: ${card.dataset.name}. Change it` : `Pick a ${slot.firstElementChild.textContent.toLowerCase()}`);
+      b.setAttribute('aria-expanded', String(open === id));
+      $$('[data-pick]', picker(id)).forEach((t) => { const on = t === card; t.classList.toggle('is-on', on); t.setAttribute('aria-pressed', String(on)); });
+      picker(id).hidden = open !== id;
+    }
   }
-  slots.forEach((s) => s.addEventListener('change', update));
-  $('[data-slots]', board).addEventListener('reset', () => setTimeout(update, 0));
+  async function update() {
+    draw(); tiles();
+    if (picks.size) lib ||= await fetch('/api/library.json').then((r) => r.json());
+    pw.st.items = slots.map((s) => picks.get(s.dataset.slot)).filter(Boolean).map((slug) => lib.items.find((i) => i.slug === slug)).filter(Boolean);
+    pw.render();
+    const next = new URLSearchParams(slots.filter((s) => picks.has(s.dataset.slot)).map((s) => [s.dataset.slot, picks.get(s.dataset.slot)]));
+    const f = pw.fields(); if (f.subject) next.set('s', f.subject); if (f.setting) next.set('p', f.setting);
+    if (picks.size) next.set('m', pw.st.model);
+    history.replaceState(null, '', [...next].length ? `?${next}` : location.pathname);
+  }
+  const nextEmpty = (after) => { const ids = slots.map((s) => s.dataset.slot); const from = ids.indexOf(after); return [...ids.slice(from + 1), ...ids.slice(0, from)].find((id) => !picks.has(id)) || null; };
+  slots.forEach((slot) => { const id = slot.dataset.slot; if (params.get(id) && $(`[data-pick="${CSS.escape(params.get(id))}"]`, picker(id))) picks.set(id, params.get(id)); $('.tile', slot).addEventListener('click', () => { open = open === id ? null : id; draw(); tiles(); }); });
+  $$('[data-pick]', board).forEach((t) => t.addEventListener('click', () => { const id = t.closest('[data-picker]').dataset.picker; picks.set(id, t.dataset.pick); open = nextEmpty(id); update(); }));
+  $$('[data-clear]', board).forEach((b) => b.addEventListener('click', () => { picks.delete(b.dataset.clear); update(); }));
+  $('[data-reset]', board).addEventListener('click', () => { picks.clear(); open = slots[0].dataset.slot; update(); });
   board.addEventListener('dc:change', update);
+  open = nextEmpty(slots[slots.length - 1].dataset.slot);
   if (params.get('m')) pw.select(params.get('m')); else update();
 }

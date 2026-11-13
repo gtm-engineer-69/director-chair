@@ -1,24 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
 import Tile from '../components/Tile.astro';
-import { cats, inCat, groupOf, clipsFirst, unique } from '../lib/data.mjs';
+import { cats, inCat, groupOf, clipsFirst, firstClipNo, unique, clipOf } from '../lib/data.mjs';
 export const getStaticPaths = () => cats.map((cat) => ({ params: { category: cat.id }, props: { cat } }));
 const { cat } = Astro.props;
 const g = groupOf(cat.id);
 const list = inCat(cat.id);
-const subs = [...new Set(list.map((i) => i.group || cat.label))];
+const inSub = (sub) => list.filter((i) => (i.group || cat.plural) === sub);
+// sub-groups that hold clips come first, in the makers' order
+const subs = [...new Set(list.map((i) => i.group || cat.plural))].map((s, n) => [s, firstClipNo(inSub(s)), n]).sort((a, b) => a[1] - b[1] || a[2] - b[2]).map((x) => x[0]);
+const withClip = list.filter(clipOf).length;
 const names = list.slice(0, 4).map((i) => i.name).join(', ');
+const others = g.cats.filter((c) => c.id !== cat.id);
 ---
-<Base title={`${cat.label}: ${cat.count} cards with prompts | Director Chair`} description={`${cat.count} ${cat.label.toLowerCase()} cards for AI video (${names} and more), each with a prompt ready to paste for your model.`} path={`/${cat.id}`}>
-  <div class="page">
+<Base title={`${cat.plural}: ${cat.count} cards with prompts | Director Chair`} description={`${cat.count} ${cat.plural.toLowerCase()} for AI video (${names} and more), each with a prompt ready to paste for your model.`} path={`/${cat.id}`}>
+  <div class="head">
     <h1>{cat.plural}</h1>
-    <p class="lead">{cat.count} cards in {g.name}. Each one has a prompt ready to paste.</p>
-    {g.cats.length > 1 && <nav class="subnav" aria-label={`${g.name} shelves`}>{g.cats.map((c) => <a class="pill plain" href={`/${c.id}`} aria-current={c.id === cat.id ? 'page' : undefined}>{c.plural}</a>)}</nav>}
+    <p>{cat.count} cards{withClip > 0 && `, ${withClip} with a reference clip`}{others.length > 0 && <>. More in {g.name}: {others.map((c, n) => <>{n > 0 && ', '}<a href={`/${c.id}`}>{c.plural}</a></>)}</>}</p>
+    {subs.length > 1 && <nav class="subnav" aria-label={`Groups of ${cat.plural.toLowerCase()}`}><a class="pill" href={`/${cat.id}`} aria-current="true">All</a>{subs.map((s, n) => <a class="pill plain" href={`#g${n}`}>{s}</a>)}</nav>}
   </div>
-  {subs.map((sub) => (
-    <section class="row">
-      {subs.length > 1 && <header><h2>{sub}</h2></header>}
-      <div class="grid">{unique(clipsFirst(list.filter((i) => (i.group || cat.label) === sub))).map((u) => <Tile item={u.item} words={u.words} />)}</div>
+  {subs.map((sub, n) => (
+    <section class="group" id={`g${n}`}>
+      {subs.length > 1 && <h2>{sub}</h2>}
+      <div class="grid">{unique(clipsFirst(inSub(sub))).map((u) => <Tile item={u.item} words={u.words} lazy={n > 0} />)}</div>
     </section>
   ))}
 </Base>

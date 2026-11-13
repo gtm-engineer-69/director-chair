@@ -1,11 +1,14 @@
 ---
-// One uniform 16:9 tile: the picture (its clip plays on hover or focus) or the card's words, the name on it, the Prompt action.
+// One uniform 16:9 tile. A picture whose clip plays on hover or focus, with one line and the Prompt action;
+// a caption frame for a hook that is said; or the card's effect in words.
 import Icon from './Icon.astro';
 import { tileOf } from '../lib/data.mjs';
 const { item, lazy = true, words = false } = Astro.props;
 const t = tileOf(item, words);
 ---
-<a class="tile" href={t.href} data-clip={t.clip || undefined}>
-  {t.still ? <img src={t.still} alt="" width="480" height="270" loading={lazy ? 'lazy' : 'eager'} decoding="async" /> : <p>{t.text}</p>}
+<a class:list={['tile', t.say && 'say']} href={t.href} data-clip={t.clip || undefined}>
+  {t.still ? <><img src={t.still} alt="" width="480" height="270" loading={lazy ? 'lazy' : 'eager'} decoding="async" /><span class="line">{t.line}</span></>
+    : t.say ? <p>{t.text.split(' ').map((w, n) => <><span class="w" style={`--i:${n}`}>{w}</span>{' '}</>)}</p>
+      : <p>{t.text}</p>}
   <span class="name">{t.name}</span><span class="act">Prompt <Icon name="arrow-right" /></span>
 </a>

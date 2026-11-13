@@ -49,7 +49,7 @@ const items = published.map(({ fm, body }) => {
   const licensed = (fm.licensed || []).map((l) => {
     const m = manifest[l.file];
     if (!m) missingMedia.push(`${fm.slug}: ${l.file}`);
-    return { site: l.site, name: l.name, text: l.text, credit: l.credit, source_url: l.clip, group: l.group ?? null, intensity: l.intensity ?? null, cue: l.cue ?? null,
+    return { site: l.site, name: l.name, text: l.text, credit: l.credit, source_url: l.clip, group: l.group ?? null, intensity: l.intensity ?? null, cue: l.cue ?? null, shot: l.shot ?? null, family: l.family ?? null, aliases: l.aliases ?? [],
       media: m ? { video: m.video, card: m.card, poster: m.poster, card_poster: m.card_poster, width: m.width, height: m.height, duration: m.duration } : null };
   });
   return {

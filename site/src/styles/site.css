@@ -29,27 +29,28 @@ button,input,select{font:inherit;letter-spacing:inherit;color:inherit}
 .hero.is-searching .core{position:static;height:auto;padding-top:132px}
 .results{margin-top:48px}
 .results .count{padding:0 var(--gutter);margin-bottom:18px;color:var(--ink-soft);font-size:var(--small)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:var(--gap);padding:0 var(--gutter)}
-.empty{padding:24px var(--gutter);text-align:center;font-size:var(--lead);color:var(--ink-soft)}
+.results .grid{padding:0 var(--gutter)}
+.results .empty{padding:0 var(--gutter);font-size:var(--lead);color:var(--ink-soft)}
 
-/* tiles: the words of a card without a picture never run under its name */
+/* tiles: buttons on the board look like tiles; words never run under the name, whatever the tile's size */
 .tile{container-type:size;display:block}
-.tile .name,.tile .act{z-index:1}
+button.tile{width:100%;border:0;padding:0;font:inherit;letter-spacing:inherit;color:inherit;text-align:left;cursor:pointer}
+.tile .name,.tile .act,.tile .line{z-index:1}
 .tile .name{max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;line-height:32px}
-.tile p{position:absolute;inset:18px 20px auto;padding:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
-@container (min-height:150px){.tile p{-webkit-line-clamp:3}}
-@container (min-height:174px){.tile p{-webkit-line-clamp:4}}
-.tile small{display:block;font-size:var(--small);color:var(--ink-soft);margin-bottom:6px}
-@media (hover:none){.tile .act{display:none}}
+.tile:not(.say)>p{-webkit-line-clamp:2}
+.tile.say p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+@container (min-height:150px){.tile:not(.say)>p{-webkit-line-clamp:3}}
+@container (min-height:174px){.tile:not(.say)>p,.tile.say p{-webkit-line-clamp:4}}
+@media (hover:none){.tile .act,.tile .line{display:none}}
 .rail:focus-visible{outline-offset:-2px}
 
 /* pages without a constellation */
 .page{padding:116px var(--gutter) 0}
 .page h1{max-width:18ch}
 .page .lead{margin-top:16px;max-width:56ch;color:var(--ink-soft)}
-.subnav{display:flex;flex-wrap:wrap;gap:2px;margin:24px 0 0 -20px;padding-left:20px}
-.subnav [aria-current]{background:var(--white)}
-.row>.grid+.grid{margin-top:var(--gap)}
+.page .subnav{flex-wrap:wrap;margin:24px 0 0 -20px}
+.page .subnav .pill:first-child{margin-left:0}
+.head p a{text-decoration:underline;text-underline-offset:3px}
 .index{display:grid;grid-template-columns:repeat(4,1fr);gap:28px var(--gap);padding:0 var(--gutter)}
 .index h3{font-size:var(--small);color:var(--ink-soft);margin-bottom:2px}
 .index a{display:flex;align-items:baseline;gap:8px;min-height:var(--control);align-items:center;font-size:var(--lead)}
@@ -60,8 +61,11 @@ button,input,select{font:inherit;letter-spacing:inherit;color:inherit}
 .clip .pill{position:absolute;left:12px;bottom:12px}
 .clip .i-pause,.clip.is-playing .i-play{display:none}
 .clip.is-playing .i-pause{display:block}
-.clip.type{display:grid;place-content:center;padding:8%}
-.clip.type p{font-size:clamp(22px,2.5vw,36px);line-height:1.18;letter-spacing:-0.03em;text-wrap:balance;max-width:24ch}
+.clip.type{display:grid;align-content:center;padding:8%}
+.clip.type p,.clip.say p{font-size:clamp(26px,3.5vw,50px);line-height:1.1;letter-spacing:var(--track-display);max-width:17em;text-wrap:balance}
+.clip.long p{font-size:clamp(20px,2.3vw,34px);line-height:1.16;max-width:24em}
+.clip.xlong p{font-size:clamp(16px,1.6vw,23px);line-height:1.25;letter-spacing:var(--track-text);max-width:34em}
+.results .empty{padding-top:8px}
 .info .shown{margin-top:14px;color:var(--ink-soft);font-size:var(--small)}
 .models{flex-wrap:wrap}
 .models [aria-selected="true"]{background:var(--white)}
@@ -73,10 +77,7 @@ button,input,select{font:inherit;letter-spacing:inherit;color:inherit}
 .pill.is-done .i-check{display:block}
 .pill:disabled{opacity:.45;cursor:default}
 .credit a{text-decoration:underline;text-underline-offset:3px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.fields span{display:block;margin:0 0 6px 20px;color:var(--ink-soft);font-size:var(--small)}
-.fields input,.slots select{width:100%;height:var(--control);padding:0 20px;border:0;border-radius:var(--r-pill);background:var(--white)}
-.fields input::placeholder{color:var(--ink-soft);opacity:1}
+.fields.after{margin-top:18px}
 
 /* the rest of a card: notes, sources */
 .notes{display:grid;grid-template-columns:repeat(2,1fr);gap:28px var(--gap);padding:0 var(--gutter)}
@@ -102,16 +103,21 @@ thead th{color:var(--ink-soft);font-size:var(--small)}
 tbody th{white-space:nowrap}
 tbody th small{display:block;color:var(--ink-soft);font-size:var(--small)}
 
-/* board */
-.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:18px var(--gap);padding:0 var(--gutter)}
-.slots span{display:block;margin:0 0 6px 20px;color:var(--ink-soft);font-size:var(--small)}
-.slots .pill{align-self:end;justify-self:start}
+/* board: slots are buttons, the picker for the chosen slot sits under the strip */
+.slot .tile.empty{display:grid}
+.slot .tile img{position:absolute;inset:0}
+.pick .row{margin-top:0}
+.pick .row header span{display:inline-flex}
+button.see{border:0;background:none;cursor:pointer;color:inherit;text-decoration:underline;text-underline-offset:3px}
+.pick .tile.is-on{outline:2px solid var(--ink);outline-offset:3px}
+.pick .rail{padding-top:6px;padding-bottom:6px}
+.boardnote{margin-top:40px}
 
 .foot nav{display:flex;flex-wrap:wrap;gap:0 20px;width:100%}
 .foot a{display:inline-flex;align-items:center;min-height:var(--control)}
 .foot span a{display:inline;text-decoration:underline;text-underline-offset:3px}
 
-@media (max-width:1100px){.index{grid-template-columns:repeat(3,1fr)} .slots{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:1100px){.index{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){
   .all{margin-left:auto}
   .all summary.pill{width:var(--control);padding:0;justify-content:center;background:var(--white)}
@@ -120,10 +126,9 @@ tbody th small{display:block;color:var(--ink-soft);font-size:var(--small)}
   .all .sheet{position:fixed;left:var(--gutter);right:var(--gutter);top:68px;width:auto;grid-template-columns:1fr 1fr}
   .page{padding-top:84px}
   .hero.is-searching .core{padding-top:96px}
-  .grid{grid-template-columns:1fr 1fr;gap:12px}
-  .grid .tile .name{font-size:13px;padding:0 10px}
-  .notes,.index,.slots{grid-template-columns:1fr}
+  .notes{grid-template-columns:1fr}
   .index{grid-template-columns:1fr 1fr}
-  .fields{grid-template-columns:1fr}
-  .subnav{margin-left:0;padding-left:0}
+  .slots .slot{min-width:0}
 }
+.mark{min-height:var(--control)}
+.foot nav a{min-width:var(--control)}

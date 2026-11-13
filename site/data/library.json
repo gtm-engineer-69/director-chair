@@ -12,19 +12,19 @@
    "id": "shot",
    "label": "Shot size",
    "group": "Camera",
-   "count": 13
+   "count": 16
   },
   {
    "id": "angle",
    "label": "Angle",
    "group": "Camera",
-   "count": 13
+   "count": 17
   },
   {
    "id": "move",
    "label": "Camera move",
    "group": "Camera",
-   "count": 42
+   "count": 43
   },
   {
    "id": "rig",
@@ -36,7 +36,7 @@
    "id": "lens",
    "label": "Lens",
    "group": "Camera",
-   "count": 9
+   "count": 10
   },
   {
    "id": "focus",
@@ -48,31 +48,31 @@
    "id": "composition",
    "label": "Composition",
    "group": "Frame",
-   "count": 13
+   "count": 14
   },
   {
    "id": "ratio",
    "label": "Aspect ratio",
    "group": "Frame",
-   "count": 6
+   "count": 11
   },
   {
    "id": "light",
    "label": "Light",
    "group": "Light and look",
-   "count": 11
+   "count": 22
   },
   {
    "id": "time",
    "label": "Time of day",
    "group": "Light and look",
-   "count": 4
+   "count": 12
   },
   {
    "id": "look",
    "label": "Colour look",
    "group": "Light and look",
-   "count": 13
+   "count": 14
   },
   {
    "id": "texture",
@@ -90,7 +90,7 @@
    "id": "character",
    "label": "Character",
    "group": "People and places",
-   "count": 5
+   "count": 6
   },
   {
    "id": "expression",
@@ -102,13 +102,13 @@
    "id": "setting",
    "label": "Setting",
    "group": "People and places",
-   "count": 3
+   "count": 6
   },
   {
    "id": "motion",
    "label": "Subject motion and speed",
    "group": "Motion",
-   "count": 8
+   "count": 9
   },
   {
    "id": "transition",
@@ -721,6 +721,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Restlessness will not stop",
+     "shot": null,
+     "family": "Fear",
+     "aliases": "anxious nervous worried restless tense",
      "media": {
       "video": "/media/emotion-direction/18-anxiety.mp4",
       "card": "/media/emotion-direction/18-anxiety-card.mp4",
@@ -788,6 +791,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 14",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/14-arc-right-hq.mp4",
       "card": "/media/aicameramovements/14-arc-right-hq-card.mp4",
@@ -807,6 +813,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 14B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/14b-arc-left-hq.mp4",
       "card": "/media/aicameramovements/14b-arc-left-hq-card.mp4",
@@ -878,6 +887,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Drawn toward wonder",
+     "shot": null,
+     "family": "Joy",
+     "aliases": "awe wonder amazed inspired reverent",
      "media": {
       "video": "/media/emotion-direction/15-awe.mp4",
       "card": "/media/emotion-direction/15-awe-card.mp4",
@@ -943,6 +955,60 @@
    "source": {
     "url": null,
     "note": "Own words, from the first Director Chair spec and Director Chair field notes on video prompting; pitfalls from the sources named per pitfall"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "backlight",
+   "name": "Backlight",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A glow around the edges separates the person from the background.",
+   "use_when": "Golden-hour lifestyle, hair and fabric shots, dust or steam in the air.",
+   "phrase": "the light source behind her, facing the lens, a bright outline on her hair and shoulders, her face in soft shade",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Say what lights the face too (a bounce, a window), or it falls into silhouette.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "rim-light",
+    "silhouette",
+    "golden-hour"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
    },
    "body": "",
    "shown_with": null
@@ -1060,6 +1126,11 @@
      "site": "flim",
      "url": "https://flim.ai/",
      "what": "film and ad stills to search by text or image (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
     }
    ],
    "licensed": [],
@@ -1350,6 +1421,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Attention drains away",
+     "shot": null,
+     "family": "Physical",
+     "aliases": "bored tired uninterested listless",
      "media": {
       "video": "/media/emotion-direction/12-boredom.mp4",
       "card": "/media/emotion-direction/12-boredom-card.mp4",
@@ -1561,6 +1635,71 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "width": 1280,
+     "height": 720,
+     "duration": 15
+    }
+   }
+  },
+  {
+   "slug": "camera-roll",
+   "name": "Camera roll",
+   "category": "move",
+   "group": "Specials",
+   "media": [
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The horizon turns: disorientation, dream, a world tipping over.",
+   "use_when": "Dream sequences, drunk or dizzy points of view, transitions, music videos.",
+   "phrase": "the camera rolls slowly clockwise around the lens axis, the horizon tipping a quarter turn while she stays centred",
+   "pitfalls": [
+    {
+     "text": "Give the direction and how far it turns (a quarter turn, a full turn); an open roll keeps spinning.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "dutch-angle",
+    "orbit",
+    "whip-pan"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its camera motion filter: zoom, pan, rotate, static)"
+   },
+   "body": "",
+   "shown_with": {
+    "slug": "orbit",
+    "name": "Orbit",
+    "category": "move",
+    "label": "Shown with: Orbit",
+    "site": "aicameramovements",
+    "credit": "AI Camera Movements (aicameramovements.com)",
+    "source_url": "https://aicameramovements.com/previews/hq/15-orbit-clockwise-hq.mp4",
+    "media": {
+     "video": "/media/aicameramovements/15-orbit-clockwise-hq.mp4",
+     "card": "/media/aicameramovements/15-orbit-clockwise-hq-card.mp4",
+     "poster": "/media/aicameramovements/15-orbit-clockwise-hq.jpg",
+     "card_poster": "/media/aicameramovements/15-orbit-clockwise-hq-card.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -2050,7 +2189,13 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -2103,6 +2248,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 22",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/22-chase-shot-hq.mp4",
       "card": "/media/aicameramovements/22-chase-shot-hq-card.mp4",
@@ -2171,6 +2319,67 @@
    },
    "body": "",
    "shown_with": null
+  },
+  {
+   "slug": "chest-level",
+   "name": "Chest level",
+   "category": "angle",
+   "group": "Height",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Close to eye level but a hair lower, so the person reads as present and a little taller.",
+   "use_when": "Interviews, talking heads, handheld documentary work.",
+   "phrase": "camera at chest height, looking straight at him, the lens a hand below his eye line",
+   "pitfalls": [
+    {
+     "text": "Angles given in degrees are often ignored. Say where the lens sits against the body (at her knee, at her hip) instead.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "eye-level",
+    "hip-level",
+    "handheld-shot"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+   },
+   "body": "",
+   "shown_with": {
+    "slug": "handheld-shot",
+    "name": "Handheld",
+    "category": "move",
+    "label": "Shown with: Handheld",
+    "site": "aicameramovements",
+    "credit": "AI Camera Movements (aicameramovements.com)",
+    "source_url": "https://aicameramovements.com/previews/hq/23-handheld-shot-hq.mp4",
+    "media": {
+     "video": "/media/aicameramovements/23-handheld-shot-hq.mp4",
+     "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
+     "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
+     "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "width": 1280,
+     "height": 720,
+     "duration": 15
+    }
+   }
   },
   {
    "slug": "chromatic-hit",
@@ -2283,6 +2492,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -2460,6 +2679,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Meaning will not settle",
+     "shot": null,
+     "family": "Surprise",
+     "aliases": "confused puzzled uncertain lost",
      "media": {
       "video": "/media/emotion-direction/13-confusion.mp4",
       "card": "/media/emotion-direction/13-confusion-card.mp4",
@@ -2666,7 +2888,18 @@
      "checked": "2025-12-08"
     }
    ],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -2725,6 +2958,9 @@
      "group": "Drone/Crane",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 25B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/25b-crane-down-hq.mp4",
       "card": "/media/aicameramovements/25b-crane-down-hq-card.mp4",
@@ -2794,6 +3030,9 @@
      "group": "Drone/Crane",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 25",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/25-crane-up-hq.mp4",
       "card": "/media/aicameramovements/25-crane-up-hq-card.mp4",
@@ -2864,6 +3103,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 07A",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/07a-crash-zoom-in-v2-hq.mp4",
       "card": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.mp4",
@@ -2883,6 +3125,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 07B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/07b-crash-zoom-out-v2-hq.mp4",
       "card": "/media/aicameramovements/07b-crash-zoom-out-v2-hq-card.mp4",
@@ -3001,6 +3246,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Composure collapses",
+     "shot": null,
+     "family": "Sadness",
+     "aliases": "cry sob grief devastated tears",
      "media": {
       "video": "/media/emotion-direction/06-crying.mp4",
       "card": "/media/emotion-direction/06-crying-card.mp4",
@@ -3536,6 +3784,109 @@
    "shown_with": null
   },
   {
+   "slug": "dawn",
+   "name": "Dawn and sunrise",
+   "category": "time",
+   "group": "Daylight",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "First light: fresh starts, quiet, a day about to happen.",
+   "use_when": "Morning routines, running, travel, new beginnings.",
+   "phrase": "just after sunrise, low warm sun on the horizon, long soft shadows, cool blue still in the shadows, mist over the ground",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    },
+    {
+     "text": "Dawn and dusk look alike to a model; add what only mornings have (mist, dew, empty streets).",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this time of day (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this time of day (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "golden-hour",
+    "blue-hour",
+    "fog"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "day-for-night",
+   "name": "Day for night",
+   "category": "time",
+   "group": "Low light",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A night scene with the readability of daylight: the classic film night.",
+   "use_when": "Night exteriors that must stay clear, moonlit landscapes, stylised thrillers.",
+   "phrase": "a night scene shot in daylight and graded dark blue, underexposed, hard moon-like shadows, the sky deep navy, faces still readable",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this time of day (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this time of day (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "moonlight",
+    "night",
+    "blue-hour"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "deep-focus",
    "name": "Deep focus",
    "category": "focus",
@@ -3737,6 +4088,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Resolve locks in",
+     "shot": null,
+     "family": "Drive",
+     "aliases": "determined resolve focused motivated",
      "media": {
       "video": "/media/emotion-direction/16-determination.mp4",
       "card": "/media/emotion-direction/16-determination-card.mp4",
@@ -3922,6 +4276,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Full recoil",
+     "shot": null,
+     "family": "Disgust",
+     "aliases": "revolted repelled gross distaste recoil",
      "media": {
       "video": "/media/emotion-direction/05-disgust.mp4",
       "card": "/media/emotion-direction/05-disgust-card.mp4",
@@ -3994,6 +4351,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 08",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/08-dolly-in-hq.mp4",
       "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
@@ -4069,6 +4429,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 09",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/09-dolly-out-hq.mp4",
       "card": "/media/aicameramovements/09-dolly-out-hq-card.mp4",
@@ -4294,6 +4657,9 @@
      "group": "Drone/Crane",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 26B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/26b-drone-pull-back-hq.mp4",
       "card": "/media/aicameramovements/26b-drone-pull-back-hq-card.mp4",
@@ -4352,6 +4718,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aerial shot (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aerial shot (free tier, link only)"
     }
    ],
    "licensed": [
@@ -4364,6 +4740,9 @@
      "group": "Drone/Crane",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 26",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/26-drone-push-in-hq.mp4",
       "card": "/media/aicameramovements/26-drone-push-in-hq-card.mp4",
@@ -4420,7 +4799,18 @@
      "checked": "2025-12-08"
     }
    ],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -4473,6 +4863,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S4",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s4-earth-zoom-out-hq.mp4",
       "card": "/media/aicameramovements/s4-earth-zoom-out-hq-card.mp4",
@@ -5151,6 +5544,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Confidence folds inward",
+     "shot": null,
+     "family": "Social",
+     "aliases": "embarrassed awkward ashamed blushing",
      "media": {
       "video": "/media/emotion-direction/21-embarrassment.mp4",
       "card": "/media/emotion-direction/21-embarrassment-card.mp4",
@@ -5458,6 +5854,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Nothing left to give",
+     "shot": null,
+     "family": "Physical",
+     "aliases": "exhausted tired drained sleepy fatigue",
      "media": {
       "video": "/media/emotion-direction/22-exhaustion.mp4",
       "card": "/media/emotion-direction/22-exhaustion-card.mp4",
@@ -5567,6 +5966,11 @@
      "site": "flim",
      "url": "https://flim.ai/",
      "what": "film and ad stills to search by text or image (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
     }
    ],
    "licensed": [],
@@ -5615,6 +6019,11 @@
      "site": "flim",
      "url": "https://flim.ai/",
      "what": "film and ad stills to search by text or image (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
     }
    ],
    "licensed": [],
@@ -5710,6 +6119,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -5771,6 +6190,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Patience is gone",
+     "shot": null,
+     "family": "Social",
+     "aliases": "annoyed impatient dismissive sarcastic",
      "media": {
       "video": "/media/emotion-direction/08-eye-roll.mp4",
       "card": "/media/emotion-direction/08-eye-roll-card.mp4",
@@ -5952,6 +6374,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 06",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/06-fast-zoom-in-v2-hq.mp4",
       "card": "/media/aicameramovements/06-fast-zoom-in-v2-hq-card.mp4",
@@ -5971,6 +6396,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 06B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/06b-fast-zoom-out-v2-hq.mp4",
       "card": "/media/aicameramovements/06b-fast-zoom-out-v2-hq-card.mp4",
@@ -6293,6 +6721,60 @@
    "shown_with": null
   },
   {
+   "slug": "firelight",
+   "name": "Firelight",
+   "category": "light",
+   "group": "Natural",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Warm, flickering, intimate light that moves on the faces.",
+   "use_when": "Campfires, candles, fireplaces, cosy winter, survival stories.",
+   "phrase": "lit only by a campfire in front of them, warm orange light flickering on their faces, the night behind them dark",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "In video, say the light flickers; a still fire looks like a lamp.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "practical-light",
+    "underlight",
+    "low-key-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "first-person-walk",
    "name": "First-person walk",
    "category": "move",
@@ -6329,6 +6811,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S1",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s1-first-person-view-hq.mp4",
       "card": "/media/aicameramovements/s1-first-person-view-hq-card.mp4",
@@ -6354,6 +6839,55 @@
     "note": "Move names and the seven groups from aicameramovements.com (names and structure only); behaviour and numbers in our own words from Director Chair field notes on video prompting and the first Director Chair spec"
    },
    "body": "## Move card\n\n- **Camera:** moves forward at eye height as the person\n- **Pace:** walking pace\n- **Keep:** the person's hands or body edges at the bottom of the frame\n- **Ends:** at the next thing they will touch",
+   "shown_with": null
+  },
+  {
+   "slug": "fisheye-lens",
+   "name": "Fisheye lens",
+   "category": "lens",
+   "group": "Special",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Bent lines and a huge field of view: playful, skate, music video, surveillance.",
+   "use_when": "Skate and street culture, music videos, comedy close-ups, peephole views.",
+   "phrase": "a fisheye lens, the edges of the frame curving strongly, the face close to the lens and bulging, the whole room visible around her",
+   "pitfalls": [
+    {
+     "text": "A fisheye bends straight lines at the edges; keep important text and logos in the centre.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lens (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lens (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ultra-wide-lens",
+    "action-cam-rig",
+    "wide-lens"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (lens size Ultra Wide / Fisheye) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -6448,6 +6982,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Playful restraint",
+     "shot": null,
+     "family": "Social",
+     "aliases": "flirty playful charming half smile",
      "media": {
       "video": "/media/emotion-direction/10-flirtation.mp4",
       "card": "/media/emotion-direction/10-flirtation-card.mp4",
@@ -6471,6 +7008,109 @@
     "note": "Families, intensities and emotion names from Emotion Direction (names and structure only, read 13 Oct 2026); the directions are our own words in its grammar: body parts in the order they move, ending on what holds. Rules from Director Chair field notes on video prompting"
    },
    "body": "## Three intensities\n\n- **Subtle:** a look held a moment longer than normal, a slow blink\n- **Medium:** the chin dips, the gaze comes back with one slow deliberate blink, a small warm smile grows from one corner of the mouth, the eye contact does not break\n- **Explosive:** a laugh with the head turned away and the eyes coming back, the fingers touch the hair, a step closer",
+   "shown_with": null
+  },
+  {
+   "slug": "fluorescent-light",
+   "name": "Fluorescent light",
+   "category": "light",
+   "group": "Studio",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Flat green-white overhead light: institutional, tired, uneasy.",
+   "use_when": "Offices, hospitals, night shops, corridors, a story about burnout.",
+   "phrase": "long fluorescent tubes in the ceiling, flat greenish white light from above, slightly sickly skin tones, hard reflections on the floor",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "top-light",
+    "mixed-light",
+    "practical-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "fog",
+   "name": "Fog and mist",
+   "category": "time",
+   "group": "Daylight",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Depth fades into white; the world feels hushed or uncertain.",
+   "use_when": "Mystery, morning rituals, landscapes, a figure appearing out of nowhere.",
+   "phrase": "thick morning fog, the trees ten metres back fading to pale grey, the far background gone completely",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    },
+    {
+     "text": "Say how far one can see; fog without a distance comes back as a light haze.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this weather (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this weather (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "volumetric-light",
+    "overcast-light",
+    "backlight"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -6515,6 +7155,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 17",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq.mp4",
       "card": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card.mp4",
@@ -7306,6 +7949,60 @@
     "url": null,
     "note": "Label structure from Camera Control (aicameracontrol.com), its framing label read on 13 Oct 2026 by placing the subject in the 3D stage"
    },
+   "body": "## Values the Camera Control stage uses\n\nThe stage reads the framing off the 3D scene and writes it into its prompt. Its values, in our words:\n\n- **Size**, from how much of the frame the person fills: extreme close-up, close-up, medium close-up, medium, medium-wide, wide, extreme wide. Tighter sizes are paired with more skin detail and shallower focus, wider ones with deep focus.\n- **Side**: front, front three-quarter (left or right), profile (left or right), rear three-quarter (left or right), back.\n- **Height**: ground level, knee level, hip level, chest level, eye level, high angle, overhead.\n- **Lens**: a vertical field of view from 14 to 90 degrees, written as the nearest of 14, 18, 24, 28, 35, 50, 85, 100 or 135mm.\n- **Presets**: medium, wide, close-up, low angle, high angle, over the shoulder, two shot.\n- **Moves** (video): static, push in, pull out, pan, tilt, tracking, orbit, crane, handheld, crash zoom, dolly zoom, whip pan, aerial, or your own.\n- **Staging**: one or two people, each placed left or right, nearer or further, and turned; a pose per person; a rule-of-thirds overlay; a shot view and a plan view from above.\n- **Sheets**: a character sheet or an environment sheet can stand in for the written subject and place.",
+   "shown_with": null
+  },
+  {
+   "slug": "front-view",
+   "name": "Front view",
+   "category": "angle",
+   "group": "Viewpoint",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Face to face: direct, confrontational or honest.",
+   "use_when": "Direct address, mugshot-style portraits, symmetrical frames, the moment someone turns to face the viewer.",
+   "phrase": "seen straight from the front, her face and chest square to the camera, both ears equally visible",
+   "pitfalls": [
+    {
+     "text": "A front view flattens the face; turn the body a few degrees or light it from the side when the shape of the face matters.",
+     "evidence": "film-craft",
+     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this view (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this view (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "three-quarter-view",
+    "profile-shot",
+    "centred-symmetry"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
    "body": "",
    "shown_with": null
   },
@@ -7352,6 +8049,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Effort turns to defeat",
+     "shot": null,
+     "family": "Anger",
+     "aliases": "frustrated defeated annoyed exasperated",
      "media": {
       "video": "/media/emotion-direction/17-frustration.mp4",
       "card": "/media/emotion-direction/17-frustration-card.mp4",
@@ -7398,7 +8098,18 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -7413,6 +8124,55 @@
     "note": "Own words, from the first Director Chair spec and Director Chair field notes on video prompting; pitfalls from the sources named per pitfall"
    },
    "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "genre-as-a-look",
+   "name": "Genre as a look",
+   "category": "look",
+   "group": "How to use",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A genre brings a whole visual grammar the viewer already knows.",
+   "use_when": "Briefing a look by reference: thriller, horror, western, sci-fi, noir, romance, music video.",
+   "phrase": "the visual grammar of a western: wide dusty exteriors, hard sun, low angles on the riders, warm brown grade",
+   "pitfalls": [
+    {
+     "text": "The genre word alone gives a cliche; translate it into light, lens, colour and framing, then drop the word.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this genre (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this genre (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "global-look-block",
+    "guide-look-from-film-still",
+    "black-and-white-noir"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (genre and type filters)"
+   },
+   "body": "## Translations to start from\n\n- **Thriller:** low-key side light, cold grade, longer lenses, tight frames\n- **Horror:** underlight or darkness, wide lens close to the face, long holds\n- **Western:** hard sun, wide exteriors, low angles, warm brown grade\n- **Sci-fi:** clean symmetry, cool practical light, scale against a person\n- **Romance:** soft backlight, warm grade, shallow focus\n- **Comedy:** high-key, wide enough to see the body, eye level\n- **Music video:** coloured light, fast moves, bold framing\n\nThe sites also file stills by type (film, series, ad, music video, documentary) and release year; search there by genre and look at the frames, then write the translation.",
    "shown_with": null
   },
   {
@@ -7699,6 +8459,55 @@
      "duration": 15
     }
    }
+  },
+  {
+   "slug": "group-shot",
+   "name": "Group shot",
+   "category": "shot",
+   "group": "People",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A team, a family or a crowd reads as one body.",
+   "use_when": "Team pages, events, community proof, crowd energy.",
+   "phrase": "a group of five standing in a loose line, all faces visible and in focus, the camera at eye level a few metres back",
+   "pitfalls": [
+    {
+     "text": "Give the number of people and how they stand; more than about five tends to come back with merged hands and faces, so check every face before using it.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "two-shot",
+    "wide-shot",
+    "deep-focus"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (the Characters filter counts people)"
+   },
+   "body": "",
+   "shown_with": null
   },
   {
    "slug": "guide-gpt-image",
@@ -8066,6 +8875,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "The truth weighs down",
+     "shot": null,
+     "family": "Sadness",
+     "aliases": "guilty remorse regret ashamed sorry",
      "media": {
       "video": "/media/emotion-direction/20-guilt.mp4",
       "card": "/media/emotion-direction/20-guilt-card.mp4",
@@ -8169,6 +8981,9 @@
      "group": "Human Camera",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 23",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/23-handheld-shot-hq.mp4",
       "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
@@ -8240,6 +9055,60 @@
    "shown_with": null
   },
   {
+   "slug": "hard-light",
+   "name": "Hard light",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Sharp-edged shadows and texture: tough, sunny, graphic.",
+   "use_when": "Sport, summer, streetwear, anything that should feel raw or bold.",
+   "phrase": "a small hard light source, direct sun or a bare lamp, casting crisp-edged shadows across her face and the wall",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Hard light shows every skin flaw; on faces, keep it for looks that want grit.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "soft-light",
+    "high-noon",
+    "low-key-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "helicopter-shot",
    "name": "Helicopter shot",
    "category": "move",
@@ -8264,6 +9133,16 @@
      "site": "aicameramovements",
      "url": "https://aicameramovements.com/",
      "what": "a looping example clip of this move and a free prompt card (link only)"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aerial shot (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aerial shot (free tier, link only)"
     }
    ],
    "licensed": [
@@ -8276,6 +9155,9 @@
      "group": "Drone/Crane",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 27",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/27-helicopter-shot-hq.mp4",
       "card": "/media/aicameramovements/27-helicopter-shot-hq-card.mp4",
@@ -8336,6 +9218,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -8397,6 +9289,55 @@
    "shown_with": null
   },
   {
+   "slug": "high-key-light",
+   "name": "High-key light",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Bright, even, nearly shadowless: clean, optimistic, commercial.",
+   "use_when": "Product pages, SaaS explainers, beauty, comedy.",
+   "phrase": "a bright white set lit evenly from the front and both sides, almost no shadows, the background near white",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "low-key-light",
+    "soft-light",
+    "look-commercial"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its brightness filter)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "high-noon",
    "name": "High noon",
    "category": "time",
@@ -8446,6 +9387,50 @@
    "source": {
     "url": null,
     "note": "The first Director Chair spec, own words"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "hip-level",
+   "name": "Hip level",
+   "category": "angle",
+   "group": "Height",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A grounded, slightly low view that puts the hands and the body language in play.",
+   "use_when": "Standoffs, people at work with their hands, cowboy-framed walk-ups.",
+   "phrase": "camera at hip height, level or tilted a touch upward, her hands and belt line in the frame",
+   "pitfalls": [
+    {
+     "text": "Angles given in degrees are often ignored. Say where the lens sits against the body (at her knee, at her hip) instead.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "cowboy-shot",
+    "knee-level",
+    "chest-level"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
    },
    "body": "",
    "shown_with": null
@@ -8789,6 +9774,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S3",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s3-infinite-zoom-hq.mp4",
       "card": "/media/aicameramovements/s3-infinite-zoom-hq-card.mp4",
@@ -8926,7 +9914,18 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -8938,6 +9937,55 @@
    "source": {
     "url": null,
     "note": "Own words, from the first Director Chair spec and Director Chair field notes on video prompting; pitfalls from the sources named per pitfall"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "interior-exterior",
+   "name": "Interior or exterior",
+   "category": "setting",
+   "group": "Building a place",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The first fact of any scene: inside or outside decides where the light comes from.",
+   "use_when": "The opening of every scene line, the way a script slugline does it.",
+   "phrase": "interior, a small kitchen at night, the only light from the cooker hood",
+   "pitfalls": [
+    {
+     "text": "State inside or outside first, then the light source that belongs to it; a model otherwise lights an interior like a sunny day.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this setting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this setting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "location-plate",
+    "practical-light",
+    "window-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
    },
    "body": "",
    "shown_with": null
@@ -9073,6 +10121,55 @@
      "duration": 15
     }
    }
+  },
+  {
+   "slug": "knee-level",
+   "name": "Knee level",
+   "category": "angle",
+   "group": "Height",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The person grows taller than they are, without the drama of a floor shot.",
+   "use_when": "Heroic product or founder shots, sport, someone walking toward the lens.",
+   "phrase": "camera at knee height, the lens tilted slightly up at her, the ceiling or sky edging into the top of the frame",
+   "pitfalls": [
+    {
+     "text": "Angles given in degrees are often ignored. Say where the lens sits against the body (at her knee, at her hip) instead.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Knee level looks slightly up; ground level looks along the floor. Name which one.",
+     "evidence": "film-craft",
+     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ground-level",
+    "low-angle",
+    "hip-level"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+   },
+   "body": "",
+   "shown_with": null
   },
   {
    "slug": "kodak-portra-400",
@@ -9259,6 +10356,55 @@
    "shown_with": null
   },
   {
+   "slug": "landscape-setting",
+   "name": "Landscape as the setting",
+   "category": "setting",
+   "group": "Building a place",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The place does half the storytelling: scale, isolation, adventure.",
+   "use_when": "Outdoor brands, travel, cars, any shot where the place is the point.",
+   "phrase": "a slot canyon, smooth red sandstone walls rising on both sides, a thin beam of sun reaching the sandy floor",
+   "pitfalls": [
+    {
+     "text": "Name the landform, the ground under the feet and the light on it; a bare place name comes back as a postcard.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this setting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this setting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "extreme-wide-shot",
+    "location-plate",
+    "scale-against-person"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its environment presets)"
+   },
+   "body": "## Landforms to name\n\nCity street, village, mountain, jungle, swamp, beach, rocky coast, redwood forest, cave, canyon, slot canyon, rocky desert, sand dunes, savanna, an overgrown or abandoned place.",
+   "shown_with": null
+  },
+  {
    "slug": "late-reactions",
    "name": "Reactions arrive late",
    "category": "expression",
@@ -9337,6 +10483,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Laughter breaks loose",
+     "shot": null,
+     "family": "Joy",
+     "aliases": "happy laugh excited amusement joyful",
      "media": {
       "video": "/media/emotion-direction/01-joy-laughter.mp4",
       "card": "/media/emotion-direction/01-joy-laughter-card.mp4",
@@ -9578,6 +10727,11 @@
      "site": "flim",
      "url": "https://flim.ai/",
      "what": "film and ad stills to search by text or image (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
     }
    ],
    "licensed": [],
@@ -9594,6 +10748,72 @@
    },
    "body": "",
    "shown_with": null
+  },
+  {
+   "slug": "long-exposure",
+   "name": "Long exposure",
+   "category": "motion",
+   "group": "Speed",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Moving things smear into trails while the still things stay sharp.",
+   "use_when": "Night city stills, light trails, waterfalls, busy crowds around a still person.",
+   "phrase": "a long exposure from a tripod, car lights stretched into red and white lines, the moving crowd blurred, she stands sharp in the middle",
+   "pitfalls": [
+    {
+     "text": "Say what moves (blurred) and what holds still (sharp); without that the whole frame blurs.",
+     "evidence": "film-craft",
+     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this look (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this look (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "time-lapse",
+    "what-moves-what-stays",
+    "night"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its long-exposure preset)"
+   },
+   "body": "",
+   "shown_with": {
+    "slug": "time-lapse",
+    "name": "Time-lapse",
+    "category": "motion",
+    "label": "Shown with: Time-lapse",
+    "site": "aicameramovements",
+    "credit": "AI Camera Movements (aicameramovements.com)",
+    "source_url": "https://aicameramovements.com/previews/hq/s5-time-lapse-hq.mp4",
+    "media": {
+     "video": "/media/aicameramovements/s5-time-lapse-hq.mp4",
+     "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
+     "poster": "/media/aicameramovements/s5-time-lapse-hq.jpg",
+     "card_poster": "/media/aicameramovements/s5-time-lapse-hq-card.jpg",
+     "width": 1280,
+     "height": 720,
+     "duration": 15
+    }
+   }
   },
   {
    "slug": "long-form-first",
@@ -10364,6 +11584,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -10467,6 +11697,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 20",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/20-low-tracking-v2-hq.mp4",
       "card": "/media/aicameramovements/20-low-tracking-v2-hq-card.mp4",
@@ -10732,7 +11965,23 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -10781,6 +12030,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -10820,7 +12079,23 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -10866,6 +12141,114 @@
    "source": {
     "url": null,
     "note": "Own words from the Director Chair hook framework (our 2026 synthesis of @marco.thecreative's TikTok series, OpusClip's hook formulas, a Brandefy article, Meta retention research and a Gemini research report)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "mixed-light",
+   "name": "Mixed light",
+   "category": "light",
+   "group": "Colour",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Warm and cool sources meet in one frame: real, lived-in, urban.",
+   "use_when": "Night streets, kitchens at dusk, offices with screens, anything that should feel observed rather than staged.",
+   "phrase": "warm tungsten light from a lamp on her left, cool blue daylight from the window on her right, the two colours meeting on her face",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Name which source is warm and which is cool, and where each falls; otherwise the model averages them into one grey tone.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "practical-light",
+    "window-light",
+    "neon-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "moonlight",
+   "name": "Moonlight",
+   "category": "light",
+   "group": "Natural",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Cool, low, quiet night light where shapes still read.",
+   "use_when": "Night exteriors, romance, suspense, a figure in a field.",
+   "phrase": "cool blue moonlight from high on her right, soft shadows, the landscape visible in dim silver, the sky dark blue not black",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Real night is black. Ask for dim blue light with visible shapes, the way films fake it.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "night",
+    "day-for-night",
+    "blue-hour"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
    },
    "body": "",
    "shown_with": null
@@ -11262,6 +12645,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Smile without warmth",
+     "shot": null,
+     "family": "Social",
+     "aliases": "nervous fake smile strained awkward masking",
      "media": {
       "video": "/media/emotion-direction/25-nervous-fake-smile.mp4",
       "card": "/media/emotion-direction/25-nervous-fake-smile-card.mp4",
@@ -11801,6 +13187,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 15",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/15-orbit-clockwise-hq.mp4",
       "card": "/media/aicameramovements/15-orbit-clockwise-hq-card.mp4",
@@ -11820,6 +13209,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 15B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/15b-orbit-counterclockwise-hq.mp4",
       "card": "/media/aicameramovements/15b-orbit-counterclockwise-hq-card.mp4",
@@ -11919,6 +13311,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -11933,6 +13335,55 @@
    "source": {
     "url": null,
     "note": "Own words, from the first Director Chair spec and Director Chair field notes on video prompting; pitfalls from the sources named per pitfall"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "overcast-light",
+   "name": "Overcast",
+   "category": "time",
+   "group": "Daylight",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Soft, shadowless grey daylight: calm, honest, a bit melancholic.",
+   "use_when": "Documentary, Nordic and minimal looks, skin and product detail without harsh shadows.",
+   "phrase": "a fully overcast sky, soft even daylight from above, no hard shadows, muted colours",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this weather and light (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this weather and light (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "soft-light",
+    "high-noon",
+    "fog"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
    },
    "body": "",
    "shown_with": null
@@ -12075,6 +13526,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Sharp jolt",
+     "shot": null,
+     "family": "Physical",
+     "aliases": "pain hurt wince grimace jolt",
      "media": {
       "video": "/media/emotion-direction/07-pain-wince.mp4",
       "card": "/media/emotion-direction/07-pain-wince-card.mp4",
@@ -12135,6 +13589,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -12147,6 +13611,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 02",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/02-pan-right-hq.mp4",
       "card": "/media/aicameramovements/02-pan-right-hq-card.mp4",
@@ -12166,6 +13633,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 02B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/2b-pan-left-hq.mp4",
       "card": "/media/aicameramovements/2b-pan-left-hq-card.mp4",
@@ -12232,6 +13702,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S6",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s6-pass-through-objects-hq.mp4",
       "card": "/media/aicameramovements/s6-pass-through-objects-hq-card.mp4",
@@ -12330,6 +13803,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 11A",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/11a-pedestal-up-hq.mp4",
       "card": "/media/aicameramovements/11a-pedestal-up-hq-card.mp4",
@@ -12349,6 +13825,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 11B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/11b-pedestal-down-hq.mp4",
       "card": "/media/aicameramovements/11b-pedestal-down-hq-card.mp4",
@@ -12375,6 +13854,60 @@
     "note": "Move names and the seven groups from aicameramovements.com (names and structure only); behaviour and numbers in our own words from Director Chair field notes on video prompting and the first Director Chair spec"
    },
    "body": "## Move card\n\n- **Camera:** rises or sinks straight up or down\n- **Pace:** steady\n- **Keep:** the lens level, not tilting\n- **Ends:** the new height clearly readable",
+   "shown_with": null
+  },
+  {
+   "slug": "period-setting",
+   "name": "Period setting",
+   "category": "setting",
+   "group": "Building a place",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A decade read at a glance: clothes, cars, signs and film colour.",
+   "use_when": "Retro campaigns, flashbacks, anniversary films.",
+   "phrase": "the 1970s: brown and orange interiors, wide collars, a boxy car outside, warm faded colour",
+   "pitfalls": [
+    {
+     "text": "Name three objects of the period and the film look of the time; the decade alone gives a costume party.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Check every sign and screen for anachronisms before use.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this period (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this period (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "look-warm-nostalgia",
+    "film-35mm",
+    "vhs-tape"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (time period) and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (release year)"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -12645,6 +14178,55 @@
    "shown_with": null
   },
   {
+   "slug": "pose-in-the-blocking",
+   "name": "Body pose in the blocking",
+   "category": "character",
+   "group": "Prompt blocks",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The body tells the story before the face does.",
+   "use_when": "Any shot where the stance matters: alert, crouched, kneeling, fallen, asleep, braced to fight, slumped.",
+   "phrase": "she kneels on one knee, her weight on the back foot, both hands resting on the raised knee",
+   "pitfalls": [
+    {
+     "text": "Write the pose as the parts of the body and where the weight sits, not as a mood word.",
+     "evidence": "film-craft",
+     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    },
+    {
+     "text": "If a posed blocking frame is attached, say the pose must match it; the model otherwise keeps its own default stance.",
+     "evidence": "practitioner",
+     "source": "Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "guide-shot-from-first-frame",
+    "framing-label",
+    "emotion-as-behaviour"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Camera Control (aicameracontrol.com), its public app bundle read on 13 Nov 2026 (names and values only)"
+   },
+   "body": "## Stances to start from\n\n- **Alert:** standing, weight forward, head up, ready to move\n- **Crouched:** low to the ground, one hand on the floor\n- **Kneeling:** down on one knee\n- **Fallen:** lying where they dropped\n- **Asleep:** lying down, the body loose\n- **Braced:** fists up, feet apart\n- **Slumped:** head lowered, shoulders dropped",
+   "shown_with": null
+  },
+  {
    "slug": "pov-phone-scroll",
    "name": "POV phone scroll",
    "category": "hook",
@@ -12713,7 +14295,18 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -13577,6 +15170,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Satisfaction held quietly",
+     "shot": null,
+     "family": "Drive",
+     "aliases": "proud satisfied achievement confidence",
      "media": {
       "video": "/media/emotion-direction/24-pride.mp4",
       "card": "/media/emotion-direction/24-pride-card.mp4",
@@ -13628,6 +15224,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -13869,6 +15475,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 13",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/13-push-past-pass-by-shot-hq.mp4",
       "card": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card.mp4",
@@ -13974,6 +15583,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Control breaks open",
+     "shot": null,
+     "family": "Anger",
+     "aliases": "furious explosive mad anger snarl",
      "media": {
       "video": "/media/emotion-direction/04-rage.mp4",
       "card": "/media/emotion-direction/04-rage-card.mp4",
@@ -13997,6 +15609,60 @@
     "note": "Families, intensities and emotion names from Emotion Direction (names and structure only, read 13 Oct 2026); the directions are our own words in its grammar: body parts in the order they move, ending on what holds. Rules from Director Chair field notes on video prompting"
    },
    "body": "## Three intensities\n\n- **Subtle:** the jaw locks, the nostrils widen, the stare hardens without a blink\n- **Medium:** the brows drive down and in, the upper lip lifts off the teeth, the nostrils flare, the tendons in the neck stand out, the head pushes forward, hard breaths through the nose while the snarl holds\n- **Explosive:** a shout with the whole body, the fists come up, the face red, spit on the breath, the chest heaving between bursts",
+   "shown_with": null
+  },
+  {
+   "slug": "rain",
+   "name": "Rain",
+   "category": "time",
+   "group": "Low light",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Wet surfaces, reflections and drops: drama, longing or grit.",
+   "use_when": "Night city, breakups, sports in bad weather, cosy window scenes.",
+   "phrase": "steady rain, wet asphalt reflecting the street lights, drops visible against a dark background, her hair and coat wet",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    },
+    {
+     "text": "Rain shows against a dark background with a light behind it; without backlight it disappears.",
+     "evidence": "film-craft",
+     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this weather (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this weather (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "backlight",
+    "night",
+    "neon-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -14026,7 +15692,18 @@
      "checked": "2025-12-08"
     }
    ],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -14037,6 +15714,102 @@
    "source": {
     "url": null,
     "note": "The first Director Chair spec, own words"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "ratio-1-43",
+   "name": "1.43:1 (IMAX)",
+   "category": "ratio",
+   "group": "Cinema",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A tall, immersive cinema frame: scale and height.",
+   "use_when": "Vertical scale (towers, rockets, mountains) in a frame that is still landscape.",
+   "phrase": "1.43:1 frame, taller than 16:9, the subject filling the height",
+   "pitfalls": [
+    {
+     "text": "Generate 4:3 or 16:9 with headroom and crop; few models offer the ratio itself.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ratio-4-3",
+    "ratio-16-9"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "ratio-1-85",
+   "name": "1.85:1 flat widescreen",
+   "category": "ratio",
+   "group": "Cinema",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The everyday cinema frame: a touch wider than television, calm and filmic.",
+   "use_when": "Brand films that should feel like cinema without the epic of scope.",
+   "phrase": "1.85:1 frame, thin black bars at top and bottom of a 16:9 video",
+   "pitfalls": [
+    {
+     "text": "Generate 16:9 and add the bars in the edit; asking a model for 1.85 rarely changes the frame.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ratio-16-9",
+    "ratio-21-9"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 1.66)"
    },
    "body": "",
    "shown_with": null
@@ -14069,7 +15842,18 @@
      "checked": "2025-12-08"
     }
    ],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -14081,6 +15865,102 @@
    "source": {
     "url": null,
     "note": "The first Director Chair spec, own words"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "ratio-2-00",
+   "name": "2:1 (Univisium)",
+   "category": "ratio",
+   "group": "Cinema",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Wide but not epic: a modern series and streaming frame.",
+   "use_when": "Premium social ads that letterbox on a phone, series-style brand films.",
+   "phrase": "2:1 frame, black bars at top and bottom of a 16:9 video",
+   "pitfalls": [
+    {
+     "text": "Generate 16:9 and crop to 2:1 in the edit; keep heads clear of the top eighth of the frame.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ratio-16-9",
+    "ratio-21-9"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 2.20)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "ratio-2-76",
+   "name": "2.76:1 ultra wide",
+   "category": "ratio",
+   "group": "Cinema",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A very wide band of image: landscapes and spectacle.",
+   "use_when": "Landscape heroes, website banners, a single striking epic shot.",
+   "phrase": "2.76:1 frame, a very wide band of image with thick black bars above and below",
+   "pitfalls": [
+    {
+     "text": "Only a crop from a wider generation gets here; plan the subject in the middle band.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ratio-21-9",
+    "extreme-wide-shot"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter, which also lists 3.5 and 4)"
    },
    "body": "",
    "shown_with": null
@@ -14100,7 +15980,18 @@
    "phrase": "21:9 ultrawide frame",
    "pitfalls": [],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -14142,6 +16033,55 @@
    "source": {
     "url": null,
     "note": "The first Director Chair spec, own words"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "ratio-4-3",
+   "name": "4:3 (1.33 and Academy 1.37)",
+   "category": "ratio",
+   "group": "Cinema",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The old television and early film frame: nostalgic, intimate, boxed in.",
+   "use_when": "Retro looks, archive pastiche, portraits that fill the height.",
+   "phrase": "4:3 frame, nearly square, the subject filling the height",
+   "pitfalls": [
+    {
+     "text": "Most video models do not generate 4:3; generate wider and crop, or set it in the edit with pillarbox bars.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this aspect ratio (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this aspect ratio (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "ratio-1-1",
+    "vhs-tape",
+    "film-16mm"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its ratio filter)"
    },
    "body": "",
    "shown_with": null
@@ -14447,6 +16387,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "The answer lands",
+     "shot": null,
+     "family": "Surprise",
+     "aliases": "realize epiphany recognition understanding",
      "media": {
       "video": "/media/emotion-direction/14-realization.mp4",
       "card": "/media/emotion-direction/14-realization-card.mp4",
@@ -14628,6 +16571,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Pressure finally releases",
+     "shot": null,
+     "family": "Joy",
+     "aliases": "relieved safe reassured tension release",
      "media": {
       "video": "/media/emotion-direction/23-relief.mp4",
       "card": "/media/emotion-direction/23-relief-card.mp4",
@@ -14833,6 +16779,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 18",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq.mp4",
       "card": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq-card.mp4",
@@ -15034,6 +16983,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Quiet hurt",
+     "shot": null,
+     "family": "Sadness",
+     "aliases": "sad quiet hurt sorrow downcast",
      "media": {
       "video": "/media/emotion-direction/19-sadness.mp4",
       "card": "/media/emotion-direction/19-sadness-card.mp4",
@@ -15484,6 +17436,55 @@
    "shown_with": null
   },
   {
+   "slug": "season",
+   "name": "Season",
+   "category": "time",
+   "group": "Daylight",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The time of year sets colour, clothing and mood at once.",
+   "use_when": "Seasonal campaigns, product launches tied to a time of year, a story told over a year.",
+   "phrase": "late autumn, orange and brown leaves on the wet ground, bare branches, low sun, people in coats and scarves",
+   "pitfalls": [
+    {
+     "text": "Show the season in three places (plants, light, clothing); one cue alone gets lost.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this season (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this season (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "snow",
+    "golden-hour",
+    "global-look-block"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "## Cues per season\n\n- **Spring:** fresh green, blossom, light jackets, clear soft light\n- **Summer:** high sun, saturated colour, bare arms, heat haze\n- **Autumn:** orange and brown, wet leaves, coats, low sun\n- **Winter:** bare trees, snow or frost, breath in the air, short grey days",
+   "shown_with": null
+  },
+  {
    "slug": "self-proving-claim",
    "name": "The video proves its own claim",
    "category": "hook",
@@ -15828,6 +17829,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Sudden disbelief",
+     "shot": null,
+     "family": "Surprise",
+     "aliases": "shocked surprised disbelief stunned",
      "media": {
       "video": "/media/emotion-direction/02-shock.mp4",
       "card": "/media/emotion-direction/02-shock-card.mp4",
@@ -15851,6 +17855,108 @@
     "note": "Families, intensities and emotion names from Emotion Direction (names and structure only, read 13 Oct 2026); the directions are our own words in its grammar: body parts in the order they move, ending on what holds. Rules from Director Chair field notes on video prompting"
    },
    "body": "## Three intensities\n\n- **Subtle:** the eyebrows jump and settle, a quick double blink, the lips part slightly\n- **Medium:** the eyes go wide and the brows shoot up, the mouth drops open, the head pulls back an inch, everything holds still for a beat before the first blink\n- **Explosive:** the whole body jerks back, both hands fly up near the face, the jaw hangs fully open, a frozen stare that lasts well past comfortable",
+   "shown_with": null
+  },
+  {
+   "slug": "short-siding",
+   "name": "Short siding",
+   "category": "composition",
+   "group": "Placement",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "The person looks toward the near edge of the frame: boxed in, uneasy.",
+   "use_when": "Tension, isolation, someone cornered; the deliberate opposite of giving looking room.",
+   "phrase": "she sits on the left third looking left, toward the near edge, the empty space of the frame behind her head",
+   "pitfalls": [
+    {
+     "text": "Looking room is the default: the space goes in front of the face. Break it only on purpose.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this composition (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this composition (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "rule-of-thirds",
+    "negative-space",
+    "screen-direction"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read (composition: left heavy, right heavy, balanced)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "shot-reverse-shot",
+   "name": "Shot reverse shot",
+   "category": "shot",
+   "group": "People",
+   "media": [
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A conversation the viewer sits inside, cutting between the two faces.",
+   "use_when": "Dialogue, interviews with two people, a customer and a salesperson.",
+   "phrase": "two shots of one exchange: over his shoulder onto her face, then the reverse over her shoulder onto his face, both at the same height and lens",
+   "pitfalls": [
+    {
+     "text": "Keep both cameras on the same side of the line between them, or the two people seem to look the same way.",
+     "evidence": "film-craft",
+     "source": "Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+    },
+    {
+     "text": "Generate both sides from the same start frame or reference set, or the room and the light change between them.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "over-the-shoulder-shot",
+    "screen-direction",
+    "single-shot"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only (its counter-shot preset)"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -15885,6 +17991,55 @@
    "source": {
     "url": null,
     "note": "Own words from Director Chair notes on Reel Kit (Justyn The AI Guy) (described from the frames of two clips; no result per effect was measured) and Director Chair notes on A Blender film from one request (Riley Brown, Claude Fable 5.2)"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "side-light",
+   "name": "Side light",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Half the face lit, half in shadow: shape, texture and tension.",
+   "use_when": "Serious portraits, thrillers, craft and texture close-ups.",
+   "phrase": "a single light from her left at head height, the left side of her face bright, the right side falling into shadow",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "rembrandt-light",
+    "hard-light",
+    "low-key-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
    },
    "body": "",
    "shown_with": null
@@ -15926,6 +18081,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 19",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/19-side-tracking-hq.mp4",
       "card": "/media/aicameramovements/19-side-tracking-hq-card.mp4",
@@ -16039,6 +18197,55 @@
    "shown_with": null
   },
   {
+   "slug": "single-shot",
+   "name": "Clean single",
+   "category": "shot",
+   "group": "People",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "One person alone in the frame, nobody else's shoulder in it: full attention on them.",
+   "use_when": "Interview answers, testimonials, the reaction that matters.",
+   "phrase": "a clean single of her, only her in the frame, no one else's shoulder or head visible",
+   "pitfalls": [
+    {
+     "text": "Name it clean when no foreground person may appear; a dialogue scene otherwise drifts into an over-the-shoulder.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "over-the-shoulder-shot",
+    "two-shot",
+    "medium-close-up"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read and Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "slider-shot",
    "name": "Slider",
    "category": "move",
@@ -16075,6 +18282,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 12",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/12-slider-right-hq.mp4",
       "card": "/media/aicameramovements/12-slider-right-hq-card.mp4",
@@ -16094,6 +18304,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 12B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/12b-slider-left-hq.mp4",
       "card": "/media/aicameramovements/12b-slider-left-hq-card.mp4",
@@ -16258,6 +18471,16 @@
      "site": "aicameramovements",
      "url": "https://aicameramovements.com/",
      "what": "a looping example clip of this move and a free prompt card (link only)"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -16270,6 +18493,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 05",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/05-slow-zoom-in-hq.mp4",
       "card": "/media/aicameramovements/05-slow-zoom-in-hq-card.mp4",
@@ -16323,6 +18549,16 @@
      "site": "aicameramovements",
      "url": "https://aicameramovements.com/",
      "what": "a looping example clip of this move and a free prompt card (link only)"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -16335,6 +18571,9 @@
      "group": "Zoom/Lens",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 05B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/5b-slow-zoom-out-hq.mp4",
       "card": "/media/aicameramovements/5b-slow-zoom-out-hq-card.mp4",
@@ -16405,6 +18644,9 @@
      "group": null,
      "intensity": "Medium",
      "cue": "Quiet superiority",
+     "shot": null,
+     "family": "Social",
+     "aliases": "smug gloating smirk superior proud",
      "media": {
       "video": "/media/emotion-direction/11-smug-gloating.mp4",
       "card": "/media/emotion-direction/11-smug-gloating-card.mp4",
@@ -16509,6 +18751,9 @@
      "group": "Human Camera",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 24",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/24-snorricam-v2-hq.mp4",
       "card": "/media/aicameramovements/24-snorricam-v2-hq-card.mp4",
@@ -16533,6 +18778,109 @@
     "note": "Move names and the seven groups from aicameramovements.com (names and structure only); behaviour and numbers in our own words from Director Chair field notes on video prompting and the first Director Chair spec"
    },
    "body": "## Move card\n\n- **Camera:** fixed to the subject's body, facing them\n- **Pace:** the body's own movement\n- **Keep:** the subject locked in frame while the world swings\n- **Ends:** the subject still fixed in frame",
+   "shown_with": null
+  },
+  {
+   "slug": "snow",
+   "name": "Snow",
+   "category": "time",
+   "group": "Daylight",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "A quiet, clean, cold world; sound seems to drop away.",
+   "use_when": "Winter campaigns, holidays, outdoor gear, stillness.",
+   "phrase": "light snow falling slowly, a white layer on the ground and on her shoulders, her breath visible in the cold air",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    },
+    {
+     "text": "Add the cold on the person (breath, red cheeks, snow on the shoulders); snow only in the background reads as a set.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this weather (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this weather (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "season",
+    "overcast-light",
+    "high-key-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "soft-light",
+   "name": "Soft light",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Gentle shadows that wrap around the face: calm, flattering, expensive.",
+   "use_when": "Beauty, skincare, portraits, wellness, most talking heads.",
+   "phrase": "a large diffused light source close to her, a white sheet or overcast window, shadows soft and graded on the far side of her face",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "hard-light",
+    "softbox-light",
+    "window-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
    "shown_with": null
   },
   {
@@ -17055,6 +19403,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -17067,6 +19425,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 01",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/01-static-shot-hq.mp4",
       "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
@@ -17146,6 +19507,60 @@
      "duration": 15
     }
    }
+  },
+  {
+   "slug": "storm",
+   "name": "Storm and lightning",
+   "category": "time",
+   "group": "Low light",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Wind, rain and flashes: danger and release.",
+   "use_when": "Trailers, turning points, extreme sports, dramatic product reveals.",
+   "phrase": "a dark storm, heavy rain driven sideways by the wind, a lightning flash lighting the whole street white for an instant",
+   "pitfalls": [
+    {
+     "text": "Keep one time of day and one weather for the whole job, written the same in every prompt; a mix makes cuts that do not match.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    },
+    {
+     "text": "In video, ask for one or two flashes at a given moment; constant lightning looks like a strobe.",
+     "evidence": "practitioner",
+     "source": "Director Chair field notes on video prompting"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this weather (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this weather (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "rain",
+    "night",
+    "low-key-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from Flim's filter and edit-preset vocabulary (flim.ai pages and the public app.flim.ai bundle, read 13 Nov 2026), names only"
+   },
+   "body": "",
+   "shown_with": null
   },
   {
    "slug": "studio-dolly-rig",
@@ -17243,6 +19658,9 @@
      "group": null,
      "intensity": "Subtle",
      "cue": "Something does not add up",
+     "shot": null,
+     "family": "Fear",
+     "aliases": "suspicious skeptical distrust wary",
      "media": {
       "video": "/media/emotion-direction/09-suspicion.mp4",
       "card": "/media/emotion-direction/09-suspicion-card.mp4",
@@ -17338,8 +19756,8 @@
    "licensed": [],
    "site_names": [],
    "related": [
-    "preset-ugc-one-table",
     "dolly-in",
+    "preset-ugc-one-table",
     "ground-level",
     "movement-opener"
    ],
@@ -17476,6 +19894,9 @@
      "group": null,
      "intensity": "Explosive",
      "cue": "Fear refuses to release",
+     "shot": null,
+     "family": "Fear",
+     "aliases": "scared fear panic horror terrified",
      "media": {
       "video": "/media/emotion-direction/03-terror.mp4",
       "card": "/media/emotion-direction/03-terror-card.mp4",
@@ -17781,6 +20202,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -17793,6 +20224,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 04B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/4b-tilt-down-hq.mp4",
       "card": "/media/aicameramovements/4b-tilt-down-hq-card.mp4",
@@ -17875,6 +20309,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S2",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s2-tilt-shift-hq.mp4",
       "card": "/media/aicameramovements/s2-tilt-shift-hq-card.mp4",
@@ -17931,6 +20368,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this camera move (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this camera move (free tier, link only)"
     }
    ],
    "licensed": [
@@ -17943,6 +20390,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 04",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/04-tilt-up-hq.mp4",
       "card": "/media/aicameramovements/04-tilt-up-hq-card.mp4",
@@ -18008,6 +20458,9 @@
      "group": "Specials",
      "intensity": null,
      "cue": null,
+     "shot": "Shot S5",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/s5-time-lapse-hq.mp4",
       "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
@@ -18174,7 +20627,23 @@
      "checked": "2025-12-08"
     }
    ],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
+    },
+    {
+     "site": "aicameracontrol",
+     "url": "https://aicameracontrol.com/",
+     "what": "a free 3D stage that sets this value and writes it into the prompt"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -18187,6 +20656,60 @@
    "source": {
     "url": null,
     "note": "Own words, from the first Director Chair spec and Director Chair field notes on video prompting; pitfalls from the sources named per pitfall"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
+   "slug": "top-light",
+   "name": "Top light",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Light from straight above: eyes sink into shadow, isolated and stark.",
+   "use_when": "Interrogations, lonely figures under a lamp, boxing, a single product on a table.",
+   "phrase": "one lamp directly above her head, her eye sockets in shadow, a pool of light on the floor around her",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Eyes go dark under top light; add a faint bounce from below if the eyes must read.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "high-noon",
+    "low-key-light",
+    "practical-light"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
    },
    "body": "",
    "shown_with": null
@@ -18233,6 +20756,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 16",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/16-tracking-shot-hq.mp4",
       "card": "/media/aicameramovements/16-tracking-shot-hq-card.mp4",
@@ -18350,6 +20876,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 10",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/10-truck-right-hq.mp4",
       "card": "/media/aicameramovements/10-truck-right-hq-card.mp4",
@@ -18369,6 +20898,9 @@
      "group": "Physical Moves",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 10B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/10b-truck-left-hq.mp4",
       "card": "/media/aicameramovements/10b-truck-left-hq-card.mp4",
@@ -18466,6 +20998,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this shot type (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this shot type (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -18591,6 +21133,60 @@
    "shown_with": null
   },
   {
+   "slug": "underlight",
+   "name": "Underlight",
+   "category": "light",
+   "group": "Contrast",
+   "media": [
+    "image",
+    "video"
+   ],
+   "checked": "2026-11-13",
+   "effect": "Light from below turns a face strange and threatening.",
+   "use_when": "Horror, campfire stories, a face lit by a phone or a screen in the dark.",
+   "phrase": "the only light comes from below, a phone screen in his hands lighting his chin and nose from underneath, the room dark",
+   "pitfalls": [
+    {
+     "text": "A style word for light does nothing. Name the source, where it sits against the person, and what fills the shadow side.",
+     "evidence": "measured",
+     "source": "Director Chair field notes on image prompting"
+    },
+    {
+     "text": "Give it a reason in the scene (a phone, a fire, a floor lamp); unmotivated it reads as a gimmick.",
+     "evidence": "film-craft",
+     "source": "ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+    }
+   ],
+   "per_model": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this lighting (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this lighting (free tier, link only)"
+    }
+   ],
+   "licensed": [],
+   "site_names": [],
+   "related": [
+    "low-key-light",
+    "practical-light",
+    "firelight"
+   ],
+   "rights": "own-work",
+   "evidence": "film-craft",
+   "source": {
+    "url": null,
+    "note": "Own words; the term from ShotDeck's public filter categories (lighting type, time of day, lens size, frame size, composition), from its community articles and third-party reviews read 13 Nov 2026; the filter panel itself is behind a bot check and was not read"
+   },
+   "body": "",
+   "shown_with": null
+  },
+  {
    "slug": "vector-flat-style",
    "name": "Flat vector",
    "category": "style",
@@ -18663,6 +21259,9 @@
      "group": "Dolly/Track",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 21",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/21-vehicle-tracking-hq.mp4",
       "card": "/media/aicameramovements/21-vehicle-tracking-hq-card.mp4",
@@ -19306,6 +21905,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 03",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/03-whip-pan-right-hq.mp4",
       "card": "/media/aicameramovements/03-whip-pan-right-hq-card.mp4",
@@ -19325,6 +21927,9 @@
      "group": "Pan/Tilt",
      "intensity": null,
      "cue": null,
+     "shot": "Shot 03B",
+     "family": null,
+     "aliases": [],
      "media": {
       "video": "/media/aicameramovements/3b-whip-pan-left-hq.mp4",
       "card": "/media/aicameramovements/3b-whip-pan-left-hq-card.mp4",
@@ -19517,6 +22122,16 @@
      "site": "aicameracontrol",
      "url": "https://aicameracontrol.com/",
      "what": "a free 3D stage to place the person and set the lens before you generate"
+    },
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this frame size (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this frame size (free tier, link only)"
     }
    ],
    "licensed": [],
@@ -19687,7 +22302,18 @@
     }
    ],
    "per_model": [],
-   "external_refs": [],
+   "external_refs": [
+    {
+     "site": "shotdeck",
+     "url": "https://shotdeck.com/",
+     "what": "real film examples of this angle (paid, link only)"
+    },
+    {
+     "site": "flim",
+     "url": "https://flim.ai/",
+     "what": "film, ad and music-video stills of this angle (free tier, link only)"
+    }
+   ],
    "licensed": [],
    "site_names": [],
    "related": [
@@ -19732,8 +22358,8 @@
    "licensed": [],
    "site_names": [],
    "related": [
-    "macro-lens",
     "dolly-out",
+    "macro-lens",
     "slow-zoom-out",
     "belief-shattering"
    ],

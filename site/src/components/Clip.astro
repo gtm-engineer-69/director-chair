@@ -1,14 +1,17 @@
 ---
-// The large clip of a card page. Without a clip the card's own words fill the frame.
+// The large frame of a card page: its clip, or a hook's line as a caption that lights up word by word, or the card's own words.
 import Icon from './Icon.astro';
-const { view, name, text } = Astro.props;
+const { view, name, text, say = false } = Astro.props;
 const m = view?.media;
+const size = text && text.length > 220 ? 'xlong' : text && text.length > 110 ? 'long' : '';
 ---
 {m ? (
   <div class="clip" data-clip-main>
     <video src={m.video} poster={m.poster} muted loop playsinline preload="metadata" width={m.width} height={m.height} aria-label={`${name}, reference clip`}></video>
     <button class="pill round" type="button" data-toggle aria-label="Play the clip"><Icon name="play" class="i-play" /><Icon name="pause" class="i-pause" /></button>
   </div>
+) : say ? (
+  <div class:list={['clip say play', size]} tabindex="0" aria-label={text}><p aria-hidden="true">{text.split(' ').map((w, n) => <><span class="w" style={`--i:${n}`}>{w}</span>{' '}</>)}</p></div>
 ) : (
-  <div class="clip type"><p>{text}</p></div>
+  <div class:list={['clip type', size]}><p>{text}</p></div>
 )}

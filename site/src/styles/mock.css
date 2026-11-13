@@ -86,3 +86,71 @@ h2{font-size:var(--h2);line-height:1.25;letter-spacing:-0.03em}
   .facts{grid-template-columns:1fr 1fr;gap:24px var(--gap)}
 }
 @media (prefers-reduced-motion:reduce){ *{transition:none!important;scroll-behavior:auto!important} }
+
+/* ===== round 2 additions (13 Nov): tile hover, hook tiles, hook page, category, board. Nothing above is changed. ===== */
+.tile .name,.tile .line{color:var(--ink)}
+.tile .act{background:var(--ink);color:var(--white)}
+.tile .line{position:absolute;inset:10px 10px auto 10px;padding:9px 14px 10px;border-radius:8px;background:var(--white);font-size:var(--small);line-height:1.35;opacity:0;transition:opacity var(--dur) var(--ease)}
+.tile:hover .line,.tile:focus-visible .line{opacity:1}
+.tile:focus-visible{outline-offset:3px}
+
+/* caption tile: a textual hook, the line is the picture */
+.say{background:var(--ink);color:var(--white);display:grid;place-items:center;text-align:center}
+.tile.say{padding:14px 22px 48px}
+.say p,.tile.say p{padding:0;color:var(--white);font-size:21px;line-height:1.18;letter-spacing:-0.03em;text-wrap:balance}
+@keyframes say{from{opacity:.24}to{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  .say:hover .w,.say:focus-visible .w,.say.play .w{animation:say .25s var(--ease) both;animation-delay:calc(var(--i)*110ms)}
+}
+.clip.say{padding:8%}
+.clip.say p{font-size:clamp(26px,3.5vw,50px);line-height:1.1;letter-spacing:var(--track-display);max-width:17em}
+
+/* hook prompt: two fields feed a prompt for a text model */
+.fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;margin-top:12px}
+.field{display:flex;align-items:center;gap:10px;height:48px;padding:0 20px;border-radius:var(--r-pill);background:var(--white);font-size:var(--small)}
+.field span{color:var(--ink-soft)}
+.field input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;letter-spacing:inherit;color:var(--ink)}
+.field input::placeholder{color:var(--ink-soft);opacity:1}
+.field:focus-within{outline:2px solid var(--ink);outline-offset:3px}
+.tok{color:var(--ink-soft)} .tok.set{color:var(--ink)}
+
+/* category page: one heading, a row of sub-group pills, quiet groups of uniform tiles */
+.head{padding:136px var(--gutter) 0}
+.head p{margin-top:10px;color:var(--ink-soft)}
+.subnav{display:flex;gap:2px;margin:28px calc(var(--gutter)*-1) 0;overflow-x:auto;scrollbar-width:none}
+.subnav::-webkit-scrollbar{display:none}
+.subnav .pill:first-child{margin-left:var(--gutter)} .subnav .pill:last-child{margin-right:var(--gutter)}
+.group{margin-top:64px;padding:0 var(--gutter)}
+.group h2{margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+
+/* board: eight picks as a strip, one prompt beside it */
+.board{display:grid;grid-template-columns:minmax(0,1fr) 448px;column-gap:64px;align-items:start;padding:136px var(--gutter) 0}
+.board .head{padding:0}
+.slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px var(--gap);margin-top:44px}
+.slot>span{display:block;margin-bottom:8px;color:var(--ink-soft);font-size:var(--small)}
+.slot .tile{display:block}
+.slot .tile p{padding:12px 14px;font-size:17px;line-height:1.25}
+.slot .tile .name{left:8px;bottom:8px}
+.tile.empty{display:grid;place-items:center;color:var(--ink-soft)}
+.slot.sel .tile{outline:2px solid var(--ink);outline-offset:3px}
+.board .prompt{grid-area:auto;margin-top:6px}
+.pick{margin-top:72px}
+
+@media (max-width:1100px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr))} .board{grid-template-columns:minmax(0,1fr) 380px;column-gap:32px} .slots{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:720px){
+  .tile.say{padding:12px 18px 46px} .tile.say p{font-size:18px}
+  .fields{grid-template-columns:minmax(0,1fr)}
+  .head{padding-top:92px} .group{margin-top:48px}
+  .grid{grid-template-columns:1fr 1fr;gap:10px}
+  .grid .tile .name{display:block;left:8px;bottom:8px;height:30px;line-height:30px;padding:0 12px;max-width:calc(100% - 16px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .grid .tile .line,.grid .tile .act{display:none}
+  .grid .tile p{padding:10px 12px;font-size:var(--small);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .board{grid-template-columns:minmax(0,1fr);padding-top:92px}
+  .slots{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:168px;gap:10px;margin:28px calc(var(--gutter)*-1) 0;padding:4px var(--gutter);overflow-x:auto;scrollbar-width:none}
+  .board .prompt{margin-top:36px} .pick{margin-top:48px}
+}
+/* caption tiles keep a visible action; text tiles never spill under the name */
+.tile.say .act{background:var(--white);color:var(--ink)}
+.tile:not(.say)>p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.slot .tile>p{-webkit-line-clamp:3}

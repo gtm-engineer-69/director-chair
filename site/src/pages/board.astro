@@ -1,31 +1,42 @@
 ---
 import Base from '../layouts/Base.astro';
 import Prompt from '../components/Prompt.astro';
-import { cats, inCat, models, tileOf } from '../lib/data.mjs';
+import Icon from '../components/Icon.astro';
+import { inCat, models, tileOf, clipsFirst, catOf } from '../lib/data.mjs';
 import { kindOf } from '../lib/prompt.mjs';
-// one slot per shelf whose cards go into an image or video prompt
-const slots = cats.map((cat) => ({ cat, list: inCat(cat.id).filter((i) => kindOf(i, models) === 'shot') })).filter((s) => s.list.length && !['preset', 'guide'].includes(s.cat.id));
+// one slot per part of a shot; a slot offers the cards of its shelf that go into an image or video prompt
+const parts = [['shot', 'Shot'], ['angle', 'Angle'], ['move', 'Move'], ['lens', 'Lens'], ['light', 'Light'], ['time', 'Time of day'], ['look', 'Look'], ['texture', 'Texture'], ['expression', 'Expression'], ['motion', 'Motion'], ['hook', 'Hook'], ['transition', 'Transition']]
+  .map(([id, label]) => ({ id, label, list: clipsFirst(inCat(id).filter((i) => kindOf(i, models) === 'shot')).map((i) => tileOf(i)) })).filter((p) => p.list.length);
 ---
-<Base title="Director's board: build one prompt from many cards | Director Chair" description="Pick one of each (shot, angle, move, light, look, expression, hook, transition) and get one complete prompt for your model. The address holds your board, so you can share it." path="/board">
+<Base title="Director's board: build one prompt from many cards | Director Chair" description="Pick one card for each part (shot, angle, move, light, look, expression, hook, transition) and get one complete prompt for your model. The address holds your board, so you can share it." path="/board">
   <div data-board>
-    <article class="card">
-      <div class="clip type" data-board-clip><p data-board-words>Pick one of each.</p><img alt="" hidden data-board-still /></div>
-      <div class="info">
-        <h1>Director's board</h1>
-        <p class="lead">Pick one of each below. You get one complete prompt, written for the model you choose.</p>
-        <p class="shown">The address holds your board, so you can share it.</p>
+    <div class="board">
+      <div>
+        <div class="head"><h1>Director's board</h1><p>Pick one card for each part. The prompt writes itself.</p></div>
+        <div class="slots">
+          {parts.map((p) => (
+            <div class="slot" data-slot={p.id}><span>{p.label}</span>
+              <button class="tile empty" type="button" aria-label={`Pick a ${p.label.toLowerCase()}`} aria-controls="pick" data-open={p.id}><Icon name="plus" /></button>
+            </div>
+          ))}
+        </div>
       </div>
-      <Prompt board />
-    </article>
-    <section class="row"><header><h2>The board</h2></header>
-      <form class="slots" data-slots>
-        {slots.map((s) => (
-          <label><span>{s.cat.label}</span>
-            <select name={s.cat.id} data-slot={s.cat.id}><option value="">None</option>{s.list.map((i) => <option value={i.slug} data-name={tileOf(i).name} data-src={tileOf(i).still}>{i.name}</option>)}</select>
-          </label>
-        ))}
-        <button class="pill" type="reset">Clear the board</button>
-      </form>
-    </section>
+      <Prompt board heading="Your prompt" />
+    </div>
+    <div class="pick" id="pick">
+      {parts.map((p) => (
+        <section class="row" data-picker={p.id} hidden>
+          <header><h2>Pick a {p.label.toLowerCase()}</h2><span><button class="see" type="button" data-clear={p.id}>Leave this one out</button></span></header>
+          <div class="rail">
+            {p.list.map((t) => (
+              <button class="tile" type="button" data-pick={t.slug} data-name={t.name} data-still={t.still} data-clip={t.clip || undefined}>
+                {t.still ? <img src={t.still} alt="" width="480" height="270" loading="lazy" /> : <p>{t.text}</p>}<span class="name">{t.name}</span>
+              </button>
+            ))}
+          </div>
+        </section>
+      ))}
+      <p class="fine boardnote">The address holds your board, so you can share it. <button class="see" type="button" data-reset>Clear the board</button></p>
+    </div>
   </div>
 </Base>

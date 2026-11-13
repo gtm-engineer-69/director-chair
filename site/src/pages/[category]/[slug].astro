@@ -23,7 +23,7 @@ const description = `${item.effect} ${sentence(item.use_when)} With a prompt rea
 ---
 <Base title={`${item.name}: ${cat.label.toLowerCase()} prompt for AI video | Director Chair`} description={description} path={urlOf(item)} image={own?.media.poster} twin={`${urlOf(item)}.md`}>
   <article class="card">
-    <Clip view={view} name={t.name} text={sentence(item.phrase)} />
+    <Clip view={view} name={t.name} text={t.say ? t.text : sentence(item.phrase)} say={t.say} />
     <div class="info">
       <a class="pill" href={`/${cat.id}`}><Icon name={g.icon} />{cat.plural}</a>
       <h1>{t.name}</h1>
