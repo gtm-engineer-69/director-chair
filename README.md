@@ -2,7 +2,7 @@
 
 The free, open library of video craft for AI video: https://directorchair.ai
 
-399 cards (shot sizes, angles, camera moves, lenses, light, colour looks, transitions, effects, sound, expressions, hooks, scripts, formats, presets, which model for what). Every card has prompt instructions: pick a model, get the complete prompt, paste it.
+More than 400 cards (shot sizes, angles, camera moves, lenses, light, colour looks, transitions, effects, sound, expressions, hooks, scripts, formats, presets, which model for what). Every card has prompt instructions: pick a model, get the complete prompt, paste it.
 
 No account, no paywall, no tracking.
 
