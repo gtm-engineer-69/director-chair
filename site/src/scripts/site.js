@@ -172,7 +172,7 @@ if (board && pw) {
       slot.classList.toggle('sel', open === id); b.classList.toggle('empty', !card);
       b.innerHTML = !card ? empty : card.dataset.still ? `<img src="${esc(card.dataset.still)}" alt=""><span class="name">${esc(card.dataset.name)}</span>` : `<p>${esc(card.dataset.name)}</p>`;
       if (card?.dataset.clip) b.dataset.clip = card.dataset.clip; else delete b.dataset.clip;
-      b.setAttribute('aria-label', card ? `${slot.firstElementChild.textContent}: ${card.dataset.name}. Change it` : `Pick a ${slot.firstElementChild.textContent.toLowerCase()}`);
+      b.setAttribute('aria-label', card ? `${slot.firstElementChild.textContent}: ${card.dataset.name}. Change it` : `Pick ${/^[aeiou]/i.test(slot.firstElementChild.textContent) ? "an" : "a"} ${slot.firstElementChild.textContent.toLowerCase()}`);
       b.setAttribute('aria-expanded', String(open === id));
       $$('[data-pick]', picker(id)).forEach((t) => { const on = t === card; t.classList.toggle('is-on', on); t.setAttribute('aria-pressed', String(on)); });
       picker(id).hidden = open !== id;

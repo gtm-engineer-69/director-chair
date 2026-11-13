@@ -179,3 +179,6 @@ td.date{white-space:nowrap}
 .page .subnav{margin-left:0}
 /* on a phone, Copy stays in reach while the prompt panel is on screen */
 @media (max-width:720px){ .panel .acts{position:sticky;bottom:0;margin:20px -24px -20px;padding:12px 24px 16px;background:var(--white);border-radius:0 0 var(--r-plate) var(--r-plate)} }
+.table a{padding:4px 0}
+/* caption tiles centre their line, as drawn (".tile" set display:block after the mock) */
+.tile.say{display:grid;place-items:center}

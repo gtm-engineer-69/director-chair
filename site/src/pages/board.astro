@@ -16,7 +16,7 @@ const parts = [['shot', 'Shot'], ['angle', 'Angle'], ['move', 'Move'], ['lens', 
         <div class="slots">
           {parts.map((p) => (
             <div class="slot" data-slot={p.id}><span>{p.label}</span>
-              <button class="tile empty" type="button" aria-label={`Pick a ${p.label.toLowerCase()}`} aria-controls="pick" data-open={p.id}><Icon name="plus" /></button>
+              <button class="tile empty" type="button" aria-label={`Pick ${/^[aeiou]/i.test(p.label) ? "an" : "a"} ${p.label.toLowerCase()}`} aria-controls="pick" data-open={p.id}><Icon name="plus" /></button>
             </div>
           ))}
         </div>
@@ -26,7 +26,7 @@ const parts = [['shot', 'Shot'], ['angle', 'Angle'], ['move', 'Move'], ['lens', 
     <div class="pick" id="pick">
       {parts.map((p) => (
         <section class="row" data-picker={p.id} hidden>
-          <header><h2>Pick a {p.label.toLowerCase()}</h2><span><button class="see" type="button" data-clear={p.id}>Leave this one out</button></span></header>
+          <header><h2>Pick {/^[aeiou]/i.test(p.label) ? "an" : "a"} {p.label.toLowerCase()}</h2><span><button class="see" type="button" data-clear={p.id}>Leave this one out</button></span></header>
           <div class="rail">
             {p.list.map((t) => (
               <button class="tile" type="button" data-pick={t.slug} data-name={t.name} data-still={t.still} data-clip={t.clip || undefined}>
