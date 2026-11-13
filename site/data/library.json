@@ -468,9 +468,9 @@
    "body": "",
    "shown_with": {
     "slug": "snorricam",
-    "name": "Body-mounted (snorricam)",
+    "name": "Snorricam (body-mounted camera)",
     "category": "move",
-    "label": "Shown with: Body-mounted (snorricam)",
+    "label": "Shown with: Snorricam (body-mounted camera)",
     "site": "aicameramovements",
     "credit": "AI Camera Movements (aicameramovements.com)",
     "source_url": "https://aicameramovements.com/previews/hq/24-snorricam-v2-hq.mp4",
@@ -1021,7 +1021,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Challenges something the viewer is sure of.",
    "use_when": "Category education, contrarian founders.",
    "phrase": "say the common belief, then contradict it with one fact: everyone says you need a film crew; we shot this on one phone",
@@ -1036,7 +1036,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "myth-exposure",
+    "confession-hook",
+    "contrast-hook"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -1508,7 +1512,7 @@
    "checked": "2026-11-13",
    "effect": "A polished, flattering face for a talking head.",
    "use_when": "Founders and presenters talking to camera.",
-   "phrase": "one soft key light directly in front of her and slightly above eye level, a small shadow under the nose, a softbox as the source",
+   "phrase": "one soft key light straight in front of her, set high above her eyes and angled down, a small butterfly-shaped shadow under the nose, a softbox as the source",
    "pitfalls": [
     {
      "text": "Cinematic lighting says nothing to the model. Name the source, where it comes from and the fill.",
@@ -1903,7 +1907,7 @@
      "source": "Director Chair field notes on b-roll and the Director Chair hook framework (our 2026 synthesis of @marco.thecreative's TikTok series, OpusClip's hook formulas, a Brandefy article, Meta retention research and a Gemini research report)"
     },
     {
-     "text": "Keep text off the area where the captions sit, and away from the frame edges; devices crop differently.",
+     "text": "Keep text clear of where the platform prints its own caption and account name, and away from the frame edges; devices crop differently.",
      "evidence": "practitioner",
      "source": "The Director Chair hook framework (our 2026 synthesis of @marco.thecreative's TikTok series, OpusClip's hook formulas, a Brandefy article, Meta retention research and a Gemini research report)"
     }
@@ -2528,7 +2532,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Shows the goal is nearer than the viewer assumed.",
    "use_when": "Aspirational products, learning, fitness.",
    "phrase": "you are one setting away from video that looks shot, not generated",
@@ -2543,7 +2547,10 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "effort-compression",
+    "direct-address"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -3471,7 +3478,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Opens a question the viewer needs closed, so they stay for the answer.",
    "use_when": "Explainers, reveals, before and after.",
    "phrase": "start with the result and hold back how: this cost us 40 euro and replaced a whole shoot, here is the trick",
@@ -3491,7 +3498,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "curiosity-object",
+    "proof-first",
+    "bold-claim-hook"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -3758,7 +3769,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Shares numbers only the company has; authority and curiosity at once.",
    "use_when": "Founders, B2B, launches.",
    "phrase": "the founder holds up the dashboard to the lens: we looked at 10,000 orders, and one thing stood out",
@@ -3773,7 +3784,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "count-up-number",
+    "ticking-number-hook",
+    "proof-first"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -4208,7 +4223,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Calls out one specific viewer, who then feels it is about them.",
    "use_when": "Niche audiences, B2B roles, local targeting.",
    "phrase": "point at the lens: if you run a shop with fewer than five people, this is for you",
@@ -4223,7 +4238,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "setting-as-targeting",
+    "hook-three-jobs",
+    "eye-contact-pause"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -5050,7 +5069,7 @@
      "source": "Director Chair measurement of a published short, Oct 2026"
     },
     {
-     "text": "Our export ran at -8.2 LUFS with a true peak of +0.4 dBTP, which clips. Export at -14 LUFS with the peak at or under -1 dBTP.",
+     "text": "Our export ran at -8.2 LUFS with a true peak of +0.4 dBTP, which clips. Export at -14 LUFS with the peak at or under -1.5 dBTP, our QA default.",
      "evidence": "measured",
      "source": "Director Chair measurement of a published short, 22 Oct 2026"
     },
@@ -5193,7 +5212,7 @@
      "source": "Director Chair measurement of a published short, Oct 2026"
     },
     {
-     "text": "People watch a story and keep a list: 1.6 percent of plays saved here, against 5 to 6.5 percent for the same account's step lists. Do not use it for a how-to or a lead magnet.",
+     "text": "People watch a story but save a list: 1.6 percent of plays saved here, against 5 to 6.5 percent for the same account's step lists. Do not use it for a how-to or a lead magnet.",
      "evidence": "measured",
      "source": "Director Chair measurement of a published short, 23 Oct 2026"
     },
@@ -5347,7 +5366,7 @@
      "source": "Director Chair measurement of a published short, 22 Oct 2026"
     },
     {
-     "text": "The reference runs hot at -10.3 LUFS; export at -14 with the true peak at or under -1 dBTP.",
+     "text": "The reference runs hot at -10.3 LUFS; export at -14 with the true peak at or under -1.5 dBTP.",
      "evidence": "measured",
      "source": "Director Chair measurement of a published short, 22 Oct 2026"
     }
@@ -5476,7 +5495,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Promises a big result for a small effort of watching.",
    "use_when": "Tutorials, tips, workflows.",
    "phrase": "it took me three years to learn this, you get it in forty seconds",
@@ -5491,7 +5510,10 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "closer-than-you-think",
+    "curiosity-gap"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -7636,7 +7658,7 @@
   },
   {
    "slug": "format-stacked-board",
-   "name": "Speaker over a board",
+   "name": "Stacked board video",
    "category": "format",
    "group": "Formats",
    "media": [
@@ -8799,13 +8821,13 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "The most realistic motion and sound from one start frame.",
    "use_when": "One continuous action of 8 seconds or less from an approved still.",
    "phrase": "the camera first, then the action in order with its pace, then the sound in its own sentence, then what stays as in the start image, then the look sentence",
    "pitfalls": [
     {
-     "text": "Veo has no end frame. For a shot that must land on a specific image, use Kling 3.0 with start and end.",
+     "text": "Veo 3.1 takes a first and a last frame on Google's own surfaces (Flow, the Gemini API), but not every tool that resells it exposes the end frame. Check yours; otherwise use Kling 3.0 with start and end.",
      "evidence": "vendor",
      "source": "Director Chair field notes on video prompting"
     },
@@ -11217,13 +11239,13 @@
     "image",
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Readable on a phone in daylight and recognisable in the first frame.",
    "use_when": "YouTube, Reels, TikTok, creator and brand social.",
    "phrase": "a little more midtone contrast than for a big screen, colours natural not boosted, shadows with detail, whites not clipped",
    "pitfalls": [
     {
-     "text": "Do not push saturation to pop on phones: platforms desaturate reds and lift shadows in compression, and pushed colour bands.",
+     "text": "Do not push saturation to pop on phones: pushed colour and smooth gradients band and block up after the platform's compression.",
      "evidence": "vendor",
      "source": "The Director Chair colour grading guide"
     },
@@ -12120,7 +12142,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Tells the viewer they are probably doing something wrong; they check.",
    "use_when": "Tips, how-tos, product comparisons.",
    "phrase": "you are writing your video prompts in the wrong order, and it is why the faces keep changing",
@@ -12135,7 +12157,10 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "confession-hook",
+    "myth-exposure"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -12402,7 +12427,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Names a myth in the category and promises the real story.",
    "use_when": "Health, finance, beauty, any category with folklore.",
    "phrase": "name the myth in five words, then a pause, then: here is what actually happens",
@@ -12422,7 +12447,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "belief-shattering",
+    "mistake-calling",
+    "eye-contact-pause"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -12873,7 +12902,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "The product appears into frame and becomes the hook.",
    "use_when": "Product videos, unboxing.",
    "phrase": "a hand brings the product up from below the frame into the centre, close to the lens",
@@ -12889,7 +12918,9 @@
    "licensed": [],
    "site_names": [],
    "related": [
-    "insert-shot"
+    "insert-shot",
+    "curiosity-object",
+    "zoom-reveal-hook"
    ],
    "rights": "own-work",
    "evidence": "practitioner",
@@ -13153,7 +13184,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "A full circle around the subject; spectacle, a hero moment, the world spinning around someone.",
    "use_when": "Product reveals, a dancer, a dramatic statement.",
    "phrase": "orbit, the camera circles all the way around him at a steady distance, he stays in the centre while the background turns",
@@ -13228,7 +13259,8 @@
     "Orbit counterclockwise"
    ],
    "related": [
-    "arc-shot"
+    "arc-shot",
+    "camera-roll"
    ],
    "rights": "own-work",
    "evidence": "film-craft",
@@ -13741,7 +13773,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Breaks the scroll with something the viewer did not expect.",
    "use_when": "Crowded feeds, low-interest categories.",
    "phrase": "open on an action nobody expects in this setting: the founder drops the product into a bucket of water and keeps talking",
@@ -13756,7 +13788,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "curiosity-object",
+    "impossible-image",
+    "stakes-in-frame-zero"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -15295,7 +15331,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Leads with the result, so the claim earns attention.",
    "use_when": "Testimonials, case studies, product results.",
    "phrase": "open on the number or the review, on screen and spoken: 190 ads in one quarter with four people",
@@ -15310,7 +15346,11 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "bold-claim-hook",
+    "self-proving-claim",
+    "data-reveal"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -15334,7 +15374,7 @@
    "phrase": "punch in to 1.12 times on every other sentence, the face staying at the same height in the frame",
    "pitfalls": [
     {
-     "text": "Punch-ins soften a 1080 pixel take. A sharp crop needs a source of 2160 pixels on the short side.",
+     "text": "A punch-in enlarges the pixels it keeps: on a 1080 pixel take even 1.12 times softens a little. A 4K source (2160 pixels on the short side) stays sharp up to 2 times.",
      "evidence": "practitioner",
      "source": "Director Chair field notes on editing"
     },
@@ -16131,13 +16171,13 @@
     "image",
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Full-screen vertical: TikTok, Reels, Shorts, Stories.",
    "use_when": "All vertical social video and story ads.",
    "phrase": "9:16 vertical frame, the subject centred with room above and below for captions",
    "pitfalls": [
     {
-     "text": "9:16 is the tallest ratio Nano Banana makes; for anything taller, generate the nearest ratio and crop.",
+     "text": "9:16 is the tallest ratio Nano Banana Pro makes; for anything taller, generate the nearest ratio and crop.",
      "evidence": "measured",
      "source": "Director Chair field notes on image prompting"
     }
@@ -16503,7 +16543,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Shows a situation the viewer recognises from their own day.",
    "use_when": "Everyday problems, creator content.",
    "phrase": "open on the familiar moment, no words yet: three browser tabs of the same prompt, sighing",
@@ -16518,7 +16558,10 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "pov-title",
+    "direct-address"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -17177,7 +17220,7 @@
    "checked": "2026-11-13",
    "effect": "Each layer sits where the eye and the interface leave room for it.",
    "use_when": "Any talking-head video with a text hook and captions.",
-   "phrase": "text hook in the top fifth, the face in the middle, captions in the lower fifth above the platform's buttons",
+   "phrase": "text hook in the top fifth, the face in the middle, captions just above the bottom quarter, clear of the platform's buttons and description",
    "pitfalls": [
     {
      "text": "Keep text at least 10 percent away from every edge; devices crop differently.",
@@ -18454,13 +18497,13 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
-   "effect": "Builds tension or focus without the camera moving; the background flattens.",
+   "checked": "2026-11-13",
+   "effect": "Builds tension or focus without the camera moving; the picture grows, with no shift between foreground and background.",
    "use_when": "A realisation, a dramatic line, a product that should feel more and more important.",
    "phrase": "slow zoom in on her face, the camera stays in place while the lens tightens the frame",
    "pitfalls": [
     {
-     "text": "A zoom changes the lens and flattens the picture; a dolly moves the camera and keeps the depth. Say which one you mean.",
+     "text": "A zoom only magnifies the picture, so nothing shifts in depth; a dolly moves the camera, so the foreground slides against the background. Say which one you mean.",
      "evidence": "film-craft",
      "source": "Director Chair field notes on video prompting"
     }
@@ -18716,13 +18759,13 @@
   },
   {
    "slug": "snorricam",
-   "name": "Body-mounted (snorricam)",
+   "name": "Snorricam (body-mounted camera)",
    "category": "move",
    "group": "Human camera",
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "The person is locked in frame while the world swings around them: disorientation, intensity.",
    "use_when": "Music videos, sport, a character losing control.",
    "phrase": "body-mounted camera fixed to his chest facing his face, he stays still in the frame while the street swings behind him",
@@ -19796,13 +19839,13 @@
     "image",
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Compresses distance: layers stack together, the viewer watches from far away.",
    "use_when": "Two people stacked close, crowds, sport, a surveillance feel.",
    "phrase": "telephoto lens from far away, strong compression, the people and the buildings behind them stacked close together",
    "pitfalls": [
     {
-     "text": "Long lenses make things look closer than they are; distances collapse.",
+     "text": "Long lenses make things at different distances look closer together than they are; the gaps between them collapse.",
      "evidence": "film-craft",
      "source": "ShotDeck lens-size guide via Director Chair field notes on video prompting"
     },
@@ -20496,7 +20539,7 @@
    "media": [
     "video"
    ],
-   "checked": "2026-10-13",
+   "checked": "2026-11-13",
    "effect": "Makes the moment feel limited.",
    "use_when": "Offers, launches, events.",
    "phrase": "this only works until Friday, here is why",
@@ -20511,7 +20554,10 @@
    "external_refs": [],
    "licensed": [],
    "site_names": [],
-   "related": [],
+   "related": [
+    "offer-hook",
+    "cta-single-action"
+   ],
    "rights": "own-work",
    "evidence": "practitioner",
    "source": {
@@ -21069,17 +21115,17 @@
   },
   {
    "slug": "ultra-wide-lens",
-   "name": "Ultra wide or fisheye",
+   "name": "Ultra wide lens",
    "category": "lens",
    "group": "Focal length",
    "media": [
     "image",
     "video"
    ],
-   "checked": "2026-10-13",
-   "effect": "Stretches space and bends edges; things near the lens look huge, the room looks bigger.",
+   "checked": "2026-11-13",
+   "effect": "Stretches space toward the edges; things near the lens look huge, the room looks bigger.",
    "use_when": "Skate and action content, tight interiors, playful distortion.",
-   "phrase": "ultra wide lens close to the subject, strong curve at the edges of the frame, the room stretching away",
+   "phrase": "ultra wide lens close to the subject, straight lines kept straight but the edges of the frame stretched, the room stretching away",
    "pitfalls": [
     {
      "text": "Ultra wide makes subjects look much further away than they are; keep the important thing close to the lens.",
@@ -21121,6 +21167,7 @@
    "site_names": [],
    "related": [
     "wide-lens",
+    "fisheye-lens",
     "action-cam-rig"
    ],
    "rights": "own-work",
