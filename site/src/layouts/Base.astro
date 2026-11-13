@@ -31,6 +31,7 @@ const tools = [['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'],
 <meta name="theme-color" content="#f2efea" />
 <link rel="preload" as="font" type="font/woff2" href={figtree} crossorigin />
 <link rel="icon" href={ICON} />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 {twin && <link rel="alternate" type="text/markdown" href={twin} />}
 <link rel="alternate" type="application/json" href="/api/library.json" title="The whole library as JSON" />
 </head>
@@ -38,9 +39,17 @@ const tools = [['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'],
 <a class="skip pill" href="#main">Skip to the content</a>
 <header class="top">
   <a class="mark" href="/">{MARK && <img src={MARK} alt="" width="28" height="28" />}Director Chair</a>
-  <a class="pill round" href="/#search" aria-label="Search the library" data-search-link><Icon name="search" /></a>
+  <details class="find" data-find data-sheet>
+    <summary class="pill round" aria-label="Search the library"><Icon name="search" /></summary>
+    <div class="sheet">
+      <form class="search" role="search" action="/">
+        <label><Icon name="search" /><input type="search" name="q" autocomplete="off" placeholder={`Search ${items.length} cards`} aria-label="Search the library" /></label>
+      </form>
+      <div aria-live="polite"><ol class="hits" data-hits></ol><p class="soft" data-hits-note></p></div>
+    </div>
+  </details>
   <nav aria-label="Groups">{lead.map((g) => <a class="pill" href={g.href}>{g.name}</a>)}</nav>
-  <details class="all" data-menu>
+  <details class="all" data-menu data-sheet>
     <summary class="pill plain" aria-label="All groups and pages"><span>All groups</span><Icon name="chevron-down" class="i-chev" /><Icon name="menu" class="i-menu" /></summary>
     <div class="sheet">
       {groups.map((g) => <div><h3>{g.name}</h3>{g.cats.map((c) => <a href={`/${c.id}`}>{c.plural} <span>{c.count}</span></a>)}</div>)}

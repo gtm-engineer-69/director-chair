@@ -39,6 +39,24 @@ const start = [step('Pick the model for the shot.', bySlug('which-model-for-vide
       </form>
     </div>
   </section>
+  <script is:inline>
+  // keep the frames clear of the sentence and the field at any window size: a frame that comes too close shrinks toward its own outer corner, and steps out when that is not enough
+  (() => {
+    const hero = document.querySelector('[data-hero]'); const pad = 24;
+    const fit = () => {
+      const core = [...hero.querySelectorAll('.core h1, .core form')].map((e) => e.getBoundingClientRect());
+      const cx = (core[0].left + core[0].right) / 2; const cy = (core[0].top + core[1].bottom) / 2;
+      const hit = (r) => core.some((b) => r.left < b.right + pad && r.right > b.left - pad && r.top < b.bottom + pad && r.bottom > b.top - pad);
+      for (const c of hero.querySelectorAll('.c')) {
+        c.style.transform = ''; c.style.visibility = '';
+        const r = c.getBoundingClientRect(); if (!r.width || !hit(r)) continue;
+        c.style.transformOrigin = `${(r.left + r.right) / 2 < cx ? 'left' : 'right'} ${(r.top + r.bottom) / 2 < cy ? 'top' : 'bottom'}`;
+        if (![0.8, 0.65, 0.5].some((k) => { c.style.transform = `scale(${k})`; return !hit(c.getBoundingClientRect()); })) { c.style.transform = ''; c.style.visibility = 'hidden'; }
+      }
+    };
+    fit(); addEventListener('resize', fit); document.fonts && document.fonts.ready.then(fit);
+  })();
+  </script>
   <section class="results" data-results-wrap hidden aria-live="polite">
     <p class="count" data-results-meta></p>
     <div class="grid" data-results></div>

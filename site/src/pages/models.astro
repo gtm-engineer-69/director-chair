@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 import { models, bySlug, urlOf } from '../lib/data.mjs';
 const kinds = [['Video models', 'video'], ['Image models', 'image']];
 const guide = (m) => m.guide && bySlug(m.guide);
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const day = (d) => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d || ''); return m ? `${Number(m[3])} ${MONTHS[m[2] - 1]} ${m[1]}` : d; };
+const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 ---
 <Base title="Which AI video and image model for what | Director Chair" description="Which model to pick for which shot: what each AI video and image model is best for, what it is not for, how it wants its prompt, and when we last checked." path="/models">
   <div class="page"><h1>Which model for what</h1><p class="lead">Pick the model by what the shot has to do. Every line carries the date we last checked it.</p>
@@ -13,7 +16,7 @@ const guide = (m) => m.guide && bySlug(m.guide);
       <div class="table"><table>
         <thead><tr><th scope="col">Model</th><th scope="col">Best for</th><th scope="col">Not for</th><th scope="col">Reads</th><th scope="col">Checked</th></tr></thead>
         <tbody>{models.filter((m) => m.medium === medium).map((m) => (
-          <tr id={m.id}><th scope="row">{m.name} <small>{m.maker}</small></th><td>{m.best_for}</td><td>{m.not_for}</td><td>{m.prompt_style}{guide(m) && <>. <a href={urlOf(guide(m))}>Prompt guide</a></>}</td><td>{m.checked}</td></tr>
+          <tr id={m.id}><th scope="row">{m.name} <small>{m.maker}</small></th><td data-label="Best for">{cap(m.best_for)}</td><td data-label="Not for">{cap(m.not_for)}</td><td data-label="Reads">{cap(m.prompt_style)}{guide(m) && <>. <a href={urlOf(guide(m))}>Prompt guide</a></>}</td><td class="date" data-label="Checked">{day(m.checked)}</td></tr>
         ))}</tbody>
       </table></div>
     </section>

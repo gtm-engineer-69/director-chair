@@ -7,12 +7,18 @@ const calm = matchMedia('(prefers-reduced-motion: reduce)').matches || navigator
 const touch = matchMedia('(hover: none)').matches;
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-// ---- All groups sheet: closes on Escape and on a click outside
-const menu = $('[data-menu]');
-if (menu) {
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.open) { menu.open = false; $('summary', menu).focus(); } });
-  document.addEventListener('click', (e) => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
-}
+// ---- sheets (All groups, search): one open at a time; Escape or a click outside closes and gives focus back; Tab stays inside
+const sheets = $$('[data-sheet]');
+const focusables = (d) => $$('summary, a[href], button:not([disabled]), input', d).filter((e) => e.getClientRects().length);
+sheets.forEach((d) => d.addEventListener('toggle', () => { if (!d.open) return; sheets.forEach((o) => { if (o !== d) o.open = false; }); $('input', d)?.focus(); }));
+document.addEventListener('keydown', (e) => {
+  const d = sheets.find((s) => s.open); if (!d) return;
+  if (e.key === 'Escape') { d.open = false; $('summary', d).focus(); return; }
+  if (e.key !== 'Tab') return;
+  const f = focusables(d); const i = f.indexOf(document.activeElement);
+  if (e.shiftKey && i <= 0) { e.preventDefault(); f.at(-1).focus(); } else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+});
+document.addEventListener('click', (e) => sheets.forEach((d) => { if (d.open && !d.contains(e.target)) d.open = false; }));
 
 // ---- clips that play on their own (the first frame of the constellation) stay on their poster under reduced motion
 if (!calm) $$('video[data-autoplay]').forEach((v) => v.play().catch(() => {}));
@@ -87,7 +93,19 @@ function promptPanel(root) {
 }
 const pw = $('[data-prompt]') && promptPanel($('[data-prompt]'));
 
-// ---- search: results take the place of the constellation
+// ---- search: one index, read on the first search; a name that starts with the words ranks first
+let index = null;
+async function find(text) {
+  const terms = text.toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return [];
+  index ||= await fetch('/api/search.json').then((r) => r.json());
+  const q = terms.join(' ');
+  const rank = (c) => { const n = c.name.toLowerCase(); return n === q ? 0 : n.startsWith(q) ? 1 : n.includes(q) ? 2 : terms.some((t) => n.includes(t)) ? 3 : 4; };
+  return index.filter((c) => terms.every((t) => (' ' + c.words).includes(' ' + t))).map((c) => [rank(c), c]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+}
+const NONE = 'No card by that name. Try a move, a light or a hook.';
+
+// ---- on home, results take the place of the constellation
 const form = $('[data-search]');
 if (form) {
   const q = $('input', form); const hero = $('[data-hero]'); const wrap = $('[data-results-wrap]'); const grid = $('[data-results]'); const meta = $('[data-results-meta]'); const none = $('[data-noresults]'); const library = $('[data-library]');
@@ -99,8 +117,7 @@ if (form) {
     history.replaceState(null, '', terms.length ? `?q=${encodeURIComponent(q.value)}` : location.pathname);
     hero.classList.toggle('is-searching', terms.length > 0); wrap.hidden = !terms.length; library.hidden = false;
     if (!terms.length) return;
-    index ||= await fetch('/api/search.json').then((r) => r.json());
-    const hits = index.filter((c) => terms.every((t) => c.words.includes(t))).sort((a, b) => Number(b.name.toLowerCase().includes(terms[0])) - Number(a.name.toLowerCase().includes(terms[0]))).slice(0, 60);
+    const hits = (await find(q.value)).slice(0, 60);
     none.hidden = hits.length > 0; library.hidden = hits.length > 0; meta.textContent = hits.length ? `${hits.length} ${hits.length === 1 ? 'card' : 'cards'}` : '';
     grid.innerHTML = hits.map(tile).join('');
     tiles();
@@ -109,10 +126,34 @@ if (form) {
   q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 120); });
   form.addEventListener('submit', (e) => { e.preventDefault(); run(); });
   document.addEventListener('keydown', (e) => { if (e.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); q.focus(); } });
-  $('[data-search-link]')?.addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' }); q.focus({ preventScroll: true }); });
   const start = new URLSearchParams(location.search).get('q');
   if (start) { q.value = start; run(); }
   if (location.hash === '#search') q.focus({ preventScroll: true });
+}
+
+// ---- the search sheet in the header, on every page: name, shelf, one line, the poster when the card has a clip
+const finder = $('[data-find]');
+if (finder) {
+  const fq = $('input', finder); const list = $('[data-hits]', finder); const note = $('[data-hits-note]', finder);
+  const row = (c) => `<li><a href="${esc(c.href)}">${c.still ? `<img src="${esc(c.still)}" alt="" width="96" height="54" loading="lazy">` : '<span class="ph"></span>'}<span><span class="nm">${esc(c.name)} <span class="soft">· ${esc(c.group)}</span></span><small>${esc(c.line)}</small></span></a></li>`;
+  let t = 0;
+  fq.addEventListener('input', () => {
+    clearTimeout(t);
+    t = setTimeout(async () => {
+      const v = fq.value.trim(); const hits = await find(v);
+      if (v !== fq.value.trim()) return;
+      list.innerHTML = hits.slice(0, 6).map(row).join('');
+      note.innerHTML = !v ? '' : !hits.length ? NONE : hits.length > 6 ? `<a href="/?q=${encodeURIComponent(v)}">See all ${hits.length} cards</a>` : '';
+    }, 120);
+  });
+  // arrow keys walk from the field through the results
+  finder.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    const f = [fq, ...$$('[data-hits] a, [data-hits-note] a', finder)]; const i = f.indexOf(document.activeElement);
+    if (i < 0) return; e.preventDefault(); f[Math.max(0, Math.min(f.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)))].focus();
+  });
+  // on home the field in the first screen is the search
+  if (form) $('summary', finder).addEventListener('click', (e) => { e.preventDefault(); scrollTo({ top: 0, behavior: calm ? 'auto' : 'smooth' }); $('input', form).focus({ preventScroll: true }); });
 }
 
 // ---- board: pick one card per part; the picks live in the address, so a board can be shared

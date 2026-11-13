@@ -41,16 +41,38 @@ function moveCard(item) {
   return m[1].split('\n').map((l) => l.match(/^- \*\*(.+?):\*\* (.+)$/)).filter(Boolean).map((b) => `${b[1]}: ${b[2].trim()}.`).join(' ');
 }
 
-function phraseFor(item, model, models) {
+// Library phrases were written about one person ("toward her", "beside him"). In a prompt they follow the visitor's subject:
+// a woman gets she and her, a man he and him, anything else (an empty field, a product, a group) "the subject".
+// A phrase that already names two people (she and he) is left as it is.
+const FEM = /\b(woman|women|girl|girls|lady|she|her|mother|mom|mum|wife|daughter|sister|actress|grandmother|grandma|queen|bride|female|businesswoman)\b/i;
+const MAL = /\b(man|men|boy|boys|guy|gentleman|he|him|his|father|dad|husband|son|brother|grandfather|grandpa|king|groom|male|businessman)\b/i;
+export const genderOf = (s = '') => (FEM.test(s) === MAL.test(s) ? 'n' : FEM.test(s) ? 'f' : 'm');
+export const twoPeople = (t = '') => /\b(she|her|hers|herself)\b/i.test(t) && /\b(he|him|his|himself)\b/i.test(t);
+// "her" is an object before punctuation, a preposition or a verb ("toward her, ", "behind her stretches"), else it owns the next word ("her face")
+const OBJ = /^(?:\W|$|(?:and|or|as|at|in|on|to|from|with|while|into|onto|over|under|through|across|toward|towards|past|behind|before|after|again|up|down|out|off|away|back|then|so|but|for|by|like|than|late|standing|sitting|stretches|is|was|a|an|the)\b)/i;
+const PRON = { f: { s: 'she', o: 'her', p: 'her', x: 'herself' }, m: { s: 'he', o: 'him', p: 'his', x: 'himself' }, n: { s: 'the subject', o: 'the subject', p: "the subject's", x: 'itself' } };
+export function pronouns(text, g) {
+  if (!text || twoPeople(text)) return text;
+  const w = PRON[g];
+  return text.replace(/\b(she|he|hers|her|him|his|herself|himself)\b/gi, (wd, _k, off, str) => {
+    const k = wd.toLowerCase();
+    const role = k === 'she' || k === 'he' ? 's' : k === 'him' ? 'o' : k === 'his' || k === 'hers' ? 'p' : k.endsWith('self') ? 'x' : OBJ.test(str.slice(off + wd.length).replace(/^ /, '')) ? 'o' : 'p';
+    return /^[A-Z]/.test(wd) ? cap(w[role]) : w[role];
+  });
+}
+// the setting reads after the subject: "in a kitchen", unless the visitor wrote the preposition ("on a rainy platform")
+const where = (P) => (/^(in|on|at|inside|under|by|near|beside|across|through|over|outside|behind|along|among|above|below|against|beneath|from|into|onto|within|amid|around|between|underwater)\b/i.test(P) ? P : `in ${P}`);
+
+function phraseFor(item, model, models, g = 'n') {
   const family = models.filter((m) => m.guide && m.guide === model.guide).map((m) => m.id);
   const row = (item.per_model || []).find((p) => p.model === model.id) || (item.per_model || []).find((p) => family.includes(p.model));
-  let p = row ? row.phrase : item.phrase;
+  let p = pronouns(row ? row.phrase : item.phrase, g);
   if (model.medium === 'video') {
-    const card = moveCard(item);
+    const card = pronouns(moveCard(item), g);
     const lic = (item.licensed || [])[0];
     // the maker's own card text stands in where we have no move card of our own; the emotion texts were written for Seedance
     if (card) p = `${sent(p)} ${card}`;
-    else if (lic && (lic.site !== 'emotion-direction' || model.id.startsWith('seedance'))) p = `${sent(p)} ${sent(lic.text)}`;
+    else if (lic && (lic.site !== 'emotion-direction' || model.id.startsWith('seedance'))) p = `${sent(p)} ${sent(pronouns(lic.text, g))}`;
   }
   return p;
 }
@@ -59,12 +81,12 @@ function phraseFor(item, model, models) {
 const refLines = (items) => items.flatMap((i) => (i.licensed || []).filter((l) => l.media).slice(0, 1)
   .map((l) => `Reference clip (${l.name}): ${SITE}${l.media.video}`));
 
-function parts(items, model, models) {
+function parts(items, model, models, g) {
   const by = {};
   for (const i of items) {
     if (!i.media.includes(model.medium)) continue;
     const role = ROLE[i.category] || 'approach';
-    (by[role] ||= []).push(phraseFor(i, model, models));
+    (by[role] ||= []).push(phraseFor(i, model, models, g));
   }
   const get = (...roles) => roles.flatMap((r) => by[r] || []);
   return { get, s: (...roles) => get(...roles).map(sent).join(' '), l: (...roles) => get(...roles).map((x) => x.replace(/\.$/, '')).join('; ') };
@@ -75,18 +97,18 @@ const line = (label, text) => (text ? `${label}: ${text}` : null);
 const LAYOUT = {
   // one paragraph of full sentences, register first, then a capture line
   paragraph(p, S, P) {
-    const para = [p.s('look', 'approach'), `${cap(S)} in ${P}.`, p.s('opening', 'cast', 'performance', 'action', 'place'), p.s('framing', 'camera'), p.s('light')].filter(Boolean).join(' ');
+    const para = [p.s('look', 'approach'), `${cap(S)} ${where(P)}.`, p.s('opening', 'cast', 'performance', 'action', 'place'), p.s('framing', 'camera'), p.s('light')].filter(Boolean).join(' ');
     return [para, line('Capture', p.l('optics'))];
   },
   // what the image is for, the visible details, people, exclusions short and grouped
   gpt(p, S, P) {
-    return [`A photograph of ${S} in ${P}.`, line('Details', p.l('look', 'light', 'optics', 'place', 'approach')), line('People and framing', p.l('framing', 'camera', 'cast', 'performance', 'action', 'opening')),
+    return [`A photograph of ${S} ${where(P)}.`, line('Details', p.l('look', 'light', 'optics', 'place', 'approach')), line('People and framing', p.l('framing', 'camera', 'cast', 'performance', 'action', 'opening')),
       'Exclusions: no extra text, no watermark, no logo.'];
   },
   // labelled blocks; Seedance 2.5 puts every shot on its own timecode
   seedance(p, S, P, model) {
     const shot = model.id === 'seedance-2.5' ? 'Shot 1 (0:00 to 0:05)' : 'Shot 1';
-    return [line('Global look', p.l('look')), line('Approach', p.l('approach')), `Scene: ${S} in ${P}.${p.get('opening').length ? ' ' + p.s('opening') : ''}`, p.get('cast').length ? `Cast: ${[S, ...p.get('cast')].join('; ')}` : null,
+    return [line('Global look', p.l('look')), line('Approach', p.l('approach')), `Scene: ${S} ${where(P)}.${p.get('opening').length ? ' ' + p.s('opening') : ''}`, p.get('cast').length ? `Cast: ${[S, ...p.get('cast')].join('; ')}` : null,
       p.get('place').length ? `Place: ${[P, ...p.get('place')].join('; ')}` : null, line('First frame', p.l('framing')),
       `${shot}: ${[...p.get('action', 'performance')].join('; ') || 'one continuous shot'}${p.get('cut').length ? '. Cut: ' + p.l('cut') : ''}`,
       line('Optics and camera', p.s('optics', 'camera')), line('Light', p.l('light')), line('Sound', p.l('sound'))];
@@ -98,7 +120,7 @@ const LAYOUT = {
   },
   // camera first, then the action, the sound in its own sentence, what stays, the look
   veo(p, S, P) {
-    return [[p.s('camera', 'framing', 'optics'), `${cap(S)} in ${P}.`, p.s('opening', 'action', 'performance', 'cast', 'place', 'cut'), p.get('sound').length ? `Sound: ${p.s('sound')}` : '',
+    return [[p.s('camera', 'framing', 'optics'), `${cap(S)} ${where(P)}.`, p.s('opening', 'action', 'performance', 'cast', 'place', 'cut'), p.get('sound').length ? `Sound: ${p.s('sound')}` : '',
       'Framing and subject stay as in the start image.', p.s('look', 'light', 'approach')].filter(Boolean).join(' ')];
   },
 };
@@ -135,6 +157,6 @@ export function assemble(items, modelId, fields = {}, models = []) {
   const P = fields.setting || '[your setting]';
   // a model's own guide card gives that model's skeleton, so the guide item itself adds no phrase
   const shotItems = list.filter((i) => kindOf(i, models) === 'shot');
-  return [...layout(parts(shotItems, model, models), S, P, model), ...refLines(shotItems.filter((i) => i.media.includes(model.medium)))]
+  return [...layout(parts(shotItems, model, models, genderOf(fields.subject)), S, P, model), ...refLines(shotItems.filter((i) => i.media.includes(model.medium)))]
     .filter(Boolean).join('\n');
 }

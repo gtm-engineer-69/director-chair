@@ -133,7 +133,49 @@ button.see{border:0;background:none;cursor:pointer;color:inherit;text-decoration
 .mark{min-height:var(--control)}
 .foot nav a{min-width:var(--control)}
 /* targets: a link inside a sentence is at least 24px tall, a field's input fills its pill */
-.foot span a,.fine a,.credit a,.prose a,.head p a,.shown a{display:inline-block;padding:4px 0;margin:-4px 0}
+.foot span a,.fine a,.credit a,.prose a,.head p a,.shown a{display:inline;padding:4px 0}
 .field input,.search input{align-self:stretch}
 .all:not([open]) .sheet{display:none}
 .slot .tile:focus-visible,.pick .tile.is-on:focus-visible{outline-width:4px}
+
+/* search sheet in the header: the field, then up to six results as plain lines (poster, name, shelf, one line) */
+.find{position:relative}
+.find summary{list-style:none}
+.find summary::-webkit-details-marker{display:none}
+.find:not([open]) .sheet{display:none}
+.find .sheet{position:absolute;left:0;top:calc(100% + 8px);width:min(92vw,560px);max-height:calc(100dvh - 110px);overflow:auto;padding:12px;border-radius:var(--r-plate);background:var(--white)}
+.find .search{width:100%}
+.find .search label{background:var(--paper)}
+.hits{margin-top:8px}
+.hits a{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center;padding:6px;border-radius:8px}
+.hits a:hover{background:var(--paper)}
+.hits img,.hits .ph{width:96px;height:54px;border-radius:6px;background:var(--plate)}
+.hits .nm{display:block}
+.hits small{display:block;color:var(--ink-soft);font-size:var(--small);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+[data-hits-note]{padding:0 10px}
+[data-hits-note]:not(:empty){padding:12px 10px 6px}
+[data-hits-note] a{display:inline-flex;align-items:center;min-height:var(--control);text-decoration:underline;text-underline-offset:3px}
+@media (max-width:720px){ .find .sheet{position:fixed;left:var(--gutter);right:var(--gutter);top:68px;width:auto} .hits a{grid-template-columns:72px minmax(0,1fr);gap:12px} .hits img,.hits .ph{width:72px;height:40px} }
+
+/* models: dates stay on one line; on a phone each model is a block of labelled lines */
+td.date{white-space:nowrap}
+@media (max-width:720px){
+  .table table,.table tbody,.table tr,.table th,.table td{display:block}
+  .table thead{display:none}
+  .table tr{padding:18px 0;max-width:60ch}
+  .table tr+tr{margin-top:8px}
+  .table th,.table td{padding:0}
+  .table td{margin-top:8px}
+  .table td::before{content:attr(data-label);display:block;color:var(--ink-soft);font-size:var(--small)}
+  .table tbody th{font-size:var(--lead)}
+  .table tbody th small{display:inline;margin-left:6px}
+}
+
+/* small text tiles in a phone grid: two whole lines, never half a third */
+@media (max-width:720px){ .grid .tile:not(.say)>p{-webkit-line-clamp:2} }
+/* a clamped paragraph keeps no bottom padding, or the next line shows through it */
+.tile:not(.say)>p,.slot .tile>p{padding-bottom:0}
+/* a white pill keeps its own edge: the first pill of a page's sub-nav starts on the gutter */
+.page .subnav{margin-left:0}
+/* on a phone, Copy stays in reach while the prompt panel is on screen */
+@media (max-width:720px){ .panel .acts{position:sticky;bottom:0;margin:20px -24px -20px;padding:12px 24px 16px;background:var(--white);border-radius:0 0 var(--r-plate) var(--r-plate)} }
