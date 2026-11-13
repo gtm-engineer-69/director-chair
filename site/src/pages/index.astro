@@ -1,4 +1,5 @@
 ---
+import { home } from '../lib/ld.mjs';
 import Base from '../layouts/Base.astro';
 import Row from '../components/Row.astro';
 import Icon from '../components/Icon.astro';
@@ -25,7 +26,7 @@ const step = (verb, target) => (typeof target === 'string' ? { verb, href: `/${t
 const start = [step('Pick the model for the shot.', bySlug('which-model-for-video')), step('Make the first frame.', bySlug('guide-shot-from-first-frame')), step('Choose how close the camera is.', 'shot'),
   step('Add one camera move.', 'move'), step('Set the light.', 'light'), step('Open on a hook.', 'hook'), step('Give it an arc.', 'script'), step('Caption it and cut it.', 'effect'), step('Check it before you post.', 'publish')];
 ---
-<Base title="Director Chair: the video craft library for AI video" description={`A free, open library of ${items.length} cards of video craft for AI video: shots, moves, light, looks, hooks, scripts and presets, each with a prompt ready to paste for your model.`} path="/">
+<Base title="Director Chair: the video craft library for AI video" description={`A free, open library of ${items.length} cards of video craft for AI video: shots, moves, light, looks, hooks, scripts and presets, each with a prompt ready to paste for your model.`} path="/" ld={home()}>
   <section class="hero" data-hero>
     {sky.map((f, n) => { const c = clipOf(f.item); return (
       <a class:list={['c', f.shape, f.d && 'd']} href={urlOf(f.item)} aria-label={tileOf(f.item).name} style={f.style}>

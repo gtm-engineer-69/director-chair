@@ -7,7 +7,7 @@
     "data": "node scripts/build-data.mjs",
     "dev": "astro dev",
     "build": "node scripts/build-data.mjs && astro build",
-    "check": "node scripts/check-prompts.mjs && node scripts/check-dist.mjs",
+    "check": "node scripts/check-prompts.mjs && node scripts/check-dist.mjs && node scripts/check-ld.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

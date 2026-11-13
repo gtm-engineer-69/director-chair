@@ -6,7 +6,9 @@ import '../styles/site.css';
 import Icon from '../components/Icon.astro';
 import figtree from '@fontsource-variable/figtree/files/figtree-latin-wght-normal.woff2?url';
 import { groups, items, SITE, MARK, ICON, bySlug, clipOf } from '../lib/data.mjs';
-const { title, description, path, image, twin, noindex = false } = Astro.props;
+import { breadcrumbs } from '../lib/ld.mjs';
+const { title, description, path, image, twin, noindex = false, crumb, crumbs = path === '/' ? [] : [[crumb || title.split(/[:|]/)[0].trim(), path]], ld = [] } = Astro.props;
+const jsonld = [breadcrumbs(crumbs), ...ld].map((o) => JSON.stringify(o).replace(/</g, '\\u003c'));
 const canonical = SITE + (path === '/' ? '/' : path);
 // share image: the page's own picture, else the constellation of posters on paper (public/og.jpg, rendered once from the posters)
 const og = SITE + (image || '/og.jpg');
@@ -35,6 +37,7 @@ const tools = [['Board', '/board'], ['Models', '/models'], ['Guides', '/guide'],
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 {twin && <link rel="alternate" type="text/markdown" href={twin} />}
 <link rel="alternate" type="application/json" href="/api/library.json" title="The whole library as JSON" />
+{jsonld.map((j) => <script type="application/ld+json" set:html={j} />)}
 </head>
 <body>
 <a class="skip pill" href="#main">Skip to the content</a>

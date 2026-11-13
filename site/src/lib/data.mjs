@@ -48,5 +48,5 @@ export function tileOf(i, words = false) {
   const v = words ? null : viewOf(i);
   const say = !v && isSaid(i);
   const d = v || say ? null : diagramOf(i);   // a drawing for the camera fundamentals, in place of the words
-  return { href: urlOf(i), slug: i.slug, name: shortName(i.name), still: v ? v.media.card_poster : '', clip: v ? v.media.card : '', line: i.effect, say, text: v || d ? '' : say ? sayLine(i) : i.category === 'hook' ? sentence(i.phrase) : i.effect, ...(d && { dg: d.svg + (d.label && `<span class="dl">${d.label}</span>`) }) };
+  return { href: urlOf(i), slug: i.slug, name: shortName(i.name), still: v ? v.media.card_poster : '', srcset: v?.media.card_poster_400 ? `${v.media.card_poster_400} 400w, ${v.media.card_poster} 640w` : undefined, clip: v ? v.media.card : '', line: i.effect, say, text: v || d ? '' : say ? sayLine(i) : i.category === 'hook' ? sentence(i.phrase) : i.effect, ...(d && { dg: d.svg + (d.label && `<span class="dl">${d.label}</span>`) }) };
 }

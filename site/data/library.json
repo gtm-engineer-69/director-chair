@@ -479,6 +479,7 @@
      "card": "/media/aicameramovements/24-snorricam-v2-hq-card.mp4",
      "poster": "/media/aicameramovements/24-snorricam-v2-hq.jpg",
      "card_poster": "/media/aicameramovements/24-snorricam-v2-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/24-snorricam-v2-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -729,6 +730,7 @@
       "card": "/media/emotion-direction/18-anxiety-card.mp4",
       "poster": "/media/emotion-direction/18-anxiety.jpg",
       "card_poster": "/media/emotion-direction/18-anxiety-card.jpg",
+      "card_poster_400": "/media/emotion-direction/18-anxiety-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -799,6 +801,7 @@
       "card": "/media/aicameramovements/14-arc-right-hq-card.mp4",
       "poster": "/media/aicameramovements/14-arc-right-hq.jpg",
       "card_poster": "/media/aicameramovements/14-arc-right-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/14-arc-right-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -821,6 +824,7 @@
       "card": "/media/aicameramovements/14b-arc-left-hq-card.mp4",
       "poster": "/media/aicameramovements/14b-arc-left-hq.jpg",
       "card_poster": "/media/aicameramovements/14b-arc-left-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/14b-arc-left-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -895,6 +899,7 @@
       "card": "/media/emotion-direction/15-awe-card.mp4",
       "poster": "/media/emotion-direction/15-awe.jpg",
       "card_poster": "/media/emotion-direction/15-awe-card.jpg",
+      "card_poster_400": "/media/emotion-direction/15-awe-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -1433,6 +1438,7 @@
       "card": "/media/emotion-direction/12-boredom-card.mp4",
       "poster": "/media/emotion-direction/12-boredom.jpg",
       "card_poster": "/media/emotion-direction/12-boredom-card.jpg",
+      "card_poster_400": "/media/emotion-direction/12-boredom-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -1639,6 +1645,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -1704,6 +1711,7 @@
      "card": "/media/aicameramovements/15-orbit-clockwise-hq-card.mp4",
      "poster": "/media/aicameramovements/15-orbit-clockwise-hq.jpg",
      "card_poster": "/media/aicameramovements/15-orbit-clockwise-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/15-orbit-clockwise-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -2260,6 +2268,7 @@
       "card": "/media/aicameramovements/22-chase-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/22-chase-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/22-chase-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/22-chase-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -2379,6 +2388,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -2694,6 +2704,7 @@
       "card": "/media/emotion-direction/13-confusion-card.mp4",
       "poster": "/media/emotion-direction/13-confusion.jpg",
       "card_poster": "/media/emotion-direction/13-confusion-card.jpg",
+      "card_poster_400": "/media/emotion-direction/13-confusion-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -2973,6 +2984,7 @@
       "card": "/media/aicameramovements/25b-crane-down-hq-card.mp4",
       "poster": "/media/aicameramovements/25b-crane-down-hq.jpg",
       "card_poster": "/media/aicameramovements/25b-crane-down-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/25b-crane-down-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -3045,6 +3057,7 @@
       "card": "/media/aicameramovements/25-crane-up-hq-card.mp4",
       "poster": "/media/aicameramovements/25-crane-up-hq.jpg",
       "card_poster": "/media/aicameramovements/25-crane-up-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/25-crane-up-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -3118,6 +3131,7 @@
       "card": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 10.08
@@ -3140,6 +3154,7 @@
       "card": "/media/aicameramovements/07b-crash-zoom-out-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/07b-crash-zoom-out-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/07b-crash-zoom-out-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/07b-crash-zoom-out-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 10
@@ -3261,6 +3276,7 @@
       "card": "/media/emotion-direction/06-crying-card.mp4",
       "poster": "/media/emotion-direction/06-crying.jpg",
       "card_poster": "/media/emotion-direction/06-crying-card.jpg",
+      "card_poster_400": "/media/emotion-direction/06-crying-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -3608,6 +3624,7 @@
      "card": "/media/aicameramovements/03-whip-pan-right-hq-card.mp4",
      "poster": "/media/aicameramovements/03-whip-pan-right-hq.jpg",
      "card_poster": "/media/aicameramovements/03-whip-pan-right-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/03-whip-pan-right-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -3661,6 +3678,7 @@
      "card": "/media/aicameramovements/05-slow-zoom-in-hq-card.mp4",
      "poster": "/media/aicameramovements/05-slow-zoom-in-hq.jpg",
      "card_poster": "/media/aicameramovements/05-slow-zoom-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/05-slow-zoom-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -4111,6 +4129,7 @@
       "card": "/media/emotion-direction/16-determination-card.mp4",
       "poster": "/media/emotion-direction/16-determination.jpg",
       "card_poster": "/media/emotion-direction/16-determination-card.jpg",
+      "card_poster_400": "/media/emotion-direction/16-determination-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -4303,6 +4322,7 @@
       "card": "/media/emotion-direction/05-disgust-card.mp4",
       "poster": "/media/emotion-direction/05-disgust.jpg",
       "card_poster": "/media/emotion-direction/05-disgust-card.jpg",
+      "card_poster_400": "/media/emotion-direction/05-disgust-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -4378,6 +4398,7 @@
       "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
       "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
       "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -4456,6 +4477,7 @@
       "card": "/media/aicameramovements/09-dolly-out-hq-card.mp4",
       "poster": "/media/aicameramovements/09-dolly-out-hq.jpg",
       "card_poster": "/media/aicameramovements/09-dolly-out-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/09-dolly-out-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -4537,6 +4559,7 @@
      "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
      "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
      "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -4684,6 +4707,7 @@
       "card": "/media/aicameramovements/26b-drone-pull-back-hq-card.mp4",
       "poster": "/media/aicameramovements/26b-drone-pull-back-hq.jpg",
       "card_poster": "/media/aicameramovements/26b-drone-pull-back-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/26b-drone-pull-back-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -4767,6 +4791,7 @@
       "card": "/media/aicameramovements/26-drone-push-in-hq-card.mp4",
       "poster": "/media/aicameramovements/26-drone-push-in-hq.jpg",
       "card_poster": "/media/aicameramovements/26-drone-push-in-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/26-drone-push-in-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -4890,6 +4915,7 @@
       "card": "/media/aicameramovements/s4-earth-zoom-out-hq-card.mp4",
       "poster": "/media/aicameramovements/s4-earth-zoom-out-hq.jpg",
       "card_poster": "/media/aicameramovements/s4-earth-zoom-out-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s4-earth-zoom-out-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -5574,6 +5600,7 @@
       "card": "/media/emotion-direction/21-embarrassment-card.mp4",
       "poster": "/media/emotion-direction/21-embarrassment.jpg",
       "card_poster": "/media/emotion-direction/21-embarrassment-card.jpg",
+      "card_poster_400": "/media/emotion-direction/21-embarrassment-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -5653,6 +5680,7 @@
      "card": "/media/emotion-direction/19-sadness-card.mp4",
      "poster": "/media/emotion-direction/19-sadness.jpg",
      "card_poster": "/media/emotion-direction/19-sadness-card.jpg",
+     "card_poster_400": "/media/emotion-direction/19-sadness-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 7.07
@@ -5742,6 +5770,7 @@
      "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/01-static-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/01-static-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/01-static-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -5884,6 +5913,7 @@
       "card": "/media/emotion-direction/22-exhaustion-card.mp4",
       "poster": "/media/emotion-direction/22-exhaustion.jpg",
       "card_poster": "/media/emotion-direction/22-exhaustion-card.jpg",
+      "card_poster_400": "/media/emotion-direction/22-exhaustion-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -6220,6 +6250,7 @@
       "card": "/media/emotion-direction/08-eye-roll-card.mp4",
       "poster": "/media/emotion-direction/08-eye-roll.jpg",
       "card_poster": "/media/emotion-direction/08-eye-roll-card.jpg",
+      "card_poster_400": "/media/emotion-direction/08-eye-roll-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -6404,6 +6435,7 @@
       "card": "/media/aicameramovements/06-fast-zoom-in-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/06-fast-zoom-in-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/06-fast-zoom-in-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/06-fast-zoom-in-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 10.08
@@ -6426,6 +6458,7 @@
       "card": "/media/aicameramovements/06b-fast-zoom-out-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/06b-fast-zoom-out-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/06b-fast-zoom-out-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/06b-fast-zoom-out-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 10.08
@@ -6548,6 +6581,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -6841,6 +6875,7 @@
       "card": "/media/aicameramovements/s1-first-person-view-hq-card.mp4",
       "poster": "/media/aicameramovements/s1-first-person-view-hq.jpg",
       "card_poster": "/media/aicameramovements/s1-first-person-view-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s1-first-person-view-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -7012,6 +7047,7 @@
       "card": "/media/emotion-direction/10-flirtation-card.mp4",
       "poster": "/media/emotion-direction/10-flirtation.jpg",
       "card_poster": "/media/emotion-direction/10-flirtation-card.jpg",
+      "card_poster_400": "/media/emotion-direction/10-flirtation-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -7185,6 +7221,7 @@
       "card": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card.mp4",
       "poster": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq.jpg",
       "card_poster": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -7261,6 +7298,7 @@
      "card": "/media/aicameramovements/12-slider-right-hq-card.mp4",
      "poster": "/media/aicameramovements/12-slider-right-hq.jpg",
      "card_poster": "/media/aicameramovements/12-slider-right-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/12-slider-right-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -7747,6 +7785,7 @@
      "card": "/media/aicameramovements/26-drone-push-in-hq-card.mp4",
      "poster": "/media/aicameramovements/26-drone-push-in-hq.jpg",
      "card_poster": "/media/aicameramovements/26-drone-push-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/26-drone-push-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -7812,6 +7851,7 @@
      "card": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/13-push-past-pass-by-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -8079,6 +8119,7 @@
       "card": "/media/emotion-direction/17-frustration-card.mp4",
       "poster": "/media/emotion-direction/17-frustration.jpg",
       "card_poster": "/media/emotion-direction/17-frustration-card.jpg",
+      "card_poster_400": "/media/emotion-direction/17-frustration-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -8476,6 +8517,7 @@
      "card": "/media/aicameramovements/20-low-tracking-v2-hq-card.mp4",
      "poster": "/media/aicameramovements/20-low-tracking-v2-hq.jpg",
      "card_poster": "/media/aicameramovements/20-low-tracking-v2-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/20-low-tracking-v2-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -8624,6 +8666,7 @@
      "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/01-static-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/01-static-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/01-static-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -8905,6 +8948,7 @@
       "card": "/media/emotion-direction/20-guilt-card.mp4",
       "poster": "/media/emotion-direction/20-guilt.jpg",
       "card_poster": "/media/emotion-direction/20-guilt-card.jpg",
+      "card_poster_400": "/media/emotion-direction/20-guilt-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -9011,6 +9055,7 @@
       "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -9185,6 +9230,7 @@
       "card": "/media/aicameramovements/27-helicopter-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/27-helicopter-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/27-helicopter-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/27-helicopter-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -9657,6 +9703,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -9710,6 +9757,7 @@
      "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
      "poster": "/media/aicameramovements/s5-time-lapse-hq.jpg",
      "card_poster": "/media/aicameramovements/s5-time-lapse-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/s5-time-lapse-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -9804,6 +9852,7 @@
       "card": "/media/aicameramovements/s3-infinite-zoom-hq-card.mp4",
       "poster": "/media/aicameramovements/s3-infinite-zoom-hq.jpg",
       "card_poster": "/media/aicameramovements/s3-infinite-zoom-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s3-infinite-zoom-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -10138,6 +10187,7 @@
      "card": "/media/aicameramovements/05-slow-zoom-in-hq-card.mp4",
      "poster": "/media/aicameramovements/05-slow-zoom-in-hq.jpg",
      "card_poster": "/media/aicameramovements/05-slow-zoom-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/05-slow-zoom-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -10336,6 +10386,7 @@
      "card": "/media/aicameramovements/22-chase-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/22-chase-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/22-chase-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/22-chase-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -10513,6 +10564,7 @@
       "card": "/media/emotion-direction/01-joy-laughter-card.mp4",
       "poster": "/media/emotion-direction/01-joy-laughter.jpg",
       "card_poster": "/media/emotion-direction/01-joy-laughter-card.jpg",
+      "card_poster_400": "/media/emotion-direction/01-joy-laughter-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -10831,6 +10883,7 @@
      "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
      "poster": "/media/aicameramovements/s5-time-lapse-hq.jpg",
      "card_poster": "/media/aicameramovements/s5-time-lapse-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/s5-time-lapse-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -11727,6 +11780,7 @@
       "card": "/media/aicameramovements/20-low-tracking-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/20-low-tracking-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/20-low-tracking-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/20-low-tracking-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -12325,6 +12379,7 @@
      "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
      "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
      "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -12682,6 +12737,7 @@
       "card": "/media/emotion-direction/25-nervous-fake-smile-card.mp4",
       "poster": "/media/emotion-direction/25-nervous-fake-smile.jpg",
       "card_poster": "/media/emotion-direction/25-nervous-fake-smile-card.jpg",
+      "card_poster_400": "/media/emotion-direction/25-nervous-fake-smile-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -12799,6 +12855,7 @@
      "card": "/media/emotion-direction/01-joy-laughter-card.mp4",
      "poster": "/media/emotion-direction/01-joy-laughter.jpg",
      "card_poster": "/media/emotion-direction/01-joy-laughter-card.jpg",
+     "card_poster_400": "/media/emotion-direction/01-joy-laughter-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 7.07
@@ -12888,6 +12945,7 @@
      "card": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card.mp4",
      "poster": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq.jpg",
      "card_poster": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/17-follow-shot-over-the-shoulder-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -13226,6 +13284,7 @@
       "card": "/media/aicameramovements/15-orbit-clockwise-hq-card.mp4",
       "poster": "/media/aicameramovements/15-orbit-clockwise-hq.jpg",
       "card_poster": "/media/aicameramovements/15-orbit-clockwise-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/15-orbit-clockwise-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13248,6 +13307,7 @@
       "card": "/media/aicameramovements/15b-orbit-counterclockwise-hq-card.mp4",
       "poster": "/media/aicameramovements/15b-orbit-counterclockwise-hq.jpg",
       "card_poster": "/media/aicameramovements/15b-orbit-counterclockwise-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/15b-orbit-counterclockwise-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13566,6 +13626,7 @@
       "card": "/media/emotion-direction/07-pain-wince-card.mp4",
       "poster": "/media/emotion-direction/07-pain-wince.jpg",
       "card_poster": "/media/emotion-direction/07-pain-wince-card.jpg",
+      "card_poster_400": "/media/emotion-direction/07-pain-wince-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -13651,6 +13712,7 @@
       "card": "/media/aicameramovements/02-pan-right-hq-card.mp4",
       "poster": "/media/aicameramovements/02-pan-right-hq.jpg",
       "card_poster": "/media/aicameramovements/02-pan-right-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/02-pan-right-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13673,6 +13735,7 @@
       "card": "/media/aicameramovements/2b-pan-left-hq-card.mp4",
       "poster": "/media/aicameramovements/2b-pan-left-hq.jpg",
       "card_poster": "/media/aicameramovements/2b-pan-left-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/2b-pan-left-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13742,6 +13805,7 @@
       "card": "/media/aicameramovements/s6-pass-through-objects-hq-card.mp4",
       "poster": "/media/aicameramovements/s6-pass-through-objects-hq.jpg",
       "card_poster": "/media/aicameramovements/s6-pass-through-objects-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s6-pass-through-objects-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13847,6 +13911,7 @@
       "card": "/media/aicameramovements/11a-pedestal-up-hq-card.mp4",
       "poster": "/media/aicameramovements/11a-pedestal-up-hq.jpg",
       "card_poster": "/media/aicameramovements/11a-pedestal-up-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/11a-pedestal-up-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13869,6 +13934,7 @@
       "card": "/media/aicameramovements/11b-pedestal-down-hq-card.mp4",
       "poster": "/media/aicameramovements/11b-pedestal-down-hq.jpg",
       "card_poster": "/media/aicameramovements/11b-pedestal-down-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/11b-pedestal-down-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -13998,6 +14064,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -14914,6 +14981,7 @@
      "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/01-static-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/01-static-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/01-static-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -15214,6 +15282,7 @@
       "card": "/media/emotion-direction/24-pride-card.mp4",
       "poster": "/media/emotion-direction/24-pride.jpg",
       "card_poster": "/media/emotion-direction/24-pride-card.jpg",
+      "card_poster_400": "/media/emotion-direction/24-pride-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -15413,6 +15482,7 @@
      "card": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.mp4",
      "poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq.jpg",
      "card_poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 10.08
@@ -15472,6 +15542,7 @@
      "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
      "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
      "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -15523,6 +15594,7 @@
       "card": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/13-push-past-pass-by-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/13-push-past-pass-by-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -15631,6 +15703,7 @@
       "card": "/media/emotion-direction/04-rage-card.mp4",
       "poster": "/media/emotion-direction/04-rage.jpg",
       "card_poster": "/media/emotion-direction/04-rage-card.jpg",
+      "card_poster_400": "/media/emotion-direction/04-rage-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -16258,6 +16331,7 @@
      "card": "/media/emotion-direction/02-shock-card.mp4",
      "poster": "/media/emotion-direction/02-shock.jpg",
      "card_poster": "/media/emotion-direction/02-shock-card.jpg",
+     "card_poster_400": "/media/emotion-direction/02-shock-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 7.07
@@ -16435,6 +16509,7 @@
       "card": "/media/emotion-direction/14-realization-card.mp4",
       "poster": "/media/emotion-direction/14-realization.jpg",
       "card_poster": "/media/emotion-direction/14-realization-card.jpg",
+      "card_poster_400": "/media/emotion-direction/14-realization-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -16622,6 +16697,7 @@
       "card": "/media/emotion-direction/23-relief-card.mp4",
       "poster": "/media/emotion-direction/23-relief.jpg",
       "card_poster": "/media/emotion-direction/23-relief-card.jpg",
+      "card_poster_400": "/media/emotion-direction/23-relief-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -16779,6 +16855,7 @@
      "card": "/media/aicameramovements/23-handheld-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/23-handheld-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/23-handheld-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/23-handheld-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -16830,6 +16907,7 @@
       "card": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq-card.mp4",
       "poster": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq.jpg",
       "card_poster": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/18-reverse-tracking-walk-and-talk-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -17034,6 +17112,7 @@
       "card": "/media/emotion-direction/19-sadness-card.mp4",
       "poster": "/media/emotion-direction/19-sadness.jpg",
       "card_poster": "/media/emotion-direction/19-sadness-card.jpg",
+      "card_poster_400": "/media/emotion-direction/19-sadness-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -17160,6 +17239,7 @@
      "card": "/media/aicameramovements/19-side-tracking-hq-card.mp4",
      "poster": "/media/aicameramovements/19-side-tracking-hq.jpg",
      "card_poster": "/media/aicameramovements/19-side-tracking-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/19-side-tracking-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -17880,6 +17960,7 @@
       "card": "/media/emotion-direction/02-shock-card.mp4",
       "poster": "/media/emotion-direction/02-shock.jpg",
       "card_poster": "/media/emotion-direction/02-shock-card.jpg",
+      "card_poster_400": "/media/emotion-direction/02-shock-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -18132,6 +18213,7 @@
       "card": "/media/aicameramovements/19-side-tracking-hq-card.mp4",
       "poster": "/media/aicameramovements/19-side-tracking-hq.jpg",
       "card_poster": "/media/aicameramovements/19-side-tracking-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/19-side-tracking-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -18333,6 +18415,7 @@
       "card": "/media/aicameramovements/12-slider-right-hq-card.mp4",
       "poster": "/media/aicameramovements/12-slider-right-hq.jpg",
       "card_poster": "/media/aicameramovements/12-slider-right-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/12-slider-right-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -18355,6 +18438,7 @@
       "card": "/media/aicameramovements/12b-slider-left-hq-card.mp4",
       "poster": "/media/aicameramovements/12b-slider-left-hq.jpg",
       "card_poster": "/media/aicameramovements/12b-slider-left-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/12b-slider-left-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -18430,6 +18514,7 @@
      "card": "/media/aicameramovements/05-slow-zoom-in-hq-card.mp4",
      "poster": "/media/aicameramovements/05-slow-zoom-in-hq.jpg",
      "card_poster": "/media/aicameramovements/05-slow-zoom-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/05-slow-zoom-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -18483,6 +18568,7 @@
      "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
      "poster": "/media/aicameramovements/s5-time-lapse-hq.jpg",
      "card_poster": "/media/aicameramovements/s5-time-lapse-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/s5-time-lapse-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -18544,6 +18630,7 @@
       "card": "/media/aicameramovements/05-slow-zoom-in-hq-card.mp4",
       "poster": "/media/aicameramovements/05-slow-zoom-in-hq.jpg",
       "card_poster": "/media/aicameramovements/05-slow-zoom-in-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/05-slow-zoom-in-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -18622,6 +18709,7 @@
       "card": "/media/aicameramovements/5b-slow-zoom-out-hq-card.mp4",
       "poster": "/media/aicameramovements/5b-slow-zoom-out-hq.jpg",
       "card_poster": "/media/aicameramovements/5b-slow-zoom-out-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/5b-slow-zoom-out-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -18695,6 +18783,7 @@
       "card": "/media/emotion-direction/11-smug-gloating-card.mp4",
       "poster": "/media/emotion-direction/11-smug-gloating.jpg",
       "card_poster": "/media/emotion-direction/11-smug-gloating-card.jpg",
+      "card_poster_400": "/media/emotion-direction/11-smug-gloating-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -18802,6 +18891,7 @@
       "card": "/media/aicameramovements/24-snorricam-v2-hq-card.mp4",
       "poster": "/media/aicameramovements/24-snorricam-v2-hq.jpg",
       "card_poster": "/media/aicameramovements/24-snorricam-v2-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/24-snorricam-v2-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -19476,6 +19566,7 @@
       "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/01-static-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/01-static-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/01-static-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -19545,6 +19636,7 @@
      "card": "/media/aicameramovements/16-tracking-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/16-tracking-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/16-tracking-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/16-tracking-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -19652,6 +19744,7 @@
      "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
      "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
      "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -19709,6 +19802,7 @@
       "card": "/media/emotion-direction/09-suspicion-card.mp4",
       "poster": "/media/emotion-direction/09-suspicion.jpg",
       "card_poster": "/media/emotion-direction/09-suspicion-card.jpg",
+      "card_poster_400": "/media/emotion-direction/09-suspicion-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -19824,6 +19918,7 @@
      "card": "/media/aicameramovements/08-dolly-in-hq-card.mp4",
      "poster": "/media/aicameramovements/08-dolly-in-hq.jpg",
      "card_poster": "/media/aicameramovements/08-dolly-in-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/08-dolly-in-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -19945,6 +20040,7 @@
       "card": "/media/emotion-direction/03-terror-card.mp4",
       "poster": "/media/emotion-direction/03-terror.jpg",
       "card_poster": "/media/emotion-direction/03-terror-card.jpg",
+      "card_poster_400": "/media/emotion-direction/03-terror-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 7.07
@@ -20275,6 +20371,7 @@
       "card": "/media/aicameramovements/4b-tilt-down-hq-card.mp4",
       "poster": "/media/aicameramovements/4b-tilt-down-hq.jpg",
       "card_poster": "/media/aicameramovements/4b-tilt-down-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/4b-tilt-down-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20360,6 +20457,7 @@
       "card": "/media/aicameramovements/s2-tilt-shift-hq-card.mp4",
       "poster": "/media/aicameramovements/s2-tilt-shift-hq.jpg",
       "card_poster": "/media/aicameramovements/s2-tilt-shift-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s2-tilt-shift-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20441,6 +20539,7 @@
       "card": "/media/aicameramovements/04-tilt-up-hq-card.mp4",
       "poster": "/media/aicameramovements/04-tilt-up-hq.jpg",
       "card_poster": "/media/aicameramovements/04-tilt-up-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/04-tilt-up-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20509,6 +20608,7 @@
       "card": "/media/aicameramovements/s5-time-lapse-hq-card.mp4",
       "poster": "/media/aicameramovements/s5-time-lapse-hq.jpg",
       "card_poster": "/media/aicameramovements/s5-time-lapse-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/s5-time-lapse-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20810,6 +20910,7 @@
       "card": "/media/aicameramovements/16-tracking-shot-hq-card.mp4",
       "poster": "/media/aicameramovements/16-tracking-shot-hq.jpg",
       "card_poster": "/media/aicameramovements/16-tracking-shot-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/16-tracking-shot-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20930,6 +21031,7 @@
       "card": "/media/aicameramovements/10-truck-right-hq-card.mp4",
       "poster": "/media/aicameramovements/10-truck-right-hq.jpg",
       "card_poster": "/media/aicameramovements/10-truck-right-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/10-truck-right-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -20952,6 +21054,7 @@
       "card": "/media/aicameramovements/10b-truck-left-hq-card.mp4",
       "poster": "/media/aicameramovements/10b-truck-left-hq.jpg",
       "card_poster": "/media/aicameramovements/10b-truck-left-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/10b-truck-left-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -21314,6 +21417,7 @@
       "card": "/media/aicameramovements/21-vehicle-tracking-hq-card.mp4",
       "poster": "/media/aicameramovements/21-vehicle-tracking-hq.jpg",
       "card_poster": "/media/aicameramovements/21-vehicle-tracking-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/21-vehicle-tracking-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -21826,6 +21930,7 @@
      "card": "/media/aicameramovements/01-static-shot-hq-card.mp4",
      "poster": "/media/aicameramovements/01-static-shot-hq.jpg",
      "card_poster": "/media/aicameramovements/01-static-shot-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/01-static-shot-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -21960,6 +22065,7 @@
       "card": "/media/aicameramovements/03-whip-pan-right-hq-card.mp4",
       "poster": "/media/aicameramovements/03-whip-pan-right-hq.jpg",
       "card_poster": "/media/aicameramovements/03-whip-pan-right-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/03-whip-pan-right-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -21982,6 +22088,7 @@
       "card": "/media/aicameramovements/3b-whip-pan-left-hq-card.mp4",
       "poster": "/media/aicameramovements/3b-whip-pan-left-hq.jpg",
       "card_poster": "/media/aicameramovements/3b-whip-pan-left-hq-card.jpg",
+      "card_poster_400": "/media/aicameramovements/3b-whip-pan-left-hq-card-400.jpg",
       "width": 1280,
       "height": 720,
       "duration": 15
@@ -22053,6 +22160,7 @@
      "card": "/media/aicameramovements/03-whip-pan-right-hq-card.mp4",
      "poster": "/media/aicameramovements/03-whip-pan-right-hq.jpg",
      "card_poster": "/media/aicameramovements/03-whip-pan-right-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/03-whip-pan-right-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -22430,6 +22538,7 @@
      "card": "/media/aicameramovements/09-dolly-out-hq-card.mp4",
      "poster": "/media/aicameramovements/09-dolly-out-hq.jpg",
      "card_poster": "/media/aicameramovements/09-dolly-out-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/09-dolly-out-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 15
@@ -22489,6 +22598,7 @@
      "card": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.mp4",
      "poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq.jpg",
      "card_poster": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card.jpg",
+     "card_poster_400": "/media/aicameramovements/07a-crash-zoom-in-v2-hq-card-400.jpg",
      "width": 1280,
      "height": 720,
      "duration": 10.08

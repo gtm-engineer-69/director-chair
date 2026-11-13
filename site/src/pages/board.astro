@@ -8,7 +8,7 @@ import { kindOf } from '../lib/prompt.mjs';
 const parts = [['shot', 'Shot'], ['angle', 'Angle'], ['move', 'Move'], ['lens', 'Lens'], ['light', 'Light'], ['time', 'Time of day'], ['look', 'Look'], ['texture', 'Texture'], ['expression', 'Expression'], ['motion', 'Motion'], ['hook', 'Hook'], ['transition', 'Transition']]
   .map(([id, label]) => ({ id, label, list: clipsFirst(inCat(id).filter((i) => kindOf(i, models) === 'shot')).map((i) => tileOf(i)) })).filter((p) => p.list.length);
 ---
-<Base title="Director's board: build one prompt from many cards | Director Chair" description="Pick one card for each part (shot, angle, move, light, look, expression, hook, transition) and get one complete prompt for your model. The address holds your board, so you can share it." path="/board">
+<Base title="Director's board: build one prompt from many cards | Director Chair" description="Pick one card for each part (shot, angle, move, light, look, expression, hook, transition) and get one complete prompt for your model. The address holds your board, so you can share it." path="/board" crumb="Board">
   <div data-board>
     <div class="board">
       <div>

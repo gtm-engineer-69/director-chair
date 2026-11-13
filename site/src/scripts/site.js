@@ -112,7 +112,7 @@ if (form) {
   const q = $('input', form); const hero = $('[data-hero]'); const wrap = $('[data-results-wrap]'); const grid = $('[data-results]'); const meta = $('[data-results-meta]'); const none = $('[data-noresults]'); const library = $('[data-library]');
   let index = null;
   const words = (t) => t.split(' ').map((w, n) => `<span class="w" style="--i:${n}">${esc(w)}</span>`).join(' ');
-  const tile = (c) => `<a class="tile${c.say ? ' say' : ''}" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}><span class="name">${esc(c.name)}</span>${c.still ? `<img src="${esc(c.still)}" alt="" width="480" height="270" loading="lazy"><span class="line">${esc(c.line)}</span>` : c.dg || `<p>${c.say ? words(c.text) : esc(c.text)}</p>`}</a>`;
+  const tile = (c) => `<a class="tile${c.say ? ' say' : ''}" href="${esc(c.href)}"${c.clip ? ` data-clip="${esc(c.clip)}"` : ''}><span class="name">${esc(c.name)}</span>${c.still ? `<img src="${esc(c.still)}"${c.srcset ? ` srcset="${esc(c.srcset)}" sizes="(max-width: 720px) 50vw, 360px"` : ''} alt="" width="480" height="270" loading="lazy"><span class="line">${esc(c.line)}</span>` : c.dg || `<p>${c.say ? words(c.text) : esc(c.text)}</p>`}</a>`;
   async function run() {
     const terms = q.value.toLowerCase().split(/\s+/).filter(Boolean);
     history.replaceState(null, '', terms.length ? `?q=${encodeURIComponent(q.value)}` : location.pathname);

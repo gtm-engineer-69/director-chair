@@ -4,7 +4,7 @@ import { items, cats, lib } from '../lib/data.mjs';
 const makers = lib.external_sites.filter((s) => s.policy === 'licensed');
 const clips = (id) => items.reduce((a, i) => a + i.licensed.filter((l) => l.site === id).length, 0);
 ---
-<Base title="About Director Chair: open data, licences and credits" description="Director Chair is a free, open library of video craft for AI video. How to use the data in your own agent, the licences, who made the reference clips and how to cite it." path="/about">
+<Base title="About Director Chair: open data, licences and credits" description="Director Chair is a free, open library of video craft for AI video. How to use the data in your own agent, the licences, who made the reference clips and how to cite it." path="/about" crumb="About">
   <div class="page"><h1>About</h1><p class="lead">The free, open operating system for the AI video marketer. {items.length} cards on {cats.length} shelves, each with a prompt ready to paste.</p></div>
   <section class="row"><header><h2>What this is</h2></header><div class="prose">
     <p>Everything you need to make a short video that works, as cards: shot sizes, angles, camera moves, lenses, light, colour looks, transitions, effects, sound, expressions, hooks, scripts, formats, presets, and which model for what.</p>

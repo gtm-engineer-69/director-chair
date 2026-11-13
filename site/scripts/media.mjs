@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // media.mjs - transcodes the licensed clips in library/examples/licensed for the web.
 // Per clip: <name>.mp4 (720p, about 1 Mbps), <name>-card.mp4 (480 wide, muted, for grids),
-// <name>.jpg (poster 1280) and <name>-card.jpg (640). Writes public/media/manifest.json.
+// <name>.jpg (poster 1280), <name>-card.jpg (640) and <name>-card-400.jpg (400, for grid tiles). Writes public/media/manifest.json.
 // Idempotent: skips outputs newer than their source. Needs ffmpeg and ffprobe on PATH.
 import { execFileSync } from 'node:child_process';
 import { readdirSync, mkdirSync, statSync, existsSync, writeFileSync } from 'node:fs';
@@ -31,10 +31,11 @@ for (const site of readdirSync(SRC).filter(d => statSync(path.join(SRC, d)).isDi
     const psrc = existsSync(jpg) ? jpg : src;
     if (!fresh(o('.jpg'), psrc)) { ff([...from, '-vf', "scale='min(1280,iw)':-2", '-q:v', '4', o('.jpg')]); made++; }
     if (!fresh(o('-card.jpg'), psrc)) { ff([...from, '-vf', 'scale=640:-2', '-q:v', '5', o('-card.jpg')]); made++; }
+    if (!fresh(o('-card-400.jpg'), psrc)) { ff([...from, '-vf', 'scale=400:-2', '-q:v', '5', o('-card-400.jpg')]); made++; }
     const p = probe(o('.mp4')), s = p.streams[0];
     manifest[`examples/licensed/${site}/${f}`] = {
       video: `/media/${site}/${base}.mp4`, card: `/media/${site}/${base}-card.mp4`,
-      poster: `/media/${site}/${base}.jpg`, card_poster: `/media/${site}/${base}-card.jpg`,
+      poster: `/media/${site}/${base}.jpg`, card_poster: `/media/${site}/${base}-card.jpg`, card_poster_400: `/media/${site}/${base}-card-400.jpg`,
       width: s.width, height: s.height, duration: +(+p.format.duration).toFixed(2),
       bytes: statSync(o('.mp4')).size, card_bytes: statSync(o('-card.mp4')).size,
     };

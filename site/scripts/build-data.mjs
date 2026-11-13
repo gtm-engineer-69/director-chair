@@ -50,7 +50,7 @@ const items = published.map(({ fm, body }) => {
     const m = manifest[l.file];
     if (!m) missingMedia.push(`${fm.slug}: ${l.file}`);
     return { site: l.site, name: l.name, text: l.text, credit: l.credit, source_url: l.clip, group: l.group ?? null, intensity: l.intensity ?? null, cue: l.cue ?? null, shot: l.shot ?? null, family: l.family ?? null, aliases: l.aliases ?? [],
-      media: m ? { video: m.video, card: m.card, poster: m.poster, card_poster: m.card_poster, width: m.width, height: m.height, duration: m.duration } : null };
+      media: m ? { video: m.video, card: m.card, poster: m.poster, card_poster: m.card_poster, card_poster_400: m.card_poster_400, width: m.width, height: m.height, duration: m.duration } : null };
   });
   return {
     slug: fm.slug, name: fm.name, category: fm.category, group: fm.group ?? null, media: fm.media, checked: fm.checked,
